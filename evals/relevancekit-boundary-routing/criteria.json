@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent preserves RelevanceKit's boundary while routing adjacent widget, health, and location implementation work to sibling skills.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "RelevanceKit scope",
+      "description": "Keeps RelevanceKit skill scope to watchOS Smart Stack relevance clues, `RelevantContext`, provider `relevance()`, `RelevantIntentManager`, and the relevant-widget workflow, including WidgetKit APIs such as `RelevanceConfiguration` and `RelevanceEntriesProvider` when used specifically for relevant widgets.",
+      "max_score": 25
+    },
+    {
+      "name": "WidgetKit routing",
+      "description": "Routes general iOS Home Screen widget timelines, refresh budgets, widget families, controls, Live Activities, and APNs widget push updates to WidgetKit guidance.",
+      "max_score": 20
+    },
+    {
+      "name": "HealthKit routing",
+      "description": "Routes workout recording, `HKWorkoutSession`, workout routes, and broader HealthKit authorization/query work to HealthKit guidance.",
+      "max_score": 15
+    },
+    {
+      "name": "MapKit routing",
+      "description": "Routes place search, autocomplete, directions, and broader CoreLocation flows to MapKit/CoreLocation guidance.",
+      "max_score": 15
+    },
+    {
+      "name": "Handoff points",
+      "description": "Preserves handoff points, such as using MapKit point-of-interest categories only as input to `RelevantContext.location(category:)` and HealthKit permissions only as prerequisites for fitness/sleep clues.",
+      "max_score": 15
+    },
+    {
+      "name": "No sibling overreach",
+      "description": "Does not expand RelevanceKit into full WidgetKit, HealthKit, or MapKit implementation details.",
+      "max_score": 10
+    }
+  ]
+}

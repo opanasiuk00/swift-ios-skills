@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent performs a complete App Store review readiness audit using current build, privacy, tracking, subscription, screenshot, and reviewer-access guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Current SDK requirement",
+      "description": "States that current uploads after the relevant 2026 deadline require Xcode 26 or later and the relevant platform SDK 26 or later.",
+      "max_score": 14
+    },
+    {
+      "name": "ATT tracking",
+      "description": "Explains that cross-app or cross-website ad tracking requires ATT, a clear tracking usage description, and no tracking before authorization.",
+      "max_score": 15
+    },
+    {
+      "name": "SDK manifests",
+      "description": "Checks whether third-party SDK code that collects data, uses required-reason APIs, enables data collection, or contacts tracking domains has its own privacy manifest in the bundle containing that code.",
+      "max_score": 15
+    },
+    {
+      "name": "Privacy consistency",
+      "description": "Requires privacy manifest declarations, App Store privacy labels, privacy policy, SDK behavior, and runtime behavior to agree.",
+      "max_score": 12
+    },
+    {
+      "name": "Subscription rules",
+      "description": "Warns that digital subscriptions generally require StoreKit IAP, visible price/duration/renewal/trial terms, working restore purchases, and no external purchase path unless current rules or entitlements allow it.",
+      "max_score": 18
+    },
+    {
+      "name": "Screenshot sizes",
+      "description": "Includes current iPhone and iPad screenshot compliance, specifically 6.9-inch iPhone screenshots and 13-inch iPad screenshots when the app runs on iPad.",
+      "max_score": 14
+    },
+    {
+      "name": "Reviewer access",
+      "description": "Requires demo credentials or demo mode and clear App Review notes for login-gated or non-obvious features.",
+      "max_score": 12
+    }
+  ]
+}

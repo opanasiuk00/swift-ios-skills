@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether AppMigrationKit import/export review guidance catches progress, archiver, conversion, and app-group cleanup mistakes.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Stable progress",
+      "description": "Rejects returning a newly created progress object from the import progress property.",
+      "max_score": 10
+    },
+    {
+      "name": "Progress updates",
+      "description": "Recommends storing one progress object and updating it incrementally during import.",
+      "max_score": 10
+    },
+    {
+      "name": "Cancellation propagation",
+      "description": "States that archiver cancellation errors should propagate rather than being caught or swallowed.",
+      "max_score": 10
+    },
+    {
+      "name": "No conversion copy",
+      "description": "Rejects creating an intermediate converted export package before archiving.",
+      "max_score": 10
+    },
+    {
+      "name": "Append resources",
+      "description": "Recommends archiving transportable files directly with resource append calls.",
+      "max_score": 10
+    },
+    {
+      "name": "Avoid stalls",
+      "description": "Mentions avoiding long gaps before or between archive append calls.",
+      "max_score": 10
+    },
+    {
+      "name": "App container cleanup",
+      "description": "States that on import error the system clears the containing app data container.",
+      "max_score": 10
+    },
+    {
+      "name": "Group not cleared",
+      "description": "States that app group containers are not cleared by the migration system on import error.",
+      "max_score": 10
+    },
+    {
+      "name": "Group cleanup",
+      "description": "Recommends clearing or staging relevant app group data before writing imported content.",
+      "max_score": 10
+    },
+    {
+      "name": "Version handling",
+      "description": "Mentions using source or resource version information to handle versioned imported data.",
+      "max_score": 10
+    }
+  ]
+}

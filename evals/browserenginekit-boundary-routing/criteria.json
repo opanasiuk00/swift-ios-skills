@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether BrowserEngineKit stays scoped to alternative browser engines and routes ordinary embedded web content to sibling skills.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Rejects BrowserEngineKit",
+      "description": "Says BrowserEngineKit is not the right tool for an ordinary in-app help center or OAuth flow when the app is not implementing an approved alternative browser engine.",
+      "max_score": 25
+    },
+    {
+      "name": "Web content routing",
+      "description": "Recommends SwiftUI WebKit/WebView or WKWebView-style embedded web APIs for app-owned HTML content.",
+      "max_score": 20
+    },
+    {
+      "name": "OAuth routing",
+      "description": "Recommends ASWebAuthenticationSession or authentication-focused guidance for OAuth rather than embedded browser-engine plumbing.",
+      "max_score": 20
+    },
+    {
+      "name": "BrowserEngineKit scope",
+      "description": "Explains that BrowserEngineKit is for entitlement-approved alternative browser engines with separate web content, networking, and rendering processes.",
+      "max_score": 25
+    },
+    {
+      "name": "No entitlement overreach",
+      "description": "Does not tell the team to request BrowserEngineKit entitlements or create BrowserEngineKit extensions for the help center.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent designs a BLE onboarding flow using AccessorySetupKit rather than broad CoreBluetooth discovery, with correct plist declarations, descriptor setup, session lifecycle, picker timing, and post-selection handoff.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Uses ASK",
+      "description": "Uses AccessorySetupKit and ASAccessorySession for initial discovery and authorization rather than direct CoreBluetooth scanning.",
+      "max_score": 10
+    },
+    {
+      "name": "Support plist",
+      "description": "Declares NSAccessorySetupSupports with Bluetooth support.",
+      "max_score": 10
+    },
+    {
+      "name": "Bluetooth plist",
+      "description": "Declares Bluetooth service and name discovery values that match the sensor service UUID and EnviroTag name rule.",
+      "max_score": 10
+    },
+    {
+      "name": "Descriptor UUID",
+      "description": "Creates an ASDiscoveryDescriptor using the provided Bluetooth service UUID.",
+      "max_score": 10
+    },
+    {
+      "name": "Descriptor name",
+      "description": "Adds Bluetooth name matching for EnviroTag or an equivalent substring/prefix rule.",
+      "max_score": 10
+    },
+    {
+      "name": "Activated first",
+      "description": "Activates ASAccessorySession and treats the activated event as the safe point for reading existing accessories or presenting setup.",
+      "max_score": 10
+    },
+    {
+      "name": "User action",
+      "description": "Presents the picker from an explicit Add Sensor user action, not automatically on app launch.",
+      "max_score": 10
+    },
+    {
+      "name": "Dismissal order",
+      "description": "Stores the selected accessory on accessoryAdded and starts the in-app calibration step only after pickerDidDismiss.",
+      "max_score": 10
+    },
+    {
+      "name": "Bluetooth handoff",
+      "description": "Uses ASAccessory.bluetoothIdentifier with CoreBluetooth after selection to retrieve/connect the peripheral.",
+      "max_score": 10
+    },
+    {
+      "name": "Permission note",
+      "description": "Explains that AccessorySetupKit-only discovery avoids a broad Bluetooth permission prompt and limits CoreBluetooth scan results to paired accessories.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the RealityKit skill prevents conflating entity hit testing with ARKit real-world surface raycasts.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Entity hit-test boundary",
+      "description": "Explains that RealityViewCameraContent.hitTest intersects RealityKit entity collision shapes, not arbitrary detected physical surfaces.",
+      "max_score": 25
+    },
+    {
+      "name": "Camera ray limitation",
+      "description": "States that RealityViewCameraContent.ray produces a camera ray in RealityKit coordinates and is not by itself proof of a real-world surface hit.",
+      "max_score": 15
+    },
+    {
+      "name": "Plane anchor path",
+      "description": "Recommends AnchorEntity(.plane(...)) for simple placement on detected horizontal or vertical planes.",
+      "max_score": 20
+    },
+    {
+      "name": "ARKit raycast path",
+      "description": "Recommends ARRaycastQuery with ARSession.raycast(_:) and AnchorEntity(raycastResult:) when a one-shot real-world surface intersection is needed.",
+      "max_score": 25
+    },
+    {
+      "name": "Collision component scope",
+      "description": "Uses CollisionComponent shapes for interactive entity hit testing and gestures, not as a substitute for ARKit surface detection.",
+      "max_score": 15
+    }
+  ]
+}

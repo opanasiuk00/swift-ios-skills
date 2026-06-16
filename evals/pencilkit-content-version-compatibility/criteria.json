@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the answer correctly handles PencilKit content versions, unsupported ink loading, and current API availability boundaries.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Unsupported Loading",
+      "description": "Explains that older systems throw or fail when loading PKDrawing data that uses unsupported newer inks.",
+      "max_score": 15
+    },
+    {
+      "name": "Version Mapping",
+      "description": "Maps version1 to marker/pen/pencil-era compatibility, version2 to iPadOS 17 inks, version3 to barrel-roll angle data, and version4 to reed.",
+      "max_score": 25
+    },
+    {
+      "name": "iPadOS 16 Correction",
+      "description": "States that .version2 is not sufficient for iPadOS 16 compatibility and recommends .version1 or fallback data for pre-iPadOS 17 clients.",
+      "max_score": 20
+    },
+    {
+      "name": "Both Surfaces",
+      "description": "Sets maximumSupportedContentVersion on both PKCanvasView and PKToolPicker when restricting new content.",
+      "max_score": 15
+    },
+    {
+      "name": "Required Version",
+      "description": "Uses requiredContentVersion to decide whether to sync the original drawing or a fallback.",
+      "max_score": 15
+    },
+    {
+      "name": "Availability",
+      "description": "Calls out reed as iOS/iPadOS/macOS/visionOS 26+ and custom tool picker items as iOS/iPadOS 18+ or visionOS 2+.",
+      "max_score": 10
+    }
+  ]
+}

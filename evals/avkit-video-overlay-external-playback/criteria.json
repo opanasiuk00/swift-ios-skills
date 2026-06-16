@@ -1,0 +1,26 @@
+{
+  "context": "Tests whether the agent accurately handles SwiftUI VideoPlayer overlay interaction and narrowly scopes external playback settings.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Overlay interactivity",
+      "description": "States that VideoPlayer videoOverlay is interactive.",
+      "max_score": 25
+    },
+    {
+      "name": "Overlay event order",
+      "description": "Explains the overlay sits below system playback controls and receives only unhandled events.",
+      "max_score": 25
+    },
+    {
+      "name": "Allows external playback",
+      "description": "States that AVPlayer.allowsExternalPlayback defaults to true and should be left enabled when AirPlay is desired.",
+      "max_score": 25
+    },
+    {
+      "name": "External screen scope",
+      "description": "Explains that usesExternalPlaybackWhileExternalScreenIsActive is for automatic external-screen mode, not a blanket AirPlay requirement.",
+      "max_score": 25
+    }
+  ]
+}

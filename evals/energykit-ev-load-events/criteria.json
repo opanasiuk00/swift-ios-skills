@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the agent applies EnergyKit-specific EV guidance and load-event reporting instructions without broadening into unrelated frameworks.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Capability entitlement",
+      "description": "Requires enabling the EnergyKit capability or `com.apple.developer.energykit` entitlement.",
+      "max_score": 10
+    },
+    {
+      "name": "Shift guidance",
+      "description": "Uses shift-style electricity guidance for EV charging and interprets lower guidance ratings as better windows.",
+      "max_score": 10
+    },
+    {
+      "name": "Real token",
+      "description": "Uses the guidance token returned by EnergyKit rather than fabricating a placeholder UUID.",
+      "max_score": 15
+    },
+    {
+      "name": "Requesting device",
+      "description": "States that the device or app that requested guidance should submit the corresponding load events.",
+      "max_score": 10
+    },
+    {
+      "name": "Session lifecycle",
+      "description": "Reports a begin, active, and end load-event lifecycle for the charging session.",
+      "max_score": 15
+    },
+    {
+      "name": "EV cadence",
+      "description": "Includes steady EV sampling about every 15 minutes and additional events for meaningful charging changes.",
+      "max_score": 15
+    },
+    {
+      "name": "Batching",
+      "description": "Recommends batching submitted load events when practical for performance.",
+      "max_score": 10
+    },
+    {
+      "name": "Stable identifiers",
+      "description": "Uses stable device/session identity instead of per-event random identifiers for the managed vehicle or charger.",
+      "max_score": 10
+    },
+    {
+      "name": "Boundary control",
+      "description": "Does not turn the answer into HomeKit automation, Core Bluetooth pairing, or BackgroundTasks setup guidance.",
+      "max_score": 5
+    }
+  ]
+}

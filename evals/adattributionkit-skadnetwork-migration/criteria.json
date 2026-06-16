@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the ADAttributionKit skill keeps SKAdNetwork migration and interoperability guidance precise instead of claiming a total replacement. The scorer should evaluate only the generated migration review file.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Coexistence",
+      "description": "States that AdAttributionKit and SKAdNetwork can coexist during migration.",
+      "max_score": 10
+    },
+    {
+      "name": "Joint ranking",
+      "description": "States that impressions from both frameworks are evaluated together when determining an attribution winner.",
+      "max_score": 10
+    },
+    {
+      "name": "Single winner",
+      "description": "States that only one impression wins for a conversion.",
+      "max_score": 10
+    },
+    {
+      "name": "Click precedence",
+      "description": "Mentions click-through ads take precedence over view-through ads, with recency used within each group.",
+      "max_score": 10
+    },
+    {
+      "name": "Framework APIs",
+      "description": "Recommends AdAttributionKit update APIs for AdAttributionKit integrations and SKAdNetwork update APIs for SKAdNetwork integrations.",
+      "max_score": 10
+    },
+    {
+      "name": "Dual updates",
+      "description": "Recommends calling both sets of update APIs when the app is integrated with both frameworks.",
+      "max_score": 10
+    },
+    {
+      "name": "No universal bridge",
+      "description": "Does not claim that SKAdNetwork universally bridges all conversion values or that one update API is always sufficient.",
+      "max_score": 10
+    },
+    {
+      "name": "No pending postbacks",
+      "description": "States that update calls are ignored when there are no pending postbacks for the relevant framework.",
+      "max_score": 10
+    },
+    {
+      "name": "ID compatibility",
+      "description": "Mentions .adattributionkit and .skadnetwork ad network IDs are compatible across both frameworks.",
+      "max_score": 10
+    },
+    {
+      "name": "Publisher plist",
+      "description": "Does not say publisher apps should keep only .skadnetwork IDs; explains that publisher Info.plist declarations must cover the intended AdAttributionKit setup.",
+      "max_score": 10
+    }
+  ]
+}

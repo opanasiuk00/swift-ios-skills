@@ -1,0 +1,1 @@
+Separate GameKit responsibilities from sibling game frameworks and document legacy voice-chat caveats.

@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the authentication skill guidance is applied to a mixed Sign in with Apple, OAuth, Password AutoFill, credential lifecycle, and biometric re-authentication review.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Sign in with Apple setup",
+      "description": "Requires the Sign in with Apple capability and `ASAuthorizationControllerPresentationContextProviding` for authorization UI.",
+      "max_score": 15
+    },
+    {
+      "name": "First authorization profile data",
+      "description": "Explains that `email` and `fullName` must be cached during first authorization and handled as optional or absent later.",
+      "max_score": 15
+    },
+    {
+      "name": "Credential state lifecycle",
+      "description": "Requires Apple ID credential state checks with `getCredentialState(forUserID:completion:)` and handling credential revocation notifications.",
+      "max_score": 15
+    },
+    {
+      "name": "Server token validation",
+      "description": "Sends `identityToken` and `authorizationCode` to the server for validation or exchange instead of trusting them only on device.",
+      "max_score": 20
+    },
+    {
+      "name": "OAuth session presentation",
+      "description": "Uses `ASWebAuthenticationSession` for GitHub OAuth, avoids `WKWebView`, and returns a real active presentation anchor.",
+      "max_score": 15
+    },
+    {
+      "name": "Biometric and Keychain boundary",
+      "description": "Stores secrets in Keychain and treats `LAContext.evaluatePolicy` as local re-authentication rather than standalone proof for releasing stored secrets.",
+      "max_score": 15
+    },
+    {
+      "name": "Existing account suggestions",
+      "description": "Includes saved password or existing account setup flows using AuthenticationServices before forcing a full login screen.",
+      "max_score": 5
+    }
+  ]
+}

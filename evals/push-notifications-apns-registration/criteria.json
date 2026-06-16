@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the push-notifications skill correctly separates APNs registration from user-visible notification authorization and handles token/simulator details.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Authorization split",
+      "description": "Explains that UNUserNotificationCenter authorization is for user-visible alerts, sounds, and badges, while UIApplication.registerForRemoteNotifications is the APNs device-token registration path.",
+      "max_score": 25
+    },
+    {
+      "name": "Registration not gated",
+      "description": "States that APNs registration should not be blocked by .authorized when the app needs silent pushes or provider token binding; denied alert permission still allows silent delivery.",
+      "max_score": 20
+    },
+    {
+      "name": "Token handling",
+      "description": "Requires uploading the APNs token on every didRegister callback, avoids local token persistence as source of truth, and does not assume a fixed token length.",
+      "max_score": 25
+    },
+    {
+      "name": "Simulator handling",
+      "description": "Notes that Simulator can simulate pushes with .apns files or simctl but does not provide real APNs device-token registration.",
+      "max_score": 15
+    },
+    {
+      "name": "SwiftUI delegate wiring",
+      "description": "Uses UIApplicationDelegateAdaptor or equivalent app-delegate callbacks for didRegister/didFail and sets notification delegates/categories early.",
+      "max_score": 15
+    }
+  ]
+}

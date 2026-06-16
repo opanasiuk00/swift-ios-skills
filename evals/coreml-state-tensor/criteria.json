@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent handles iOS 18+ Core ML stateful prediction and MLTensor preprocessing with source-accurate concurrency and materialization rules.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "State creation and prediction",
+      "description": "Creates state with `model.makeState()` and passes it to a valid iOS 18+ stateful prediction overload.",
+      "max_score": 20
+    },
+    {
+      "name": "Serialized state access",
+      "description": "States that predictions sharing the same `MLState` must be serialized and that state buffers must not be read or written while prediction is in flight.",
+      "max_score": 20
+    },
+    {
+      "name": "Sendable nuance",
+      "description": "Does not claim `MLState` is non-Sendable; explains that Sendable does not remove the per-state serialization requirement.",
+      "max_score": 15
+    },
+    {
+      "name": "Tensor materialization",
+      "description": "Uses `await tensor.shapedArray(of:)` or an equivalent awaited `MLTensor` materialization before bridging into Core ML input types.",
+      "max_score": 18
+    },
+    {
+      "name": "Supported tensor APIs",
+      "description": "Avoids invented APIs such as `MLTensor(multiArray)`, `tensor.standardDeviation()`, direct lazy-buffer access, or synchronous tensor extraction.",
+      "max_score": 17
+    },
+    {
+      "name": "Stream lifecycle",
+      "description": "Uses one state per independent stream and resets streaming context by replacing the state with a fresh `model.makeState()`.",
+      "max_score": 10
+    }
+  ]
+}

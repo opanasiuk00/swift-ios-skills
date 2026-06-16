@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the AlarmKit skill guidance is applied for scheduling a one-time alarm with Snooze behavior.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "AlarmKit setup",
+      "description": "Names NSAlarmKitUsageDescription as a required non-empty host app Info.plist key and does not add undocumented AlarmKit setup keys as requirements.",
+      "max_score": 10
+    },
+    {
+      "name": "Authorization gate",
+      "description": "Requests or checks AlarmManager authorization before relying on scheduling, and handles denied or not-authorized states instead of assuming the alarm will alert.",
+      "max_score": 10
+    },
+    {
+      "name": "Clock-time alarm",
+      "description": "Uses AlarmKit alarm scheduling for a 7:00 AM clock-time alarm rather than a timer-only duration model.",
+      "max_score": 10
+    },
+    {
+      "name": "Current alert initializer",
+      "description": "Uses AlarmPresentation.Alert with the current initializer shape that has title, optional secondaryButton, and secondaryButtonBehavior, without requiring or recommending a custom stopButton argument.",
+      "max_score": 10
+    },
+    {
+      "name": "Attributes and presentation",
+      "description": "Defines AlarmAttributes with AlarmPresentation and AlarmMetadata-compatible metadata, or explicitly notes metadata can be omitted when not needed.",
+      "max_score": 10
+    },
+    {
+      "name": "Countdown snooze",
+      "description": "Configures Snooze with secondaryButtonBehavior .countdown and Alarm.CountdownDuration postAlert, using the countdown-style AlarmConfiguration initializer rather than only AlarmConfiguration.alarm(...).",
+      "max_score": 15
+    },
+    {
+      "name": "Optional intents",
+      "description": "Explains that stopIntent and secondaryIntent are optional API parameters and recommends providing them only when button actions need app cleanup, side effects, or custom behavior.",
+      "max_score": 15
+    },
+    {
+      "name": "One-time schedule",
+      "description": "Sets or describes a one-time 7:00 AM schedule with repeats .never, or correctly distinguishes relative wall-clock scheduling from fixed Date scheduling.",
+      "max_score": 10
+    },
+    {
+      "name": "Countdown customization boundary",
+      "description": "Says alerting UI is system-managed and countdown or paused customization belongs in a widget extension when needed.",
+      "max_score": 10
+    }
+  ]
+}

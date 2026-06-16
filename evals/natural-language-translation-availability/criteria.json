@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether Translation framework guidance preserves current availability and on-device behavior while handling errors.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Presentation availability",
+      "description": "Identifies translationPresentation as available starting iOS 17.4 / macOS 14.4 and does not apply that availability to all Translation APIs.",
+      "max_score": 15
+    },
+    {
+      "name": "Programmatic availability",
+      "description": "Marks TranslationSession, translationTask, LanguageAvailability, and batch translation APIs as iOS 18+ / macOS 15+.",
+      "max_score": 20
+    },
+    {
+      "name": "Strategy availability and behavior",
+      "description": "Marks TranslationSession.Strategy or preferredStrategy as iOS 26.4+ / macOS 26.4+ and does not claim highFidelity sends text to a server.",
+      "max_score": 20
+    },
+    {
+      "name": "Language availability",
+      "description": "Uses LanguageAvailability status checks and handles .installed, .supported, and .unsupported before or around translation.",
+      "max_score": 15
+    },
+    {
+      "name": "Throwing API handling",
+      "description": "Wraps translate, translations(from:), prepareTranslation, and download/cancellation cases in do/catch or equivalent error handling.",
+      "max_score": 15
+    },
+    {
+      "name": "Session lifecycle",
+      "description": "Uses translationTask inside a SwiftUI view context and notes direct TranslationSession(installedSource:target:) outside SwiftUI requires installed languages.",
+      "max_score": 15
+    }
+  ]
+}

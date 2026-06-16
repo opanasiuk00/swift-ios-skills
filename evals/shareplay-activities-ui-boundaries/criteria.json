@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the SharePlay activities skill gives boundary-aware launch and sharing guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Transferable share surfaces",
+      "description": "States that SwiftUI ShareLink, SharePlay over AirDrop, and system share sheets require the activity or shared item to conform to Transferable.",
+      "max_score": 15
+    },
+    {
+      "name": "Minimal shared payload",
+      "description": "Keeps the Transferable payload minimal by sharing IDs, URLs, or activity descriptors instead of large media or documents.",
+      "max_score": 10
+    },
+    {
+      "name": "Direct activation",
+      "description": "Uses prepareForActivation() and activate() when a FaceTime call or Messages conversation is already active.",
+      "max_score": 12
+    },
+    {
+      "name": "Participant picker",
+      "description": "Uses GroupActivitySharingController when no active conversation exists and the app needs the user to pick participants.",
+      "max_score": 12
+    },
+    {
+      "name": "Discoverable UI",
+      "description": "Mentions the shareplay SF Symbol or equivalent affordance and concise GroupActivityMetadata as discoverability guidance.",
+      "max_score": 11
+    },
+    {
+      "name": "GameKit boundary",
+      "description": "Keeps GameKit authentication, leaderboards, matchmaking, achievements, and voice/chat out of the SharePlay implementation except for handoff boundaries.",
+      "max_score": 14
+    },
+    {
+      "name": "TabletopKit boundary",
+      "description": "Keeps TabletopKit board equipment, seats, actions, and tabletop mechanics outside the SharePlay layer while allowing a GroupActivities session coordination handoff.",
+      "max_score": 13
+    },
+    {
+      "name": "AVKit boundary",
+      "description": "Keeps AVKit playback UI and media player details outside the SharePlay layer while allowing AVPlayer session coordination handoffs.",
+      "max_score": 13
+    }
+  ]
+}

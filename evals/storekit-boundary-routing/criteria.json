@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the StoreKit skill stays scoped to IAP implementation while routing App Review and ASO concerns to sibling skills and avoiding outdated external-link overclaims.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "StoreKit scope",
+      "description": "Keeps StoreKit guidance focused on IAP products, paywalls, purchase flows, transaction verification, restore purchases, and entitlement handling.",
+      "max_score": 24
+    },
+    {
+      "name": "App Review routing",
+      "description": "Routes privacy manifests, ATT, screenshots, metadata rejection risk, entitlement review, and full submission readiness to app-store-review.",
+      "max_score": 20
+    },
+    {
+      "name": "ASO routing",
+      "description": "Routes keyword strategy, ranking, screenshot-caption optimization, and conversion work to app-store-optimization.",
+      "max_score": 16
+    },
+    {
+      "name": "IAP compliance nuance",
+      "description": "States that digital features generally require IAP unless a current guideline exception, storefront rule, or approved entitlement applies.",
+      "max_score": 22
+    },
+    {
+      "name": "External link nuance",
+      "description": "Avoids a blanket claim that all external purchase links are always rejected and calls out reader-app and regional or storefront-sensitive rules.",
+      "max_score": 18
+    }
+  ]
+}

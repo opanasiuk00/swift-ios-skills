@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the App Intents skill guidance is applied to Visual Intelligence and IntentValueQuery design.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Semantic descriptor query",
+      "description": "Uses an `IntentValueQuery` method shaped around `SemanticContentDescriptor`, such as `values(for:)`, rather than a normal text-only `EntityQuery` or a custom camera API.",
+      "max_score": 15
+    },
+    {
+      "name": "Mixed result modeling",
+      "description": "Models product and store matches through a single query that can return mixed values, preferably with `@UnionValue`, instead of creating unrelated visual queries that cannot share one Visual Intelligence result surface.",
+      "max_score": 15
+    },
+    {
+      "name": "Labels and image data",
+      "description": "Uses descriptor labels and optional pixel buffer or image data appropriately, and notes that labels are high-level English descriptors rather than exhaustive synonyms or app-specific taxonomy.",
+      "max_score": 15
+    },
+    {
+      "name": "AppEntity result quality",
+      "description": "Keeps returned product and store values as useful AppEntity-style results with stable IDs, display representations, and default queries or equivalent lookup paths.",
+      "max_score": 12
+    },
+    {
+      "name": "Opening path",
+      "description": "Provides an opening flow such as `OpenIntent`, deep-link-backed navigation, or entity URL representation so users can continue from a Visual Intelligence result into product or store detail.",
+      "max_score": 10
+    },
+    {
+      "name": "Bounded latency and ranking",
+      "description": "Recommends quick bounded results, ranking, cancellation-friendly work, or other latency-aware behavior appropriate for a system query surface.",
+      "max_score": 10
+    },
+    {
+      "name": "More results handoff",
+      "description": "Includes a path for broader in-app search or a more-results handoff when the first Visual Intelligence matches are insufficient.",
+      "max_score": 10
+    },
+    {
+      "name": "Availability and grounding",
+      "description": "Treats Visual Intelligence App Intents APIs as iOS 26-era functionality and avoids claims that they work on older OS versions without availability checks.",
+      "max_score": 5
+    },
+    {
+      "name": "No sibling drift",
+      "description": "Keeps the design focused on App Intents query and entity modeling rather than expanding into camera capture implementation, Vision framework classification pipelines, or unrelated search indexing architecture. Opaque app search, ranking, or image-matching services are acceptable when they support the required use of descriptor labels and image data without implementing a separate Vision pipeline.",
+      "max_score": 8
+    }
+  ]
+}

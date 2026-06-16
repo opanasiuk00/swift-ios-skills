@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent gives modern SpriteKit setup guidance for SwiftUI-hosted iOS games without stale contact or preload patterns.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Retained SpriteView scene",
+      "description": "Stores the SpriteKit scene outside repeated SwiftUI body construction, such as with @State or another retained owner, before passing it to SpriteView.",
+      "max_score": 15
+    },
+    {
+      "name": "Scene lifecycle setup",
+      "description": "Configures gameplay nodes, scaleMode, and physicsWorld.contactDelegate from didMove(to:) or another appropriate SpriteKit scene lifecycle point.",
+      "max_score": 20
+    },
+    {
+      "name": "Distinct physics masks",
+      "description": "Uses distinct categoryBitMask, collisionBitMask, and contactTestBitMask values for player/enemy contacts instead of conflating collision and contact behavior.",
+      "max_score": 20
+    },
+    {
+      "name": "Deferred contact mutation",
+      "description": "Queues or flags contact effects in didBegin(_:) and performs node, body, or physics-world mutations later in update(_:) or an equivalent safe scene callback.",
+      "max_score": 20
+    },
+    {
+      "name": "Camera and HUD",
+      "description": "Uses SKCameraNode for world following and HUD attachment rather than repositioning every world node manually.",
+      "max_score": 10
+    },
+    {
+      "name": "Native async atlas preload",
+      "description": "Uses SKTextureAtlas preload guidance and, when showing async Swift, uses native async APIs such as preloadTextureAtlasesNamed(_:) or preloadTextureAtlases(_:).",
+      "max_score": 15
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the background-processing skill handles background push notifications without drifting into visible notification UI design.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Payload content available",
+      "description": "Requires a background notification payload with aps content-available set to 1.",
+      "max_score": 15
+    },
+    {
+      "name": "APNs background headers",
+      "description": "Requires apns-push-type: background and apns-priority: 5 for silent/background pushes.",
+      "max_score": 20
+    },
+    {
+      "name": "Reject priority ten",
+      "description": "Rejects apns-priority: 10 for silent refresh and reserves high priority for user-visible notification cases.",
+      "max_score": 10
+    },
+    {
+      "name": "Cadence throttling",
+      "description": "Warns that every-few-minutes silent pushes are too frequent and that background push delivery is low priority, throttled, and not guaranteed.",
+      "max_score": 20
+    },
+    {
+      "name": "Remote notifications mode",
+      "description": "Requires enabling the Remote notifications background mode for background notification delivery.",
+      "max_score": 10
+    },
+    {
+      "name": "Completion handler",
+      "description": "Requires bounded app work and prompt completion handler reporting with the appropriate background fetch result.",
+      "max_score": 15
+    },
+    {
+      "name": "Boundary control",
+      "description": "Keeps the answer focused on background refresh behavior and does not redesign visible notification UI.",
+      "max_score": 10
+    }
+  ]
+}

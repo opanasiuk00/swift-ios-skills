@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the iOS localization skill preserves the boundary between localization-focused locale-aware formatting and deeper standalone FormatStyle API design.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Routes custom style",
+      "description": "Routes custom ParseableFormatStyle design to the swift-formatstyle skill or standalone FormatStyle domain.",
+      "max_score": 10
+    },
+    {
+      "name": "Routes interval style",
+      "description": "Routes Date.IntervalFormatStyle auditing to the swift-formatstyle skill or standalone FormatStyle domain unless the request is specifically localization-facing.",
+      "max_score": 10
+    },
+    {
+      "name": "Routes URL style",
+      "description": "Routes URL.FormatStyle display design to the swift-formatstyle skill or standalone FormatStyle domain unless the request is specifically localization-facing.",
+      "max_score": 10
+    },
+    {
+      "name": "Localization boundary",
+      "description": "Explains that ios-localization covers FormatStyle when the work is locale-aware display for localization and internationalization.",
+      "max_score": 10
+    },
+    {
+      "name": "Minimum locale advice",
+      "description": "Includes minimum localization advice, such as respecting user locale and avoiding hardcoded date, number, separator, abbreviation, or URL presentation assumptions.",
+      "max_score": 10
+    },
+    {
+      "name": "Multiple locales",
+      "description": "Mentions testing or reviewing under multiple locales where formatting is user-facing.",
+      "max_score": 10
+    },
+    {
+      "name": "No implementation",
+      "description": "Does not produce a full custom FormatStyle or ParseStrategy implementation.",
+      "max_score": 10
+    },
+    {
+      "name": "No domain collapse",
+      "description": "Does not collapse swift-formatstyle's standalone formatting scope into ios-localization.",
+      "max_score": 10
+    },
+    {
+      "name": "Short routing",
+      "description": "Keeps the answer short and routing-oriented rather than writing a broad localization guide.",
+      "max_score": 10
+    },
+    {
+      "name": "No language prerequisite",
+      "description": "Does not imply localization only matters after adding translated languages.",
+      "max_score": 10
+    }
+  ]
+}

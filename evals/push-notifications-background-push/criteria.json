@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the push-notifications skill provides source-grounded silent/background push guidance without drifting into visible notification UI or BGTaskScheduler implementation.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Background payload",
+      "description": "Requires an aps dictionary with content-available: 1 and no alert, sound, or badge keys for a silent/background notification.",
+      "max_score": 20
+    },
+    {
+      "name": "APNs headers",
+      "description": "Requires apns-push-type: background and apns-priority: 5, and rejects apns-priority: 10 for silent refresh.",
+      "max_score": 25
+    },
+    {
+      "name": "Delivery limits",
+      "description": "Warns that background notifications are low priority, throttled, not guaranteed, and should not be sent every few minutes.",
+      "max_score": 20
+    },
+    {
+      "name": "App setup",
+      "description": "Requires Background Modes > Remote notifications and bounded didReceiveRemoteNotification handling that returns the correct UIBackgroundFetchResult promptly.",
+      "max_score": 20
+    },
+    {
+      "name": "Boundary control",
+      "description": "Keeps visible notification UI out of scope and routes long-running or scheduled background work to background-processing rather than implementing BGTaskScheduler here.",
+      "max_score": 15
+    }
+  ]
+}

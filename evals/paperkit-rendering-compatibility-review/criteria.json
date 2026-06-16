@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent catches PaperKit async rendering, HDR property, forward compatibility, and insertion controller availability issues.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Async draw",
+      "description": "Flags that PaperMarkup.draw(in:frame:options:) is async and must be awaited before returning or encoding a thumbnail.",
+      "max_score": 25
+    },
+    {
+      "name": "Render path",
+      "description": "Provides or describes an awaited render path, such as drawing into a bitmap CGContext and creating image data only after await completes.",
+      "max_score": 20
+    },
+    {
+      "name": "HDR correction",
+      "description": "Corrects maximumLinearExposure to PKToolPicker.colorMaximumLinearExposure.",
+      "max_score": 15
+    },
+    {
+      "name": "Compatibility check",
+      "description": "Checks loaded markup against the supported FeatureSet or handles MarkupError.incompatibleFormatTooNew before offering editing.",
+      "max_score": 20
+    },
+    {
+      "name": "Controller availability",
+      "description": "States that MarkupEditViewController is available on iOS, iPadOS, Mac Catalyst, and visionOS, while MarkupToolbarViewController covers macOS and Mac Catalyst toolbar-style UI.",
+      "max_score": 15
+    },
+    {
+      "name": "No sync workaround",
+      "description": "Does not recommend blocking the main thread or using a synchronous wrapper around PaperMarkup.dataRepresentation() or draw(in:frame:options:).",
+      "max_score": 5
+    }
+  ]
+}

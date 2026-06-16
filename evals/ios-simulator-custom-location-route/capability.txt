@@ -1,0 +1,1 @@
+Use simctl for command-line iOS Simulator app install, custom location routes, and cleanup.

@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the CryptoKit skill covers current iOS 26 post-quantum APIs without stale Secure Enclave claims.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Hybrid HPKE",
+      "description": "Recommends XWingMLKEM768X25519 or .XWingMLKEM768X25519_SHA256_AES_GCM_256 for hybrid quantum-secure HPKE when public-key encryption is needed.",
+      "max_score": 20
+    },
+    {
+      "name": "ML-KEM",
+      "description": "Names MLKEM768 or MLKEM1024 for key encapsulation and explains encapsulate/decapsulate at the correct level.",
+      "max_score": 20
+    },
+    {
+      "name": "ML-DSA",
+      "description": "Names MLDSA65 or MLDSA87 for post-quantum digital signatures.",
+      "max_score": 15
+    },
+    {
+      "name": "Availability",
+      "description": "States that SHA-3 and post-quantum CryptoKit APIs require iOS 26+ availability checks unless the deployment target is iOS 26+.",
+      "max_score": 15
+    },
+    {
+      "name": "Secure Enclave distinction",
+      "description": "Distinguishes classical Secure Enclave P256 signing/key agreement from iOS 26 SecureEnclave.MLKEM and SecureEnclave.MLDSA variants on supported hardware.",
+      "max_score": 20
+    },
+    {
+      "name": "Size tradeoffs",
+      "description": "Warns that post-quantum keys, ciphertexts, and signatures are much larger than P256 or Curve25519 artifacts.",
+      "max_score": 10
+    }
+  ]
+}

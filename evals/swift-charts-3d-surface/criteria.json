@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the answer uses the iOS 26 Swift Charts 3D APIs for a bivariate surface without overusing 3D for ordinary charts.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Chart3D API Choice",
+      "description": "Uses Chart3D with SurfacePlot for the iOS 26 bivariate surface instead of a 2D Chart with LinePlot or AreaPlot.",
+      "max_score": 25
+    },
+    {
+      "name": "Surface Function Shape",
+      "description": "Shows or describes SurfacePlot with x, y, and z labels and a closure that returns y from x and z.",
+      "max_score": 20
+    },
+    {
+      "name": "Stable 3D Domains",
+      "description": "Sets or recommends explicit chartXScale, chartYScale, and chartZScale domains.",
+      "max_score": 20
+    },
+    {
+      "name": "Interactive Pose",
+      "description": "Mentions Chart3DPose or chart3DPose for interactive inspection.",
+      "max_score": 20
+    },
+    {
+      "name": "3D Appropriateness",
+      "description": "Notes that Chart3D is for real spatial or surface data, not decoration for ordinary 2D comparisons.",
+      "max_score": 15
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Review App Intents Spotlight indexing designs for `IndexedEntity`, named Core Spotlight indexes, `attributeSet` metadata, stable entity IDs, and existing Core Spotlight pipeline boundaries.

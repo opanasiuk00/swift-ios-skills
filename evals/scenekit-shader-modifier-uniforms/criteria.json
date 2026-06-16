@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent fixes SceneKit shader modifier uniform usage without incorrectly applying SCNProgram Metal shader inputs to shader modifiers.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Uses u_time",
+      "description": "Replaces scn_frame.time in shader modifier code with a documented SceneKit shader modifier uniform such as u_time.",
+      "max_score": 20
+    },
+    {
+      "name": "No Swift scn_frame",
+      "description": "Does not attempt to read scn_frame.time from Swift or pass it through Float(scn_frame.time).",
+      "max_score": 15
+    },
+    {
+      "name": "Custom argument declaration",
+      "description": "Declares custom shader modifier values with #pragma arguments or an equivalent SceneKit-supported modifier argument declaration.",
+      "max_score": 15
+    },
+    {
+      "name": "Matching Swift key",
+      "description": "Passes the custom amplitude from Swift with setValue(_:forKey:) using a key that matches the shader argument name.",
+      "max_score": 15
+    },
+    {
+      "name": "Modifier versus program boundary",
+      "description": "Distinguishes SCNMaterial shader modifiers from custom SCNProgram Metal shader functions.",
+      "max_score": 15
+    },
+    {
+      "name": "scn_frame placement",
+      "description": "Limits SCNSceneBuffer scn_frame usage to SCNProgram Metal shader functions and does not describe it as a shader modifier built-in.",
+      "max_score": 20
+    }
+  ]
+}

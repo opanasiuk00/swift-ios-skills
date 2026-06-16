@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the CallKit skill corrects answer-action timing, audio lifecycle, hangup routing, and encrypted VoIP filtering scope.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Answer fulfillment",
+      "description": "Explains that CXAnswerCallAction should be fulfilled after the server/media connection is established and failed or ended if connection fails.",
+      "max_score": 20
+    },
+    {
+      "name": "Audio lifecycle",
+      "description": "States that the audio engine should start only after provider(_:didActivate:) and should stop on provider(_:didDeactivate:).",
+      "max_score": 20
+    },
+    {
+      "name": "Hangup routing",
+      "description": "Routes hangups and call-detail updates over the existing app-server connection after the initial VoIP push instead of sending more VoIP pushes.",
+      "max_score": 15
+    },
+    {
+      "name": "Encrypted metadata scope",
+      "description": "Limits CXProvider.reportNewIncomingVoIPPushPayload to notification service extensions that decrypt payloads when the server cannot tell whether content is a VoIP call or other data.",
+      "max_score": 20
+    },
+    {
+      "name": "Filtering entitlement",
+      "description": "Mentions that reportNewIncomingVoIPPushPayload requires the com.apple.developer.usernotifications.filtering entitlement.",
+      "max_score": 15
+    },
+    {
+      "name": "No generic APNs guide",
+      "description": "Does not turn the answer into a generic APNs notification permission or rich-notification guide.",
+      "max_score": 10
+    }
+  ]
+}

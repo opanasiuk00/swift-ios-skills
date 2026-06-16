@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether EventKit calendar access guidance handles iOS 17+ granular authorization, write-only limitations, full-access reads, and EventKitUI sheet behavior.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Modern keys",
+      "description": "Identifies the iOS 17+ calendar usage keys for write-only event creation and full calendar access, rather than relying only on the legacy calendar usage key.",
+      "max_score": 15
+    },
+    {
+      "name": "Legacy fallback",
+      "description": "States that the older EventKit access request is only for earlier OS fallback and should not be the iOS 17+ or iOS 26 path.",
+      "max_score": 15
+    },
+    {
+      "name": "Write-only limits",
+      "description": "Explains that write-only calendar access can create events but cannot read calendars or fetch events, including events created by the app.",
+      "max_score": 20
+    },
+    {
+      "name": "Full-access reads",
+      "description": "Requires full calendar access for conflict checks or any other existing-event fetch.",
+      "max_score": 20
+    },
+    {
+      "name": "System editor",
+      "description": "Recommends the EventKitUI system editor for user-mediated event creation without app calendar authorization when that is the only calendar feature.",
+      "max_score": 15
+    },
+    {
+      "name": "Editor limitation",
+      "description": "Notes that the system editor runs outside the app's access model, so the app should not inspect the dismissed editor to learn what was saved unless it separately has full access and refetches.",
+      "max_score": 15
+    }
+  ]
+}

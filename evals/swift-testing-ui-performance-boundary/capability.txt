@@ -1,0 +1,1 @@
+Swift Testing UI performance snapshot boundary

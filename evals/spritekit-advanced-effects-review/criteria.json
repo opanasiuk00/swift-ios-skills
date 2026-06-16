@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent catches stale or incorrect advanced SpriteKit effects guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Async atlas API correction",
+      "description": "Replaces a withCheckedContinuation wrapper with current SpriteKit async preload APIs such as SKTextureAtlas.preloadTextureAtlasesNamed(_:) or preloadTextureAtlases(_:).",
+      "max_score": 25
+    },
+    {
+      "name": "u_sprite_size correction",
+      "description": "Does not list u_sprite_size as a SpriteKit-provided shader built-in and treats sprite size as an app-defined uniform or attribute if the shader needs it.",
+      "max_score": 20
+    },
+    {
+      "name": "Actual shader symbols",
+      "description": "Names relevant SpriteKit shader symbols or functions such as u_texture, u_time, v_tex_coord, v_color_mix, v_path_distance, or SKDefaultShading() where applicable.",
+      "max_score": 20
+    },
+    {
+      "name": "Shader reuse",
+      "description": "Recommends creating stable reusable SKShader instances and changing uniforms for variation instead of compiling or changing shader source for each enemy spawn.",
+      "max_score": 15
+    },
+    {
+      "name": "Contact callback timing",
+      "description": "Explains that SKPhysicsContactDelegate callbacks occur during physics simulation and that node/body/world mutations should be deferred out of didBegin(_:).",
+      "max_score": 20
+    }
+  ]
+}

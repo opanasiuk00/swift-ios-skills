@@ -1,0 +1,26 @@
+{
+  "context": "Tests whether the Contacts skill prevents invalid key constants, avoids unnecessary full-image fetches, and narrows notes entitlement guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Name key correction",
+      "description": "Rejects CNContactCompleteNameKey and uses CNContactFormatter.descriptorForRequiredKeys(for:) or valid individual name keys.",
+      "max_score": 25
+    },
+    {
+      "name": "Image over-fetching",
+      "description": "Avoids full-resolution CNContactImageDataKey for list rows by default and recommends fetching only displayed fields, such as thumbnail image data for avatars.",
+      "max_score": 25
+    },
+    {
+      "name": "Notes entitlement",
+      "description": "States that CNContactNoteKey or CNContact.note read/write access requires com.apple.developer.contacts.notes on modern Apple platforms.",
+      "max_score": 25
+    },
+    {
+      "name": "Apple approval",
+      "description": "Mentions that the contacts notes entitlement requires Apple approval before public App Store distribution.",
+      "max_score": 25
+    }
+  ]
+}

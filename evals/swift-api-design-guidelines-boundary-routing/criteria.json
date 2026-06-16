@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the solver keeps Swift API Design Guidelines scoped to naming and argument labels while routing language-feature and SwiftLint configuration questions to sibling domains.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "API owner",
+      "description": "Identifies the awkward public function name and argument labels as belonging to Swift API design guidance.",
+      "max_score": 13
+    },
+    {
+      "name": "Role example",
+      "description": "Gives a minimal corrected API naming example that moves identifier wording out of the base name and into a clear role or prepositional argument label, such as `fetchData(id:)`, `fetchData(withID:)`, or `fetchData(forUserID:)`.",
+      "max_score": 15
+    },
+    {
+      "name": "Call-site clarity",
+      "description": "Explains the naming change using call-site clarity, role-based naming, weak type compensation, or needless-word removal.",
+      "max_score": 12
+    },
+    {
+      "name": "Factory note",
+      "description": "If discussing `makeSearchSource()`, treats the `make` prefix as appropriate for factory-style creation or otherwise does not incorrectly rename it to `create` or `build`.",
+      "max_score": 8
+    },
+    {
+      "name": "Language route",
+      "description": "Routes the protocol return-type question involving `any` or possible `some` use to Swift language/type-system guidance rather than treating it as an API naming issue.",
+      "max_score": 15
+    },
+    {
+      "name": "No type tutorial",
+      "description": "Does not expand into a full tutorial on opaque and existential types.",
+      "max_score": 8
+    },
+    {
+      "name": "Lint route",
+      "description": "Routes CI enforcement of identifier naming to SwiftLint or lint configuration guidance.",
+      "max_score": 13
+    },
+    {
+      "name": "No lint config",
+      "description": "Does not provide a full `.swiftlint.yml` or detailed rule rollout plan.",
+      "max_score": 8
+    },
+    {
+      "name": "Boundary preserved",
+      "description": "Clearly separates what Swift API Design Guidelines owns from what sibling domains own.",
+      "max_score": 8
+    }
+  ]
+}

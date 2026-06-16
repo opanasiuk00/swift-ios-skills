@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent preserves DockKit boundaries and current iOS 17.4/iOS 18 stream availability.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Tracking states",
+      "description": "Uses trackingStates on iOS 18+ to read trackedSubjects and selectSubjects(_:) for speaker or saliency-driven selection.",
+      "max_score": 20
+    },
+    {
+      "name": "Tracking state fields",
+      "description": "Treats trackingStates as a throwing async sequence and uses person fields such as speakingConfidence, lookingAtCameraConfidence, saliencyRank, rect, and identifier accurately.",
+      "max_score": 20
+    },
+    {
+      "name": "Battery states",
+      "description": "Uses batteryStates on iOS 18+ as a throwing async sequence and reads batteryLevel, chargeState, lowBattery, and name.",
+      "max_score": 15
+    },
+    {
+      "name": "Accessory events",
+      "description": "Uses accessoryEvents on iOS 17.4+ as a throwing async sequence for cameraShutter, cameraFlip, cameraZoom(factor:), and custom button events.",
+      "max_score": 20
+    },
+    {
+      "name": "SwiftUI boundary",
+      "description": "Keeps SwiftUI UI state updates on the main actor or an observable model without blocking camera or DockKit work on the main thread.",
+      "max_score": 10
+    },
+    {
+      "name": "BLE boundary",
+      "description": "Routes BLE accessory pairing or discovery to AccessorySetupKit/Core Bluetooth rather than presenting DockKit as the pairing framework.",
+      "max_score": 15
+    }
+  ]
+}

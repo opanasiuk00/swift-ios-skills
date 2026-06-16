@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent follows the CarPlay navigation setup guidance for entitlements, scene lifecycle, root template setup, map rendering boundaries, and simulator/hardware testing.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Navigation entitlement",
+      "description": "Uses the navigation CarPlay entitlement and states that Apple must grant the category-specific managed capability/provisioning support.",
+      "max_score": 10
+    },
+    {
+      "name": "Scene manifest",
+      "description": "Declares a CarPlay scene in UIApplicationSceneManifest using the CarPlay template scene role, scene class, and scene delegate class.",
+      "max_score": 10
+    },
+    {
+      "name": "Navigation delegate",
+      "description": "Uses the navigation scene delegate connection method that receives both CPInterfaceController and CPWindow.",
+      "max_score": 10
+    },
+    {
+      "name": "Reference retention",
+      "description": "Stores CPInterfaceController and CPWindow references for the active CarPlay session and clears them on disconnect.",
+      "max_score": 10
+    },
+    {
+      "name": "Map root",
+      "description": "Sets CPMapTemplate as the root template for the navigation app.",
+      "max_score": 10
+    },
+    {
+      "name": "Window boundary",
+      "description": "Limits CPWindow root view controller content to map rendering and keeps controls, alerts, overlays, and navigation UI in CarPlay templates.",
+      "max_score": 10
+    },
+    {
+      "name": "Guidance APIs",
+      "description": "Uses CarPlay route preview/navigation session concepts such as CPTrip, CPRouteChoice, CPNavigationSession, CPManeuver, or CPTravelEstimates.",
+      "max_score": 10
+    },
+    {
+      "name": "Simulator matrix",
+      "description": "Includes multiple CarPlay Simulator display configurations beyond the default window, including high-resolution or portrait coverage.",
+      "max_score": 10
+    },
+    {
+      "name": "Hardware limits",
+      "description": "States that Simulator is not enough for locked-iPhone, Siri, audio coexistence, or physical input hardware behavior.",
+      "max_score": 10
+    },
+    {
+      "name": "No custom chrome",
+      "description": "Does not recommend custom UIKit/SwiftUI controls, banners, or overlays in the CPWindow map view.",
+      "max_score": 10
+    }
+  ]
+}

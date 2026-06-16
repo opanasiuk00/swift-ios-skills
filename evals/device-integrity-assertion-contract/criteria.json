@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the device-integrity skill designs App Attest assertions that are bound to sensitive requests and verified correctly.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "One-time assertion challenge",
+      "description": "Requires a fresh one-time server challenge for the assertion flow and embeds it in client data.",
+      "max_score": 20
+    },
+    {
+      "name": "Request binding",
+      "description": "Includes request context or a request-body hash in signed client data so the assertion is bound to the sensitive request.",
+      "max_score": 20
+    },
+    {
+      "name": "Signature verification input",
+      "description": "Verifies the assertion signature over `SHA256(authenticatorData || SHA256(clientData))` using the public key stored from attestation.",
+      "max_score": 25
+    },
+    {
+      "name": "Authenticator checks",
+      "description": "Checks RP ID hash, monotonically increasing counter, and the embedded challenge before accepting the request.",
+      "max_score": 20
+    },
+    {
+      "name": "Security boundary",
+      "description": "Keeps normal user authentication and entitlement authorization separate from App Attest, which proves app-instance integrity rather than purchase or account status.",
+      "max_score": 15
+    }
+  ]
+}

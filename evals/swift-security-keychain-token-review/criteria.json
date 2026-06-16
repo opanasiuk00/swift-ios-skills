@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the solver applies swift-security Keychain review rules to an OAuth token helper and leaves gradable evidence in security-review.md.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Plaintext secret",
+      "description": "Identifies the refresh token in preferences as insecure persisted secret storage.",
+      "max_score": 10
+    },
+    {
+      "name": "Severity stated",
+      "description": "Assigns severity to the secret-storage finding and at least one Keychain implementation finding.",
+      "max_score": 10
+    },
+    {
+      "name": "OSStatus handling",
+      "description": "Requires checking SecItem result codes instead of ignoring them.",
+      "max_score": 10
+    },
+    {
+      "name": "Duplicate case",
+      "description": "Names duplicate-item handling as part of the write path.",
+      "max_score": 10
+    },
+    {
+      "name": "Missing item case",
+      "description": "Names missing-item handling for reads, deletes, update-first flows, or tests.",
+      "max_score": 10
+    },
+    {
+      "name": "Locked device case",
+      "description": "Names interaction-not-allowed or locked-device behavior as a recoverable Keychain case.",
+      "max_score": 10
+    },
+    {
+      "name": "Explicit protection",
+      "description": "Requires an explicit Keychain accessibility or access-control policy for added items.",
+      "max_score": 10
+    },
+    {
+      "name": "No delete update",
+      "description": "Rejects delete-before-add as the normal update strategy.",
+      "max_score": 10
+    },
+    {
+      "name": "Add or update",
+      "description": "Recommends an add-or-update or update-or-add strategy that preserves the item when update succeeds.",
+      "max_score": 10
+    },
+    {
+      "name": "Test checklist",
+      "description": "Includes tests for success plus at least two failure/edge paths from duplicate, missing item, locked device, logout, or migration.",
+      "max_score": 10
+    }
+  ]
+}

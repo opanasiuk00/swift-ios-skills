@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent can build a watchOS 26 RelevanceKit relevant-widget plan without falling back to a normal timeline-only widget.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Relevant widget API",
+      "description": "Uses `RelevanceConfiguration` with `RelevanceEntriesProvider` for one-card-per-meeting Smart Stack behavior instead of only a normal timeline widget.",
+      "max_score": 20
+    },
+    {
+      "name": "Provider requirements",
+      "description": "Defines a `RelevanceEntry` and implements `relevance()`, `entry(configuration:context:)`, and `placeholder(context:)`.",
+      "max_score": 20
+    },
+    {
+      "name": "Availability",
+      "description": "Annotates or clearly scopes relevant-widget-only code to watchOS 26.0+.",
+      "max_score": 15
+    },
+    {
+      "name": "Ordered relevance",
+      "description": "Returns `WidgetRelevance` with `WidgetRelevanceAttribute` values ordered by priority and using appropriate date `RelevantContext` clues.",
+      "max_score": 20
+    },
+    {
+      "name": "Preview and placeholder",
+      "description": "Handles `context.isPreview` with representative preview data and provides placeholder content.",
+      "max_score": 15
+    },
+    {
+      "name": "Duplicate-card handling",
+      "description": "Uses `.associatedKind(_:)` when a relevant widget overlaps with an existing timeline widget, or correctly explains grouping when that is the better fit.",
+      "max_score": 10
+    }
+  ]
+}

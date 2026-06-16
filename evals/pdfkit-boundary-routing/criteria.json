@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether PDFKit remains focused on PDF documents while routing broader SwiftUI interop and drawing/markup concerns to sibling skills.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "PDF Display Scope",
+      "description": "Keeps PDFView, PDFDocument loading/saving, page navigation, search, text extraction, annotations, widget form fields, and thumbnails in PDFKit scope.",
+      "max_score": 20
+    },
+    {
+      "name": "PDF-Specific SwiftUI Wrapper",
+      "description": "Allows a PDF-specific UIViewRepresentable wrapper for PDFView to remain in PDFKit scope.",
+      "max_score": 10
+    },
+    {
+      "name": "Interop Routing",
+      "description": "Routes broad UIViewRepresentable architecture, coordinator lifecycle, sizing, and general UIKit-to-SwiftUI migration issues to swiftui-uikit-interop.",
+      "max_score": 15
+    },
+    {
+      "name": "PencilKit Routing",
+      "description": "Routes Apple Pencil canvas behavior, tool picker setup, stroke serialization, and drawing policies to PencilKit.",
+      "max_score": 15
+    },
+    {
+      "name": "PaperKit Routing",
+      "description": "Routes system-standard markup UI or structured markup editing to PaperKit when that is the product requirement.",
+      "max_score": 15
+    },
+    {
+      "name": "PDF Overlay Handoff",
+      "description": "Explains that PDFKit owns per-page overlay placement and PDF persistence handoff when drawing or markup appears over PDF pages.",
+      "max_score": 10
+    },
+    {
+      "name": "No Drawing Overclaim",
+      "description": "Does not claim PDFKit provides the full PencilKit drawing model or PaperKit markup editor.",
+      "max_score": 10
+    },
+    {
+      "name": "Clear Sequence",
+      "description": "Provides a clear implementation handoff sequence across PDFKit, SwiftUI interop, PencilKit, and PaperKit.",
+      "max_score": 5
+    }
+  ]
+}

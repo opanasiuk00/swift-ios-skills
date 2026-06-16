@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent preserves the boundary between CarPlay framework template apps and CarPlay-displayed WidgetKit or ActivityKit surfaces.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Live Activity owner",
+      "description": "Routes Live Activity implementation to ActivityKit rather than CarPlay framework templates.",
+      "max_score": 15
+    },
+    {
+      "name": "Widget owner",
+      "description": "Routes small widget implementation to WidgetKit rather than CarPlay framework templates.",
+      "max_score": 15
+    },
+    {
+      "name": "Template boundary",
+      "description": "Limits the CarPlay framework skill/domain to template-based apps, scene lifecycle, category entitlements, interface controller work, and CarPlay Simulator/testing.",
+      "max_score": 15
+    },
+    {
+      "name": "No template status UI",
+      "description": "Does not implement the Live Activity or widget status surface with CPTemplate, CPListTemplate, CPMapTemplate, or another CarPlay template.",
+      "max_score": 15
+    },
+    {
+      "name": "CarPlay validation",
+      "description": "Still recommends CarPlay-specific validation for compact layouts, glanceability, locked/driver context, or CarPlay display behavior.",
+      "max_score": 15
+    },
+    {
+      "name": "Interaction caution",
+      "description": "Avoids depending on buttons, toggles, or iPhone-required interaction for the CarPlay status surface.",
+      "max_score": 10
+    },
+    {
+      "name": "Future app flow",
+      "description": "Explains that a separate eligible in-car ordering or app flow may use CarPlay templates, while the status surface remains WidgetKit/ActivityKit.",
+      "max_score": 15
+    }
+  ]
+}

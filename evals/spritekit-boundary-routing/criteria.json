@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent keeps SpriteKit focused on 2D gameplay while routing neighboring Apple game and social features to sibling frameworks.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "SpriteKit ownership",
+      "description": "Keeps SpriteKit ownership to 2D scene rendering, node hierarchy, sprites, actions, physics, contacts, particles, tile maps, camera, input, SKAudioNode, and SpriteView integration.",
+      "max_score": 25
+    },
+    {
+      "name": "GameKit handoff",
+      "description": "Routes Game Center authentication, access point, leaderboards, achievements, matchmaking, saved games, and player identity verification to GameKit guidance.",
+      "max_score": 20
+    },
+    {
+      "name": "3D framework handoff",
+      "description": "Routes 3D cutscenes or 3D board scenes to SceneKit or RealityKit guidance instead of expanding SpriteKit scope beyond narrow SK3DNode or 2D overlay boundaries.",
+      "max_score": 20
+    },
+    {
+      "name": "TabletopKit handoff",
+      "description": "Routes board-game rules, pieces, cards, dice, spatial table sessions, and visionOS tabletop logic to TabletopKit guidance.",
+      "max_score": 20
+    },
+    {
+      "name": "SharePlay handoff",
+      "description": "Routes SharePlay voice or synchronized group sessions to GroupActivities or SharePlay guidance rather than presenting them as SpriteKit APIs.",
+      "max_score": 15
+    }
+  ]
+}

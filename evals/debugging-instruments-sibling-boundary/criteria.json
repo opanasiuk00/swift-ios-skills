@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the debugging-instruments skill preserves boundaries with SwiftUI performance, MetricKit, and Swift testing skills.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Instruments stays in scope",
+      "description": "Keeps Instruments capture guidance in scope, such as SwiftUI or Animation Hitches with Time Profiler on device.",
+      "max_score": 20
+    },
+    {
+      "name": "SwiftUI remediation handoff",
+      "description": "Routes SwiftUI code-level remediation patterns to the swiftui-performance skill.",
+      "max_score": 20
+    },
+    {
+      "name": "MetricKit handoff",
+      "description": "Routes MetricKit subscriber setup, MXDiagnosticPayload processing, or MXHangDiagnostic ingestion details to the metrickit skill.",
+      "max_score": 20
+    },
+    {
+      "name": "Testing handoff",
+      "description": "Routes Swift Testing or XCTest benchmark organization details to the swift-testing skill.",
+      "max_score": 15
+    },
+    {
+      "name": "Signpost instrumentation",
+      "description": "Mentions OSSignposter or signposts as useful instrumentation for correlating app intervals with Instruments.",
+      "max_score": 15
+    },
+    {
+      "name": "No sibling collapse",
+      "description": "Does not collapse sibling skills by giving a full MetricKit ingestion implementation or full SwiftUI refactor recipe.",
+      "max_score": 10
+    }
+  ]
+}

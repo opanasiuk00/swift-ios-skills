@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the answer keeps Swift Charts guidance focused while routing adjacent Apple-platform concerns to sibling skills.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Swift Charts Scope",
+      "description": "Keeps chart type selection, marks, axes/scales, legends, annotations, selection, scrolling, vectorized plots, and Chart3D guidance in swift-charts scope.",
+      "max_score": 25
+    },
+    {
+      "name": "MapKit Boundary",
+      "description": "Routes MapKit annotations or map overlays to MapKit guidance rather than treating them as chart marks.",
+      "max_score": 15
+    },
+    {
+      "name": "Navigation Boundary",
+      "description": "Routes NavigationStack and deep-link implementation to swiftui-navigation.",
+      "max_score": 15
+    },
+    {
+      "name": "Data And State Boundaries",
+      "description": "Routes async networking/data loading and @Observable model ownership details to appropriate networking, concurrency, SwiftUI, or architecture skills.",
+      "max_score": 20
+    },
+    {
+      "name": "Accessibility Boundary",
+      "description": "Routes a deep VoiceOver/accessibility audit to ios-accessibility while still giving chart-specific label, color, Dynamic Type, and audio graph considerations.",
+      "max_score": 15
+    },
+    {
+      "name": "Actionable Chart Advice",
+      "description": "Still gives concise Swift Charts implementation recommendations rather than only listing handoffs.",
+      "max_score": 10
+    }
+  ]
+}

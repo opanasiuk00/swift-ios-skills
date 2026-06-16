@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent preserves EnergyKit boundaries for thermostat guidance, errors, load events, insights, and privacy.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Entitlement required",
+      "description": "Requires the EnergyKit capability or `com.apple.developer.energykit` entitlement.",
+      "max_score": 15
+    },
+    {
+      "name": "Region handling",
+      "description": "Rejects universal availability and handles unsupported-region or guidance-unavailable cases.",
+      "max_score": 10
+    },
+    {
+      "name": "Venue handling",
+      "description": "Requires discovering or validating an EnergyVenue and handling unavailable or restricted venues.",
+      "max_score": 10
+    },
+    {
+      "name": "Reduce action",
+      "description": "Uses reduce-style guidance for HVAC or thermostat load reduction.",
+      "max_score": 10
+    },
+    {
+      "name": "HVAC load events",
+      "description": "Uses ElectricHVACLoadEvent for thermostat/HVAC telemetry.",
+      "max_score": 10
+    },
+    {
+      "name": "Stage changes",
+      "description": "Reports HVAC load when heating or cooling stage changes.",
+      "max_score": 15
+    },
+    {
+      "name": "Session lifecycle",
+      "description": "Includes begin, active, and end session state reporting for HVAC operation.",
+      "max_score": 10
+    },
+    {
+      "name": "Insights dependency",
+      "description": "States that EnergyKit insights depend on submitted EnergyKit load events and should not be synthesized from MetricKit power data.",
+      "max_score": 10
+    },
+    {
+      "name": "Home visibility",
+      "description": "Notes that load events for an EnergyVenue are visible to people who share the associated Home.",
+      "max_score": 5
+    },
+    {
+      "name": "Boundary control",
+      "description": "Keeps MetricKit, HomeKit automation, and general app telemetry as boundaries rather than substitutes for EnergyKit behavior.",
+      "max_score": 5
+    }
+  ]
+}

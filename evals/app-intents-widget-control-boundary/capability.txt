@@ -1,0 +1,1 @@
+Separate App Intents responsibilities across widgets, Control Center controls, interactive Siri snippets, action intents, configuration intents, and WidgetKit implementation boundaries.

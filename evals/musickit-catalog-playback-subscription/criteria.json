@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent separates MusicKit catalog lookup from subscription-gated catalog playback and uses the current subscription offer API shape.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Catalog search",
+      "description": "Uses MusicCatalogSearchRequest for song search and does not require an Apple Music subscription just to fetch catalog search results.",
+      "max_score": 20
+    },
+    {
+      "name": "Playback subscription gate",
+      "description": "Checks MusicSubscription.current.canPlayCatalogContent before attempting catalog playback.",
+      "max_score": 25
+    },
+    {
+      "name": "Application player",
+      "description": "Uses ApplicationMusicPlayer.shared with queue assignment and play() for app-scoped playback.",
+      "max_score": 20
+    },
+    {
+      "name": "Offer eligibility",
+      "description": "Checks canBecomeSubscriber before presenting the Apple Music subscription offer.",
+      "max_score": 20
+    },
+    {
+      "name": "Offer API shape",
+      "description": "Uses musicSubscriptionOffer(isPresented:options:onLoadCompletion:) or accurately includes options and load-completion handling.",
+      "max_score": 15
+    }
+  ]
+}

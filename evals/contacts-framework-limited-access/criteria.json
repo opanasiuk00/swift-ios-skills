@@ -1,0 +1,26 @@
+{
+  "context": "Tests whether the Contacts skill handles iOS limited Contacts authorization without blocking usable selected-contact access.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Usable authorization states",
+      "description": "Treats both .authorized and .limited as Contacts API states where app fetch/save features can proceed.",
+      "max_score": 25
+    },
+    {
+      "name": "Limited access caveat",
+      "description": "Explains that .limited exposes only user-granted contacts and contacts the app creates, not the full address book.",
+      "max_score": 25
+    },
+    {
+      "name": "Expansion controls",
+      "description": "Recommends ContactAccessButton or contactAccessPicker for letting the person add contacts to the app's limited-access set.",
+      "max_score": 25
+    },
+    {
+      "name": "Picker boundary",
+      "description": "Distinguishes limited-access management from CNContactPickerViewController, which returns final selections rather than granting store-wide access.",
+      "max_score": 25
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether Focus Engine guidance handles tvOS directional focus, reachability, SwiftUI focus sections, UIKit focus guides, and debugging without replacing the system focus engine.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Reachable actions",
+      "description": "States that tvOS actions must be reachable through focus movement and select or activation, not touch-only gestures.",
+      "max_score": 20
+    },
+    {
+      "name": "System focus engine",
+      "description": "Explains that the focus engine controls directional movement and should not be replaced with manual swipe routing for normal UI navigation.",
+      "max_score": 20
+    },
+    {
+      "name": "Interactive card semantics",
+      "description": "Recommends semantic Button controls or explicit focusable custom controls for interactive cards.",
+      "max_score": 20
+    },
+    {
+      "name": "SwiftUI before UIKit guides",
+      "description": "Recommends focusSection() for uneven SwiftUI sidebar and grid regions before reaching for UIKit UIFocusGuide.",
+      "max_score": 25
+    },
+    {
+      "name": "Guide and debugger scope",
+      "description": "Uses UIFocusGuide only for UIKit or custom geometry gaps and mentions UIFocusDebugger as an LLDB debugging aid.",
+      "max_score": 15
+    }
+  ]
+}

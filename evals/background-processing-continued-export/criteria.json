@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the background-processing skill handles iOS 26 BGContinuedProcessingTask guidance accurately.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Continued processing API",
+      "description": "Recommends BGContinuedProcessingTaskRequest and BGContinuedProcessingTask for iOS 26 foreground-started work that may continue in the background.",
+      "max_score": 15
+    },
+    {
+      "name": "User action foreground start",
+      "description": "States that submission happens from the foreground in response to a person’s action, not as a periodic background scheduler replacement.",
+      "max_score": 10
+    },
+    {
+      "name": "Wildcard permitted identifier",
+      "description": "Uses a bundle-prefixed wildcard base in BGTaskSchedulerPermittedIdentifiers, such as a value ending in .*.",
+      "max_score": 15
+    },
+    {
+      "name": "Unique submitted identifier",
+      "description": "Explains that each submitted continued-processing job should use a concrete unique identifier under the wildcard base.",
+      "max_score": 10
+    },
+    {
+      "name": "Progress reporting",
+      "description": "Uses BGContinuedProcessingTask progress/ProgressReporting and updates progress during the export.",
+      "max_score": 15
+    },
+    {
+      "name": "Cancellation and expiration",
+      "description": "Handles user/system cancellation through expirationHandler, cancels work, cleans up partial output, and reports completion.",
+      "max_score": 15
+    },
+    {
+      "name": "GPU support check",
+      "description": "Checks BGTaskScheduler.supportedResources before requesting GPU resources.",
+      "max_score": 10
+    },
+    {
+      "name": "GPU entitlement",
+      "description": "Mentions the Background GPU Access capability or com.apple.developer.background-tasks.continued-processing.gpu entitlement when requesting GPU.",
+      "max_score": 10
+    }
+  ]
+}

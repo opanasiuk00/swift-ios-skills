@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the agent produces an App Store Optimization launch plan that follows the skill's search visibility, conversion, Custom Product Page, Product Page Optimization, localization, and review-prompt guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Visibility conversion split",
+      "description": "Separates search visibility work from conversion-rate work.",
+      "max_score": 10
+    },
+    {
+      "name": "Relevance priority",
+      "description": "Prioritizes habit-tracker-relevant keywords and avoids duplicate terms across title, subtitle, category, and keyword field.",
+      "max_score": 10
+    },
+    {
+      "name": "Indexed surfaces",
+      "description": "Uses app name, subtitle, keyword field, and primary category as key search-relevance surfaces.",
+      "max_score": 10
+    },
+    {
+      "name": "No description stuffing",
+      "description": "Does not recommend adding description keywords for ranking and presents the description as conversion copy.",
+      "max_score": 10
+    },
+    {
+      "name": "Screenshot benefits",
+      "description": "Plans the first screenshots around benefits or outcomes, not onboarding, splash, loading, or generic feature labels.",
+      "max_score": 10
+    },
+    {
+      "name": "Promotional text",
+      "description": "Uses promotional text as current conversion messaging that can rotate for launches, seasons, or events.",
+      "max_score": 10
+    },
+    {
+      "name": "Custom pages",
+      "description": "Plans Custom Product Pages for distinct audiences or acquisition channels and includes either the 70-page capacity or assigned keyword search visibility.",
+      "max_score": 15
+    },
+    {
+      "name": "PPO mechanics",
+      "description": "Plans Product Page Optimization with no more than three treatments, selected localization guidance, and one hypothesis at a time.",
+      "max_score": 15
+    },
+    {
+      "name": "Positive review timing",
+      "description": "Places review prompts after positive user moments and notes that StoreKit decides whether the prompt appears.",
+      "max_score": 10
+    }
+  ]
+}

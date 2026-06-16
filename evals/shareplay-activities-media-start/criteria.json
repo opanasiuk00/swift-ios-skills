@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the SharePlay activities skill is applied for shared media playback setup.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Capability setup",
+      "description": "Adds the Group Activities capability to the app target and references the com.apple.developer.group-session entitlement without inventing unsupported Info.plist keys.",
+      "max_score": 10
+    },
+    {
+      "name": "Activity definition",
+      "description": "Defines a GroupActivity with Codable stored data, concise GroupActivityMetadata, .watchTogether, and a fallback URL or equivalent content identifier.",
+      "max_score": 15
+    },
+    {
+      "name": "Activation path",
+      "description": "Uses GroupStateObserver.isEligibleForGroupSession to choose direct prepareForActivation/activate when eligible and GroupActivitySharingController when no conversation is active.",
+      "max_score": 15
+    },
+    {
+      "name": "Session observation",
+      "description": "Observes Activity.sessions() from a retained manager or model object rather than transient view state.",
+      "max_score": 10
+    },
+    {
+      "name": "Join lifecycle",
+      "description": "Calls session.join(), stores cancellable Task<Void, Never> handles, and cleans up on invalidation or leave.",
+      "max_score": 15
+    },
+    {
+      "name": "AVPlayer coordination",
+      "description": "Uses player.playbackCoordinator.coordinateWithSession(session) for AVPlayer rate and time synchronization.",
+      "max_score": 15
+    },
+    {
+      "name": "Messaging boundary",
+      "description": "Avoids redundant play, pause, seek, or rate messenger messages and reserves GroupSessionMessenger for app-specific state outside AVPlayer transport sync.",
+      "max_score": 10
+    },
+    {
+      "name": "Minimal payloads",
+      "description": "Keeps the activity payload to identifiers, URLs, or descriptors rather than large media data.",
+      "max_score": 10
+    }
+  ]
+}

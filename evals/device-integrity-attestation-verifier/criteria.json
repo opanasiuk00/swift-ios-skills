@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the device-integrity skill gives source-grounded App Attest attestation verification guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Attestation nonce composition",
+      "description": "Computes `clientDataHash = SHA256(challenge)` and verifies the certificate nonce against `SHA256(authData || clientDataHash)`, not `SHA256(challenge)` alone.",
+      "max_score": 25
+    },
+    {
+      "name": "Credential certificate extension",
+      "description": "Names OID `1.2.840.113635.100.8.2` as the credential certificate extension containing the nonce value to compare.",
+      "max_score": 15
+    },
+    {
+      "name": "App and key binding",
+      "description": "Verifies App ID/RP ID hash, environment `aaguid`, initial counter, `credentialId`, and keyId/public-key hash binding.",
+      "max_score": 25
+    },
+    {
+      "name": "Server challenge handling",
+      "description": "Treats the challenge as server-issued, one-time, unexpired, and consumed only after successful verification.",
+      "max_score": 15
+    },
+    {
+      "name": "Persisted state",
+      "description": "Stores the verified public key and receipt for assertion and fraud-risk use instead of treating the raw attestation object as the trusted durable record.",
+      "max_score": 20
+    }
+  ]
+}

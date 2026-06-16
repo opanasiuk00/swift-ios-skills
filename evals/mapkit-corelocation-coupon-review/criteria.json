@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the answer follows the skill's iOS 18+ CoreLocation guidance for CLServiceSession, CLMonitor, liveUpdates, diagnostics, and background location.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "When In Use",
+      "description": "Rejects requesting Always authorization up front and recommends when-in-use first.",
+      "max_score": 10
+    },
+    {
+      "name": "Service Session",
+      "description": "Uses or recommends CLServiceSession scoped to the active feature lifetime.",
+      "max_score": 10
+    },
+    {
+      "name": "Always Scope",
+      "description": "Limits Always authorization to background cases that need system relaunch after termination.",
+      "max_score": 10
+    },
+    {
+      "name": "Monitor Lifetime",
+      "description": "Recommends a long-lived CLMonitor rather than recreating monitors from view appearance.",
+      "max_score": 10
+    },
+    {
+      "name": "Condition Limit",
+      "description": "States the CLMonitor condition limit is 20 per app and recommends prioritizing, rotating, or diffing regions.",
+      "max_score": 10
+    },
+    {
+      "name": "Event Subscription",
+      "description": "Keeps monitor event subscriptions stable instead of repeatedly subscribing from view lifecycle callbacks.",
+      "max_score": 10
+    },
+    {
+      "name": "Live Updates",
+      "description": "Uses CLLocationUpdate.liveUpdates only while needed and cancels the task when the feature stops.",
+      "max_score": 10
+    },
+    {
+      "name": "Update Filtering",
+      "description": "Filters invalid, inaccurate, stale, or otherwise low-value location updates.",
+      "max_score": 10
+    },
+    {
+      "name": "Diagnostics",
+      "description": "Explicitly handles denied authorization, globally disabled Location Services, unavailable location, or insufficient in-use diagnostics with degraded behavior.",
+      "max_score": 10
+    },
+    {
+      "name": "Background Rules",
+      "description": "Requires Location updates background mode plus CLBackgroundActivitySession or Live Activity for continued background updates.",
+      "max_score": 10
+    }
+  ]
+}

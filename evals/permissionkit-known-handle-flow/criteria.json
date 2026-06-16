@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent separates known-handle lookup from communication-limit enforcement and handles response lifecycle edge cases.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Known-handle meaning",
+      "description": "Explains that isKnownHandle(_:) and knownHandles(in:) classify system-known handles and do not prove communication limits are enabled.",
+      "max_score": 20
+    },
+    {
+      "name": "Bundle identifier note",
+      "description": "Mentions that knownHandles(in:) requires a non-nil, nonempty app bundle identifier.",
+      "max_score": 10
+    },
+    {
+      "name": "Inactive limits fallback",
+      "description": "Handles AskError.communicationLimitsNotEnabled from AskCenter.shared.ask as the normal fallback when communication limits are not active.",
+      "max_score": 25
+    },
+    {
+      "name": "Modern response API",
+      "description": "Uses AskCenter.shared.responses(for: CommunicationTopic.self) to observe parent decisions and does not rely on deprecated CommunicationLimits ask/update APIs.",
+      "max_score": 20
+    },
+    {
+      "name": "No-response state",
+      "description": "Models pending, retry, cancellation, or expiration because child cancellation of the iMessage send flow may produce no PermissionResponse.",
+      "max_score": 25
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent gives current, source-grounded FinanceKit setup and transaction-query guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Managed entitlement eligibility",
+      "description": "States that `com.apple.developer.financekit` is a managed entitlement requested by the Account Holder for an organization-level Apple Developer account and approved per bundle ID.",
+      "max_score": 18
+    },
+    {
+      "name": "App Store eligibility",
+      "description": "Mentions Finance category and App Store iPhone distribution in the U.S. or U.K. as entitlement eligibility constraints.",
+      "max_score": 14
+    },
+    {
+      "name": "Market and product availability",
+      "description": "Distinguishes U.S. Apple Card, Apple Cash, and Savings data from U.K. open-banking connected-account support and includes relevant iOS availability.",
+      "max_score": 18
+    },
+    {
+      "name": "Privacy and availability checks",
+      "description": "Adds `NSFinancialDataUsageDescription` and checks `FinanceStore.isDataAvailable(.financialData)` before authorization or financial-data API calls.",
+      "max_score": 16
+    },
+    {
+      "name": "Authorization handling",
+      "description": "Uses `requestAuthorization()` or `authorizationStatus()` and handles `.authorized`, `.denied`, and `.notDetermined`.",
+      "max_score": 12
+    },
+    {
+      "name": "Transaction query snippet",
+      "description": "Builds a `TransactionQuery` with predicate, sort descriptors, limit, and offset, then calls `transactions(query:)` asynchronously.",
+      "max_score": 14
+    },
+    {
+      "name": "Amount direction",
+      "description": "Treats `CurrencyAmount.amount` as positive and applies `creditDebitIndicator` for direction or sign.",
+      "max_score": 8
+    }
+  ]
+}

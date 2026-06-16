@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent corrects MusicKit setup and authorization guidance without preserving an invented entitlement requirement.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "MusicKit App Service",
+      "description": "Recommends enabling MusicKit App Service for the app's explicit bundle ID so automatic developer token generation is configured.",
+      "max_score": 25
+    },
+    {
+      "name": "Usage description",
+      "description": "Requires NSAppleMusicUsageDescription before accessing the user's music data or media library.",
+      "max_score": 25
+    },
+    {
+      "name": "Authorization behavior",
+      "description": "Explains that MusicAuthorization.request() presents the system consent dialog when necessary and that currentStatus can inspect access without prompting.",
+      "max_score": 20
+    },
+    {
+      "name": "No invented entitlement",
+      "description": "Does not claim that com.apple.developer.musickit is the required app entitlement or that a missing entitlement causes authorization to crash.",
+      "max_score": 20
+    },
+    {
+      "name": "Background scope",
+      "description": "Treats UIBackgroundModes audio as needed for background playback, not as universal setup for catalog search.",
+      "max_score": 10
+    }
+  ]
+}

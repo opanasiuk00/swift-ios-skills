@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether swift-concurrency chooses synchronization primitives accurately and corrects stale lock guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Actors",
+      "description": "Uses actors for shared mutable state when asynchronous access and actor hops are acceptable.",
+      "max_score": 20
+    },
+    {
+      "name": "Mutex vs OSAllocatedUnfairLock",
+      "description": "Uses Mutex for new iOS 18+ code and OSAllocatedUnfairLock for iOS 16-17 support or ownership-assertion needs.",
+      "max_score": 25
+    },
+    {
+      "name": "Atomic Scalars",
+      "description": "Uses Atomic for simple scalar counters or flags when appropriate.",
+      "max_score": 15
+    },
+    {
+      "name": "Lock Anti-Patterns",
+      "description": "Rejects locks inside actors and rejects holding any lock across await suspension points.",
+      "max_score": 25
+    },
+    {
+      "name": "NSLock Accuracy",
+      "description": "Corrects the claim that NSLock is not Sendable while still preferring modern state-protecting primitives for new Swift concurrency code.",
+      "max_score": 15
+    }
+  ]
+}

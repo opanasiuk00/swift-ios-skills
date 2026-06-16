@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the skill preserves the boundary between accessibility focus and keyboard/directional focus while still covering accessibility impacts of traversal, labels, and assistive technologies.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Accessibility focus",
+      "description": "Keeps VoiceOver or accessibility focus restoration after modal dismissal in ios-accessibility scope.",
+      "max_score": 12
+    },
+    {
+      "name": "Restoration API",
+      "description": "Recommends `@AccessibilityFocusState` or an equivalent accessibility notification for accessibility focus restoration.",
+      "max_score": 10
+    },
+    {
+      "name": "Modal behavior",
+      "description": "Mentions custom modal accessibility behavior such as modal containment or escape dismissal.",
+      "max_score": 8
+    },
+    {
+      "name": "Voice Control names",
+      "description": "Keeps duplicate Voice Control names in ios-accessibility scope and recommends unique, speakable labels.",
+      "max_score": 10
+    },
+    {
+      "name": "Input labels",
+      "description": "Recommends `accessibilityInputLabels` where shorter spoken alternatives are useful.",
+      "max_score": 8
+    },
+    {
+      "name": "Tab routing",
+      "description": "Routes Tab traversal and custom-card keyboard focus implementation to focus-engine rather than solving it in accessibility guidance.",
+      "max_score": 12
+    },
+    {
+      "name": "FocusState boundary",
+      "description": "Routes `@FocusState`, `.focusable()`, and keyboard focus-state mechanics to focus-engine.",
+      "max_score": 12
+    },
+    {
+      "name": "Directional boundary",
+      "description": "Routes arrow-key movement, focus sections, scene focus, tvOS focus, and `UIFocusGuide` details to focus-engine.",
+      "max_score": 12
+    },
+    {
+      "name": "Traversal impact",
+      "description": "Still notes that accessibility element order and grouping affect VoiceOver, Switch Control, Voice Control, and keyboard accessibility outcomes.",
+      "max_score": 8
+    },
+    {
+      "name": "Clear distinction",
+      "description": "Explains the distinction between accessibility focus for assistive technologies and keyboard/directional focus in the scene.",
+      "max_score": 8
+    }
+  ]
+}

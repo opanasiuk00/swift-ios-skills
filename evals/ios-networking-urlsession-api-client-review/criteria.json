@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the ios-networking skill guidance is applied to URLSession API client architecture, response validation, retry behavior, middleware, and security boundaries.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Status Validation",
+      "description": "Requires validating HTTPURLResponse status codes before decoding and treating HTTP errors separately from transport errors.",
+      "max_score": 20
+    },
+    {
+      "name": "Session Configuration",
+      "description": "Recommends a configured URLSession for production needs such as timeouts, caching, delegates, or waitsForConnectivity instead of defaulting to URLSession.shared.",
+      "max_score": 15
+    },
+    {
+      "name": "Retry Discipline",
+      "description": "Excludes cancellation and most 4xx client errors from retry logic while allowing appropriate retries such as 429, network loss, or 5xx failures.",
+      "max_score": 15
+    },
+    {
+      "name": "Request Middleware",
+      "description": "Centralizes auth headers and similar cross-cutting request changes in middleware or a request builder rather than hardcoding tokens per request.",
+      "max_score": 15
+    },
+    {
+      "name": "Token Boundary",
+      "description": "States that sensitive tokens must not be stored in UserDefaults and routes detailed credential storage to the security boundary without expanding into a full Keychain guide.",
+      "max_score": 15
+    },
+    {
+      "name": "Transport Testing",
+      "description": "Mentions URLProtocol or equivalent transport-level testing when request construction and response handling need verification.",
+      "max_score": 15
+    },
+    {
+      "name": "Scope Control",
+      "description": "Keeps the answer focused on iOS networking client corrections rather than redesigning unrelated app architecture.",
+      "max_score": 5
+    }
+  ]
+}

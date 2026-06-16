@@ -1,0 +1,1 @@
+Evaluate App Clip feasibility against binary size limits, invocation constraints, supported framework caveats, and sibling-skill boundaries for features that belong in the full app or adjacent Apple skills.

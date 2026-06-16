@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the answer preserves the MapKit skill's boundaries while routing CarPlay, App Clips, and BLE/accessory work to sibling domains.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Map Scope",
+      "description": "Keeps maps, camera state, annotations, overlays, selection, place cards, search, geocoding, routes, and ETA in MapKit scope.",
+      "max_score": 10
+    },
+    {
+      "name": "Location Scope",
+      "description": "Keeps user location, live updates, CLServiceSession, and CLMonitor geofencing in MapKit/CoreLocation scope; discusses background constraints when background monitoring, terminated relaunch, or continuous background updates are proposed.",
+      "max_score": 10
+    },
+    {
+      "name": "CarPlay Routing",
+      "description": "Routes CarPlay scene setup, templates, navigation alerts, entitlements, and in-car UI rules to CarPlay guidance.",
+      "max_score": 10
+    },
+    {
+      "name": "CarPlay Handoff",
+      "description": "Limits MapKit's CarPlay role to providing route, destination, ETA, coordinate, or place data.",
+      "max_score": 10
+    },
+    {
+      "name": "App Clip Routing",
+      "description": "Routes App Clip invocation infrastructure such as associated domains, invocation URLs, card metadata, and continuation to App Clips guidance.",
+      "max_score": 10
+    },
+    {
+      "name": "App Clip Handoff",
+      "description": "Limits MapKit's App Clip role to selected place context, map item, URL, or place-card action data.",
+      "max_score": 10
+    },
+    {
+      "name": "BLE Routing",
+      "description": "Routes BLE scanning, pairing, permissions, accessory onboarding, and beacon protocol handling to Core Bluetooth or AccessorySetupKit guidance.",
+      "max_score": 10
+    },
+    {
+      "name": "Geofence Handoff",
+      "description": "Explains that a geofence event can trigger adjacent workflows without making MapKit own BLE or accessory setup.",
+      "max_score": 10
+    },
+    {
+      "name": "No Overclaim",
+      "description": "Does not claim MapKit directly handles CarPlay templates, App Clip launch infrastructure, or BLE pairing.",
+      "max_score": 10
+    },
+    {
+      "name": "Boundary Clarity",
+      "description": "Provides a clear end-to-end handoff sequence between MapKit/CoreLocation and the adjacent frameworks.",
+      "max_score": 10
+    }
+  ]
+}

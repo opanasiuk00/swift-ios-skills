@@ -1,0 +1,1 @@
+Review Translation framework plans for correct API availability, on-device strategy claims, language availability checks, SwiftUI session lifecycle, and throwing translation APIs.

@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the iOS localization skill gives current String Catalog generated-symbol and plural placeholder guidance without stale availability claims.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "String Catalog availability",
+      "description": "Frames String Catalogs as the Xcode 15+ recommended workflow and does not claim they require iOS 17 or newer.",
+      "max_score": 10
+    },
+    {
+      "name": "Generated symbols setting",
+      "description": "Mentions enabling Generate String Catalog Symbols, generated localizable symbols, or the equivalent Xcode target setting.",
+      "max_score": 10
+    },
+    {
+      "name": "Stable keys",
+      "description": "Explains that stable manually managed keys should be kept or created for generated symbols rather than relying on fragile copy-derived identifiers.",
+      "max_score": 10
+    },
+    {
+      "name": "Room symbol",
+      "description": "Uses a generated-symbol SwiftUI example for the room key, such as Text(.roomAvailable).",
+      "max_score": 10
+    },
+    {
+      "name": "Plural function symbol",
+      "description": "Uses a generated function example for the count key, such as Text(.landmarksCount(count: 42)).",
+      "max_score": 10
+    },
+    {
+      "name": "Positional named placeholder",
+      "description": "Uses positional named catalog placeholder syntax such as %1$(count)lld, not %(count)lld.",
+      "max_score": 10
+    },
+    {
+      "name": "Plural variants",
+      "description": "Mentions String Catalog plural variants or equivalent plural-ready translator handling for the count string.",
+      "max_score": 10
+    },
+    {
+      "name": "Resolved string API",
+      "description": "Uses String(localized:) for cases that need a resolved String and does not overroute all localized values through NSLocalizedString.",
+      "max_score": 10
+    },
+    {
+      "name": "Deferred resource API",
+      "description": "Distinguishes LocalizedStringResource as useful for deferred or system-framework resolution.",
+      "max_score": 10
+    },
+    {
+      "name": "NSLocalizedString migration",
+      "description": "Treats NSLocalizedString as legacy for new Swift code while acknowledging literal keys can still be exported or migrated.",
+      "max_score": 10
+    }
+  ]
+}

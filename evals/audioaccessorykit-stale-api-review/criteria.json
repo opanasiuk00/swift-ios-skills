@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent catches stale AudioAccessoryKit sample code and corrects both API shape and lifecycle ownership.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Flags stale registration",
+      "description": "Identifies register(accessory, capabilities) or equivalent raw Capabilities registration as stale or wrong.",
+      "max_score": 15
+    },
+    {
+      "name": "Correct configuration initializer",
+      "description": "Uses AccessoryControlDevice.Configuration with deviceCapabilities, not an incorrect capabilities: parameter.",
+      "max_score": 15
+    },
+    {
+      "name": "Correct register call",
+      "description": "Shows AccessoryControlDevice.register(accessory, configuration) or an equivalent Configuration-based registration.",
+      "max_score": 10
+    },
+    {
+      "name": "Container role",
+      "description": "States that registration belongs in the container app after AccessorySetupKit pairing.",
+      "max_score": 10
+    },
+    {
+      "name": "Extension role",
+      "description": "States that current(for:) and update(_:) belong in the app extension path.",
+      "max_score": 15
+    },
+    {
+      "name": "Separated examples",
+      "description": "Keeps registration and placement update examples separate enough that lifecycle ownership is clear.",
+      "max_score": 10
+    },
+    {
+      "name": "Placement update shape",
+      "description": "Reads current configuration, changes devicePlacement, and calls update(_:).",
+      "max_score": 10
+    },
+    {
+      "name": "ASAccessory source",
+      "description": "Treats ASAccessory as provided by AccessorySetupKit and does not instantiate it directly.",
+      "max_score": 5
+    },
+    {
+      "name": "Error awareness",
+      "description": "Mentions thrown errors or invalidation/recovery for registration or update operations.",
+      "max_score": 5
+    },
+    {
+      "name": "No unrelated rewrite",
+      "description": "Does not turn the review into broad BLE discovery, UI, or unrelated audio session guidance.",
+      "max_score": 5
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent separates TransactionPicker's ephemeral access from persistent FinanceKit authorization and resumable history sync.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Picker access model",
+      "description": "Explains that `TransactionPicker` selected transactions are passed directly for immediate use and access is ephemeral, not persistent sync authorization.",
+      "max_score": 18
+    },
+    {
+      "name": "Persistent access model",
+      "description": "Recommends FinanceKit authorization and account selection for ongoing account, balance, and transaction access.",
+      "max_score": 14
+    },
+    {
+      "name": "History API",
+      "description": "Uses `transactionHistory(forAccountID:since:isMonitoring:)` with persisted `FinanceStore.HistoryToken` for resumable incremental sync.",
+      "max_score": 18
+    },
+    {
+      "name": "Change application",
+      "description": "Saves every `changes.newToken` and applies inserted, updated, and deleted changes, including removing locally stored deleted data.",
+      "max_score": 16
+    },
+    {
+      "name": "Invalid token recovery",
+      "description": "Handles `FinanceError.historyTokenInvalid` by discarding the token and immediately resynchronizing the affected stream.",
+      "max_score": 14
+    },
+    {
+      "name": "Avoids full snapshots",
+      "description": "Prefers `isMonitoring: false` for catch-up-only sync and avoids fetching complete snapshots every launch.",
+      "max_score": 12
+    },
+    {
+      "name": "Boundary discipline",
+      "description": "Keeps the answer in FinanceKit/FinanceKitUI rather than drifting into PassKit payment processing or generic data-store architecture.",
+      "max_score": 8
+    }
+  ]
+}

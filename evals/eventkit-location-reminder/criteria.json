@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether EventKit reminder guidance handles reminder authorization, default lists, required reminder fields, geofence alarms, and Core Location boundaries.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Reminder access",
+      "description": "Requires full Reminders access through the modern full-access reminder request before creating or reading reminders.",
+      "max_score": 20
+    },
+    {
+      "name": "Default list",
+      "description": "Checks that a default reminder list exists before assigning a reminder calendar.",
+      "max_score": 15
+    },
+    {
+      "name": "Required fields",
+      "description": "States that title and calendar are required before saving a reminder.",
+      "max_score": 15
+    },
+    {
+      "name": "Structured location",
+      "description": "Uses a structured location with coordinates and a radius in meters for the geofence.",
+      "max_score": 20
+    },
+    {
+      "name": "Proximity alarm",
+      "description": "Configures an alarm with the structured location and an enter or leave proximity before adding it to the reminder.",
+      "max_score": 20
+    },
+    {
+      "name": "Location privacy",
+      "description": "Keeps Core Location permission conditional on accessing the person's current location, not merely using fixed job-site coordinates.",
+      "max_score": 10
+    }
+  ]
+}

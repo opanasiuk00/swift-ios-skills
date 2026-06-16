@@ -1,0 +1,1 @@
+Route mixed text, OCR, speech, localization, translation, and generative AI requests to NaturalLanguage/Translation or the correct sibling skill without broadening scope.

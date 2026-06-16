@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent preserves NaturalLanguage boundaries when adjacent Apple text, speech, localization, OCR, and AI domains appear together.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "NaturalLanguage scope",
+      "description": "Keeps tokenization, language identification, named entity recognition, sentiment analysis, embeddings, and custom NLModel tagging/classification in NaturalLanguage scope.",
+      "max_score": 20
+    },
+    {
+      "name": "Translation scope",
+      "description": "Keeps in-app text translation in Translation framework scope with appropriate availability caveats.",
+      "max_score": 15
+    },
+    {
+      "name": "OCR handoff",
+      "description": "Routes receipt-image OCR or camera text recognition to the Vision framework skill rather than treating NaturalLanguage as OCR.",
+      "max_score": 20
+    },
+    {
+      "name": "Speech handoff",
+      "description": "Routes spoken-note transcription to the Speech framework skill rather than treating NaturalLanguage as speech recognition.",
+      "max_score": 15
+    },
+    {
+      "name": "Localization handoff",
+      "description": "Routes UI strings, String Catalogs, pluralization, RTL layout, and locale-aware formatting to the iOS localization skill.",
+      "max_score": 15
+    },
+    {
+      "name": "Generative AI handoff",
+      "description": "Routes Apple Intelligence or Foundation Models summarization to the on-device AI skill rather than presenting NaturalLanguage as a generative LLM framework.",
+      "max_score": 15
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the answer corrects Swift Charts angle selection semantics for SectorMark.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Angle Value Semantics",
+      "description": "States that chartAngleSelection(value:) binds the selected plottable angle value rather than the sector's category string.",
+      "max_score": 25
+    },
+    {
+      "name": "Numeric Binding",
+      "description": "Replaces the String? selection binding with a numeric angle binding such as Double?.",
+      "max_score": 20
+    },
+    {
+      "name": "Category Mapping",
+      "description": "Maps the selected angle through cumulative sales/value ranges to derive the selected product or category.",
+      "max_score": 25
+    },
+    {
+      "name": "Sector Readability",
+      "description": "Keeps SectorMark guidance such as positive values, limiting to 5-7 sectors, or grouping small slices into Other.",
+      "max_score": 15
+    },
+    {
+      "name": "Chart-Owned Fix",
+      "description": "Treats this as a Swift Charts selection semantics issue rather than routing the primary fix to generic SwiftUI state management.",
+      "max_score": 15
+    }
+  ]
+}

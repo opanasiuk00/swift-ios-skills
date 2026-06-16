@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the App Intents skill guidance is applied to widget configuration, Control Center controls, SnippetIntent, and sibling boundary routing.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Widget versus control protocols",
+      "description": "Separates `WidgetConfigurationIntent` for configurable widgets from `ControlConfigurationIntent` for Control Center controls, and does not reuse one widget configuration intent for all surfaces.",
+      "max_score": 18
+    },
+    {
+      "name": "Configuration intent behavior",
+      "description": "Treats configuration intents primarily as configuration contracts and avoids putting shared action behavior in a `perform()` method on the configuration intent unless there is a deliberate separate action use.",
+      "max_score": 10
+    },
+    {
+      "name": "Control preview optionality",
+      "description": "States that `ControlConfigurationIntent` parameters without defaults must be optional so Control Center preview/configuration can instantiate the control.",
+      "max_score": 16
+    },
+    {
+      "name": "Shared action intent",
+      "description": "Moves accessory state changes into a separate action intent such as an `AppIntent` or `SetValueIntent` with explicit entity parameters, rather than mutating from widget configuration or snippet rendering.",
+      "max_score": 12
+    },
+    {
+      "name": "Snippet side effects",
+      "description": "Explains that `SnippetIntent.perform()` may be called multiple times and should remain side-effect-free, with accessory mutations performed before returning the snippet or in a separate action intent.",
+      "max_score": 16
+    },
+    {
+      "name": "Snippet result shape",
+      "description": "Describes the caller returning a snippet, such as `.result(snippetIntent:)`, and the snippet intent returning a view-oriented result such as `ShowsSnippetView`.",
+      "max_score": 10
+    },
+    {
+      "name": "WidgetKit boundary",
+      "description": "Keeps WidgetKit timeline provider and layout rewrite details out of the App Intents plan except for the protocol boundary needed to supply widget configuration.",
+      "max_score": 10
+    },
+    {
+      "name": "Sensitive action handling",
+      "description": "Mentions appropriate authentication, confirmation, or authorization review for smart-home state changes from system surfaces.",
+      "max_score": 8
+    }
+  ]
+}

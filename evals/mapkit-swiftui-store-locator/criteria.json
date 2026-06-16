@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether a store-locator answer follows the MapKit skill's SwiftUI Map, search, routing, selection, and location lifecycle guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "SwiftUI Map",
+      "description": "Uses SwiftUI Map APIs as the primary map surface instead of defaulting to MKMapView.",
+      "max_score": 10
+    },
+    {
+      "name": "Camera State",
+      "description": "Uses MapCameraPosition or equivalent SwiftUI map camera state.",
+      "max_score": 10
+    },
+    {
+      "name": "Markers",
+      "description": "Uses Marker or Annotation for store results.",
+      "max_score": 10
+    },
+    {
+      "name": "Selection Tags",
+      "description": "Uses a map selection binding with marker tags matching the selected value type.",
+      "max_score": 10
+    },
+    {
+      "name": "Autocomplete",
+      "description": "Uses MKLocalSearchCompleter for autocomplete rather than full searches on every keystroke.",
+      "max_score": 10
+    },
+    {
+      "name": "Resolved Search",
+      "description": "Uses MKLocalSearch with a completion or natural-language query to resolve real map items.",
+      "max_score": 10
+    },
+    {
+      "name": "Route Overlay",
+      "description": "Uses MKDirections.Request and MapPolyline(route.polyline) or equivalent MapPolyline route drawing.",
+      "max_score": 10
+    },
+    {
+      "name": "Map Controls",
+      "description": "Includes a user-location control such as MapUserLocationButton or UserAnnotation plus relevant map controls.",
+      "max_score": 10
+    },
+    {
+      "name": "Location Privacy",
+      "description": "Calls for NSLocationWhenInUseUsageDescription and a denied-location recovery or fallback path.",
+      "max_score": 10
+    },
+    {
+      "name": "Task Lifecycle",
+      "description": "Cancels or scopes search, route, and location tasks to the feature lifecycle.",
+      "max_score": 10
+    }
+  ]
+}

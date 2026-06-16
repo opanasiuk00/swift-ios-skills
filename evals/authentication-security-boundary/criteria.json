@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the authentication skill keeps AuthenticationServices and local biometric re-authentication in scope while routing deeper application security topics to sibling security guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "AuthenticationServices scope",
+      "description": "Keeps Sign in with Apple, passkeys, Password AutoFill, ASAuthorizationController flows, ASWebAuthenticationSession OAuth, and local biometric re-authentication in the authentication skill scope.",
+      "max_score": 25
+    },
+    {
+      "name": "Sibling security routing",
+      "description": "Routes detailed Keychain architecture, CryptoKit encryption, Secure Enclave, certificate pinning, and OWASP MASVS mapping to sibling security work instead of expanding the authentication answer into those domains.",
+      "max_score": 25
+    },
+    {
+      "name": "Token storage minimum",
+      "description": "Still states that auth tokens and secrets should be stored in Keychain, not UserDefaults, files, Core Data, or other ordinary app storage.",
+      "max_score": 15
+    },
+    {
+      "name": "Biometric unlock boundary",
+      "description": "Warns that `LAContext.evaluatePolicy` alone should not release stored secrets and that Keychain access control is the right handoff for protected token or key reads.",
+      "max_score": 20
+    },
+    {
+      "name": "WebAuthn server boundary",
+      "description": "Does not claim that the authentication skill owns backend WebAuthn relying-party implementation beyond requiring server challenges and server verification.",
+      "max_score": 15
+    }
+  ]
+}

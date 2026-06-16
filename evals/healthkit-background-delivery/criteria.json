@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether HealthKit background delivery guidance covers entitlement, observer lifecycle, completion handling, frequency limits, and device testing.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Background entitlement",
+      "description": "Requires the HealthKit Background Delivery capability or com.apple.developer.healthkit.background-delivery entitlement.",
+      "max_score": 15
+    },
+    {
+      "name": "Launch-time observer setup",
+      "description": "Says observer queries should be set up as the app launches rather than only when a screen appears.",
+      "max_score": 20
+    },
+    {
+      "name": "Same sample type",
+      "description": "Pairs enableBackgroundDelivery with an executed HKObserverQuery for the same sample type.",
+      "max_score": 15
+    },
+    {
+      "name": "Completion handler",
+      "description": "Requires calling the observer query completion handler even on failures and notes that missing completions can delay or stop future updates.",
+      "max_score": 20
+    },
+    {
+      "name": "Frequency limits",
+      "description": "Explains that requested frequency is a maximum and that some types, such as iOS step count, may be capped hourly.",
+      "max_score": 15
+    },
+    {
+      "name": "Device testing",
+      "description": "States that HealthKit background delivery is not supported on Simulator and must be tested on device.",
+      "max_score": 15
+    }
+  ]
+}

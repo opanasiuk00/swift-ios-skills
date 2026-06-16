@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the ActivityKit skill guidance is applied for scheduled push review.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Scheduled overload",
+      "description": "Corrects the scheduled start API to the iOS 26+ request overload that includes style, alertConfiguration, and start or startDate.",
+      "max_score": 10
+    },
+    {
+      "name": "Style availability",
+      "description": "States that the Activity.request style parameter is iOS 18+ rather than iOS 26-only.",
+      "max_score": 10
+    },
+    {
+      "name": "Standard style",
+      "description": "Recommends standard style for a persistent flight-board activity rather than transient.",
+      "max_score": 10
+    },
+    {
+      "name": "Transient semantics",
+      "description": "Describes transient as an extended Dynamic Island presentation that can auto-end on lock, collapse, leaving the app, or similar exits.",
+      "max_score": 10
+    },
+    {
+      "name": "Push start alert",
+      "description": "States that push-to-start payloads require alert.",
+      "max_score": 10
+    },
+    {
+      "name": "Payload fields",
+      "description": "Lists push-to-start fields including event start, attributes-type, attributes, content-state, and alert.",
+      "max_score": 10
+    },
+    {
+      "name": "Frequent key",
+      "description": "Uses NSSupportsLiveActivitiesFrequentUpdates for frequent Live Activity pushes.",
+      "max_score": 10
+    },
+    {
+      "name": "Frequent permission",
+      "description": "Mentions frequentPushesEnabled or frequentPushEnablementUpdates for user/system frequent push enablement.",
+      "max_score": 10
+    },
+    {
+      "name": "No fixed cadence",
+      "description": "Does not promise a fixed 30-second or once-per-minute update rate.",
+      "max_score": 10
+    },
+    {
+      "name": "Duration distinction",
+      "description": "Distinguishes 8-hour active limit, 12-hour system-ended Lock Screen persistence total, and app-ended default dismissal up to 4 hours.",
+      "max_score": 10
+    }
+  ]
+}

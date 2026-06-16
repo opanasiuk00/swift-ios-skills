@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the CryptoTokenKit skill covers current iOS 26 NFC smart-card sessions, registration, token-backed keychain lookup, and lifecycle details.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "iOS 26 NFC availability",
+      "description": "States that createNFCSlot(message:completion:) and isNFCSupported() are iOS/iPadOS 26+ APIs.",
+      "max_score": 20
+    },
+    {
+      "name": "Slot manager guards",
+      "description": "Guards TKSmartCardSlotManager.default and isNFCSupported() before creating an NFC smart-card slot.",
+      "max_score": 15
+    },
+    {
+      "name": "NFC slot to smart card",
+      "description": "Uses the TKSmartCardSlotNFCSession slotName to obtain a TKSmartCardSlot and TKSmartCard for APDU communication.",
+      "max_score": 15
+    },
+    {
+      "name": "Session cleanup",
+      "description": "Ends the NFC session with TKSmartCardSlotNFCSession.end().",
+      "max_score": 10
+    },
+    {
+      "name": "Registration manager",
+      "description": "Uses TKSmartCardTokenRegistrationManager for iOS 26+ smart-card registration instead of inventing custom persistence.",
+      "max_score": 20
+    },
+    {
+      "name": "Token-backed keychain behavior",
+      "description": "Uses kSecAttrTokenID, TKTokenWatcher, and errSecItemNotFound handling for token-backed keychain references.",
+      "max_score": 20
+    }
+  ]
+}

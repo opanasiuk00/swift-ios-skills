@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent builds a PaperKit document markup setup using the correct data model, controller, insertion UI, PencilKit tool picker bridge, persistence, and HDR property names.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Markup model",
+      "description": "Creates a PaperMarkup model with bounds matching the document or view content.",
+      "max_score": 15
+    },
+    {
+      "name": "Shared feature set",
+      "description": "Creates PaperMarkupViewController with a shared FeatureSet such as .latest and reuses that same feature set for insertion UI.",
+      "max_score": 15
+    },
+    {
+      "name": "Tool picker",
+      "description": "Retains a PKToolPicker, adds the PaperMarkupViewController as an observer, and assigns it through pencilKitResponderState.activeToolPicker with a visible or hidden toolPickerVisibility.",
+      "max_score": 20
+    },
+    {
+      "name": "Insertion UI",
+      "description": "Uses MarkupEditViewController(supportedFeatureSet:additionalActions:) and connects its delegate to PaperMarkupViewController or an equivalent forwarding delegate.",
+      "max_score": 15
+    },
+    {
+      "name": "Async persistence",
+      "description": "Saves with try await PaperMarkup.dataRepresentation() and loads with PaperMarkup(dataRepresentation:).",
+      "max_score": 15
+    },
+    {
+      "name": "HDR property",
+      "description": "Uses FeatureSet.colorMaximumLinearExposure and PKToolPicker.colorMaximumLinearExposure, not maximumLinearExposure.",
+      "max_score": 15
+    },
+    {
+      "name": "No entitlement",
+      "description": "Does not claim PaperKit requires a special entitlement or Info.plist key.",
+      "max_score": 5
+    }
+  ]
+}

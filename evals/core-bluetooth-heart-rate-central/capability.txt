@@ -1,0 +1,1 @@
+Core Bluetooth central scan, notification parsing, and safe writes

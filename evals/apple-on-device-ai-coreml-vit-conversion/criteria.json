@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the agent follows the Core ML conversion and optimization guidance owned by the on-device AI skill while preserving the boundary with Swift app integration.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Eval mode",
+      "description": "Requires inference/eval mode before tracing or exporting the PyTorch model.",
+      "max_score": 12
+    },
+    {
+      "name": "Parity baseline",
+      "description": "Requires validating the converted model against the source framework before optimization.",
+      "max_score": 10
+    },
+    {
+      "name": "Modern format",
+      "description": "Chooses mlprogram saved as an mlpackage for new work and avoids legacy neuralnetwork as the default.",
+      "max_score": 14
+    },
+    {
+      "name": "Deployment target",
+      "description": "Sets an explicit minimum deployment target appropriate to the intended devices and model format.",
+      "max_score": 8
+    },
+    {
+      "name": "Shape strategy",
+      "description": "Prefers fixed or enumerated input shapes over broad range dimensions when known shapes are sufficient.",
+      "max_score": 12
+    },
+    {
+      "name": "Compression caution",
+      "description": "Rejects blanket low-bit compression of every tensor and recommends selective compression with accuracy gates.",
+      "max_score": 14
+    },
+    {
+      "name": "Device validation",
+      "description": "Requires validation and profiling on physical target devices rather than relying only on simulator or desktop checks.",
+      "max_score": 10
+    },
+    {
+      "name": "Profiling availability",
+      "description": "Corrects the Core ML compute-plan profiling availability for iOS 17.0-era assumptions.",
+      "max_score": 12
+    },
+    {
+      "name": "Boundary control",
+      "description": "Keeps the answer focused on conversion and optimization instead of expanding into detailed Swift Core ML app wiring.",
+      "max_score": 8
+    }
+  ]
+}

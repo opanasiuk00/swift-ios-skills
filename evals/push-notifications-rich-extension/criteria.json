@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the push-notifications skill corrects rich notification and communication notification extension mistakes.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Service extension trigger",
+      "description": "States that Notification Service Extensions require mutable-content: 1 plus an alerting remote notification; silent pushes do not trigger the service extension.",
+      "max_score": 25
+    },
+    {
+      "name": "Secret sharing",
+      "description": "Uses Keychain Sharing for decryption secrets and limits App Groups to shared files/UserDefaults rather than storing secrets in App Group UserDefaults.",
+      "max_score": 20
+    },
+    {
+      "name": "Attachment handling",
+      "description": "Requires downloaded attachments to be supported files on disk, written where the extension can read them, and expects system validation/storage before display.",
+      "max_score": 20
+    },
+    {
+      "name": "Communication setup",
+      "description": "Requires Communication Notifications capability, NSUserActivityTypes entries such as INSendMessageIntent, intent donation, and content.updating(from:).",
+      "max_score": 25
+    },
+    {
+      "name": "Graceful fallback",
+      "description": "Requires calling the content handler on all paths and falling back to the original or best-attempt content when work fails or time expires.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the skill corrects stale App Store Accessibility Nutrition Label categories and grounds claim guidance in common-task evidence rather than marketing intent.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Current categories",
+      "description": "Lists the current categories as VoiceOver, Voice Control, Larger Text, Dark Interface, Differentiate Without Color Alone, Sufficient Contrast, Reduced Motion, Captions, and Audio Descriptions.",
+      "max_score": 15
+    },
+    {
+      "name": "Switch boundary",
+      "description": "States that Switch Control is important accessibility work but is not a current App Store Accessibility Nutrition Label category.",
+      "max_score": 10
+    },
+    {
+      "name": "Keyboard boundary",
+      "description": "States that Full Keyboard Access is important accessibility work but is not a current App Store Accessibility Nutrition Label category.",
+      "max_score": 10
+    },
+    {
+      "name": "Captions rename",
+      "description": "Maps Closed Captions / SDH to the current Captions label.",
+      "max_score": 10
+    },
+    {
+      "name": "Contrast rename",
+      "description": "Maps Increase Contrast evidence to the current Sufficient Contrast label rather than naming Increase Contrast as the label.",
+      "max_score": 10
+    },
+    {
+      "name": "Common tasks",
+      "description": "Says labels should be claimed only when users can complete all common tasks with that feature on the relevant device.",
+      "max_score": 10
+    },
+    {
+      "name": "Task matrix",
+      "description": "Recommends building a common-task test matrix before answering in App Store Connect.",
+      "max_score": 10
+    },
+    {
+      "name": "Media evidence",
+      "description": "Calls for caption, transcript, and audio-description evidence for media content rather than only player UI support.",
+      "max_score": 10
+    },
+    {
+      "name": "Visual labels",
+      "description": "Includes evidence for Larger Text, Dark Interface, Differentiate Without Color Alone, Sufficient Contrast, and Reduced Motion.",
+      "max_score": 10
+    },
+    {
+      "name": "Accuracy warning",
+      "description": "Warns that App Store accessibility answers must stay accurate and should not be treated as marketing claims.",
+      "max_score": 5
+    }
+  ]
+}

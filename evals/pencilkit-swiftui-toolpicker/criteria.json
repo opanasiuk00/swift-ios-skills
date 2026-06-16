@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether a SwiftUI PencilKit wrapper follows the skill's tool picker observer, first-responder, drawing policy, and binding-synchronization guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Canvas observer",
+      "description": "Registers the PKCanvasView as an observer of the PKToolPicker so picker selections update the canvas tool.",
+      "max_score": 15
+    },
+    {
+      "name": "Retained picker",
+      "description": "Stores one PKToolPicker for the canvas lifetime instead of recreating it during updates or appearances.",
+      "max_score": 10
+    },
+    {
+      "name": "First responder",
+      "description": "Calls setVisible for the canvas and makes the canvas first responder when showing the picker.",
+      "max_score": 15
+    },
+    {
+      "name": "SwiftUI guard",
+      "description": "Avoids a SwiftUI update loop by assigning the bound PKDrawing to the canvas only when the drawings differ.",
+      "max_score": 10
+    },
+    {
+      "name": "No tool reset",
+      "description": "Does not reset canvas.tool from updateUIView in a way that overwrites picker selections.",
+      "max_score": 10
+    },
+    {
+      "name": "Default policy",
+      "description": "Explains that the default drawing policy is system-setting aware when the tool picker is visible and otherwise only Apple Pencil draws.",
+      "max_score": 15
+    },
+    {
+      "name": "Any input",
+      "description": "Correctly identifies any-input behavior as allowing both Pencil and finger drawing.",
+      "max_score": 10
+    },
+    {
+      "name": "Pencil only",
+      "description": "Correctly identifies pencil-only behavior as allowing only Apple Pencil touches to draw on the canvas.",
+      "max_score": 10
+    },
+    {
+      "name": "Coordinator delegate",
+      "description": "Uses a Coordinator or equivalent delegate path to propagate canvas drawing changes back to SwiftUI state.",
+      "max_score": 5
+    }
+  ]
+}

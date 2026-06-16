@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent handles SignificantAppUpdateTopic availability, description quality, response handling, and legal-boundary framing.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "26.2 availability",
+      "description": "States that SignificantAppUpdateTopic and the matching AskCenter ask/responses flow require iOS/iPadOS 26.2+ availability.",
+      "max_score": 25
+    },
+    {
+      "name": "Significance decision",
+      "description": "Says the app developer determines whether an update is significant based on applicable regulations rather than using the topic for every small wording tweak.",
+      "max_score": 20
+    },
+    {
+      "name": "Concrete description",
+      "description": "Replaces vague descriptions like \"We improved the app\" with concise, understandable text describing concrete user-visible changes.",
+      "max_score": 20
+    },
+    {
+      "name": "Response handling",
+      "description": "Observes AskCenter.shared.responses(for: SignificantAppUpdateTopic.self) and handles approval, denial, and missing response states.",
+      "max_score": 25
+    },
+    {
+      "name": "Legal boundary",
+      "description": "Keeps legal/regulatory discussion at the boundary and does not provide jurisdiction-specific legal advice.",
+      "max_score": 10
+    }
+  ]
+}

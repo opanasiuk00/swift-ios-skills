@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent handles Wi-Fi accessory setup with AccessorySetupKit and hands off to NetworkExtension without crossing into adjacent domains.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "WiFi support",
+      "description": "Includes WiFi in NSAccessorySetupSupports for Wi-Fi discovery.",
+      "max_score": 10
+    },
+    {
+      "name": "SSID prefix",
+      "description": "Uses ASDiscoveryDescriptor.ssidPrefix for the CamLink- setup networks rather than a fixed full SSID.",
+      "max_score": 10
+    },
+    {
+      "name": "SSID exclusivity",
+      "description": "Does not set both ssid and ssidPrefix on the same descriptor.",
+      "max_score": 10
+    },
+    {
+      "name": "Picker item",
+      "description": "Creates an ASPickerDisplayItem with a user-facing name, product image, and descriptor.",
+      "max_score": 10
+    },
+    {
+      "name": "Session events",
+      "description": "Activates ASAccessorySession and handles accessoryAdded or picker dismissal events for the selected accessory.",
+      "max_score": 10
+    },
+    {
+      "name": "Network handoff",
+      "description": "Uses ASAccessory.ssid with NEHotspotConfiguration or NetworkExtension after selection to join the accessory network.",
+      "max_score": 10
+    },
+    {
+      "name": "Boundary statement",
+      "description": "Explains that AccessorySetupKit handles discovery/authorization and NetworkExtension handles the post-selection network join.",
+      "max_score": 10
+    },
+    {
+      "name": "User intent",
+      "description": "States that picker presentation should be tied to an explicit user action and not shown unexpectedly on launch.",
+      "max_score": 10
+    },
+    {
+      "name": "Permission scope",
+      "description": "Explains that setup through AccessorySetupKit avoids broad wireless discovery prompts for the selected accessory path.",
+      "max_score": 10
+    },
+    {
+      "name": "No adjacent domains",
+      "description": "Does not include HomeKit, Matter, or general camera streaming implementation.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the ios-accessibility guidance is applied to a realistic SwiftUI shopping cart with custom controls, gesture-only behavior, modal presentation, media, Dynamic Type, and motion concerns.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Icon labels",
+      "description": "Requires meaningful labels for icon-only interactive controls, including favorite and quantity buttons.",
+      "max_score": 10
+    },
+    {
+      "name": "Trait accuracy",
+      "description": "Mentions correct accessibility traits or real controls for custom controls without putting control types into labels.",
+      "max_score": 10
+    },
+    {
+      "name": "Row grouping",
+      "description": "Recommends grouping row content or otherwise reducing excessive VoiceOver and Switch Control scan stops.",
+      "max_score": 10
+    },
+    {
+      "name": "Gesture alternatives",
+      "description": "Provides custom accessibility actions or visible/menu alternatives for swipe-to-delete, long-press, or gesture-only behavior.",
+      "max_score": 10
+    },
+    {
+      "name": "Voice Control",
+      "description": "Requires unique, speakable Voice Control labels and mentions checking visible targets with Show Names and Show Numbers.",
+      "max_score": 10
+    },
+    {
+      "name": "Input labels",
+      "description": "Uses or recommends `accessibilityInputLabels` for long or awkward spoken labels.",
+      "max_score": 10
+    },
+    {
+      "name": "Focus restoration",
+      "description": "Requires returning accessibility focus to the checkout trigger when the sheet is dismissed.",
+      "max_score": 10
+    },
+    {
+      "name": "Image handling",
+      "description": "Distinguishes decorative product imagery from content images that need useful descriptions.",
+      "max_score": 10
+    },
+    {
+      "name": "Dynamic Type",
+      "description": "Covers Dynamic Type with system text styles, scalable metrics, and adaptive layouts rather than fixed font sizes.",
+      "max_score": 10
+    },
+    {
+      "name": "Reduced Motion",
+      "description": "Requires respecting Reduce Motion for cart, row, and checkout animations.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the SharePlay activities skill corrects common collaborative app synchronization mistakes.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Retained session owner",
+      "description": "Moves sessions() observation out of a recreated SwiftUI view task and into a retained manager or model object.",
+      "max_score": 12
+    },
+    {
+      "name": "Unreliable ephemeral updates",
+      "description": "Uses unreliable GroupSessionMessenger delivery for high-frequency ephemeral stroke, cursor, or pointer updates.",
+      "max_score": 12
+    },
+    {
+      "name": "Reliable durable commands",
+      "description": "Uses reliable GroupSessionMessenger delivery for durable state-changing commands such as clear canvas, selections, or mode changes.",
+      "max_score": 12
+    },
+    {
+      "name": "Messenger size limit",
+      "description": "States that messenger payloads should stay under 256 KB and should not carry large image or file data.",
+      "max_score": 12
+    },
+    {
+      "name": "Journal attachments",
+      "description": "Uses GroupSessionJournal for larger non-time-sensitive attachments and notes Transferable item requirements.",
+      "max_score": 14
+    },
+    {
+      "name": "Journal size limit",
+      "description": "Mentions the 100 MB GroupSessionJournal attachment limit and recommends server storage or file transfer for larger or protected assets.",
+      "max_score": 10
+    },
+    {
+      "name": "Late joiner state",
+      "description": "Handles late joiners by detecting new participants and sending a full state snapshot or equivalent canonical state.",
+      "max_score": 14
+    },
+    {
+      "name": "Cleanup lifecycle",
+      "description": "Includes leave/end and task cleanup so abandoned sessions and message listeners do not leak.",
+      "max_score": 14
+    }
+  ]
+}

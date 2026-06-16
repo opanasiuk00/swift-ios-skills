@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the ios-simulator skill preserves Simulator boundaries and routes hardware-dependent work to devices or sibling skills.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Hardware-only features",
+      "description": "Routes camera capture, Bluetooth or BLE pairing, barometer behavior, and accelerometer/gyroscope-dependent behavior to real hardware testing.",
+      "max_score": 25
+    },
+    {
+      "name": "Simulator-supported scenarios",
+      "description": "Treats Face ID or Touch ID fallback, memory warnings, and manual iCloud sync triggering as Simulator-supported scenarios.",
+      "max_score": 20
+    },
+    {
+      "name": "Performance warning",
+      "description": "States that Simulator is not an accurate performance proxy for processing, graphics, memory, networking, or Metal GPU behavior.",
+      "max_score": 20
+    },
+    {
+      "name": "APNs boundary",
+      "description": "States that real APNs delivery must be verified on a device and that `simctl push` is only local payload/display handling.",
+      "max_score": 20
+    },
+    {
+      "name": "Sibling boundaries",
+      "description": "Keeps the answer focused on iOS Simulator boundaries instead of turning it into an Instruments, Core Motion, Core Bluetooth, Push Notifications, or Metal implementation guide.",
+      "max_score": 15
+    }
+  ]
+}

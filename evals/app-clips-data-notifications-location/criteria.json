@@ -1,0 +1,36 @@
+{
+  "context": "",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Non-secret shared handoff",
+      "description": "Recommends App Groups/shared container or shared UserDefaults only for non-secret pending-session state and explicitly rejects passwords, refresh tokens, payment credentials, or credential secrets in shared storage.",
+      "max_score": 20
+    },
+    {
+      "name": "Sign in with Apple migration",
+      "description": "Uses the shared Sign in with Apple user identifier and full-app `ASAuthorizationAppleIDProvider.getCredentialState(forUserID:)` verification for an authorized credential state.",
+      "max_score": 15
+    },
+    {
+      "name": "Keychain direction and availability",
+      "description": "States that the full app can access App Clip-created keychain items only on iOS 15.4+ with correct association entitlements and that the App Clip cannot read full-app keychain items.",
+      "max_score": 15
+    },
+    {
+      "name": "Ephemeral notification authorization",
+      "description": "Names `NSAppClipRequestEphemeralUserNotification` under the App Clip target's `NSAppClip` Info.plist dictionary, notes the up-to-8-hour ephemeral notification window after each launch, and checks for `.ephemeral` authorization before scheduling.",
+      "max_score": 15
+    },
+    {
+      "name": "Notification relaunch routing",
+      "description": "Explains that tapping a notification relaunches without the original invocation URL and should use APNs `target-content-id` or `UNNotificationContent.targetContentIdentifier` for multi-experience/session routing.",
+      "max_score": 15
+    },
+    {
+      "name": "Physical location confirmation",
+      "description": "Uses `NSUserActivity.appClipActivationPayload` / `APActivationPayload.confirmAcquired(in:)` with a `CLCircularRegion` radius up to 500 meters and places `NSAppClipRequestLocationConfirmation` under the App Clip target's `NSAppClip` Info.plist dictionary, not the full app, without asking for continuous location.",
+      "max_score": 20
+    }
+  ]
+}

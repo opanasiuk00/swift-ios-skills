@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the answer uses the current iOS 26 MapKit geocoding, address, and PlaceDescriptor APIs accurately while preserving correct cycling availability.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Forward Geocoding",
+      "description": "Uses MKGeocodingRequest(addressString:) for address-string geocoding.",
+      "max_score": 10
+    },
+    {
+      "name": "Optional Request",
+      "description": "Handles the optional initializer result or otherwise accounts for invalid address strings.",
+      "max_score": 10
+    },
+    {
+      "name": "Reverse Geocoding",
+      "description": "Uses MKReverseGeocodingRequest(location:) for coordinate reverse geocoding.",
+      "max_score": 10
+    },
+    {
+      "name": "Address Type",
+      "description": "Uses MKAddress or MKMapItem.address for structured/full address output.",
+      "max_score": 10
+    },
+    {
+      "name": "Representations",
+      "description": "Uses MKMapItem.addressRepresentations or MKAddressRepresentations with fullAddress(includingRegion:singleLine:).",
+      "max_score": 10
+    },
+    {
+      "name": "GeoToolbox Import",
+      "description": "Imports GeoToolbox before using PlaceDescriptor.",
+      "max_score": 10
+    },
+    {
+      "name": "Place Descriptor",
+      "description": "Uses PlaceDescriptor with coordinate or address representations for places without a provider place ID.",
+      "max_score": 10
+    },
+    {
+      "name": "MapItem Request",
+      "description": "Uses MKMapItemRequest(placeDescriptor:) to resolve a PlaceDescriptor.",
+      "max_score": 10
+    },
+    {
+      "name": "iOS 26 Scope",
+      "description": "Marks the new geocoding, address representation, or PlaceDescriptor APIs as iOS 26+ without applying that availability to unrelated older APIs.",
+      "max_score": 10
+    },
+    {
+      "name": "Cycling Availability",
+      "description": "Treats cycling directions as an iOS 14+ transport type, not an iOS 26-only feature.",
+      "max_score": 10
+    }
+  ]
+}

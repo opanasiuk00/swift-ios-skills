@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the answer follows MapKit guidance for static map snapshots, Look Around previews, route context, and bounded async work.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Snapshotter",
+      "description": "Uses MKMapSnapshotter for a static map image rather than rendering an interactive map just to share a preview.",
+      "max_score": 10
+    },
+    {
+      "name": "Snapshot Options",
+      "description": "Configures snapshot options such as region or camera and output size; scale is a plus but not required unless high-DPI output is requested.",
+      "max_score": 10
+    },
+    {
+      "name": "Marker Overlay",
+      "description": "Accounts for drawing or compositing a marker/annotation onto the snapshot output.",
+      "max_score": 10
+    },
+    {
+      "name": "Look Around Request",
+      "description": "Uses MKLookAroundSceneRequest or an equivalent MapKit Look Around scene request for street-level imagery.",
+      "max_score": 10
+    },
+    {
+      "name": "Look Around UI",
+      "description": "Uses LookAroundPreview or otherwise describes presenting the returned Look Around scene.",
+      "max_score": 10
+    },
+    {
+      "name": "No Scene Fallback",
+      "description": "Handles missing Look Around scenes without treating it as a fatal error.",
+      "max_score": 10
+    },
+    {
+      "name": "Route Context",
+      "description": "Uses MKDirections.Request to calculate route context or ETA to the destination.",
+      "max_score": 10
+    },
+    {
+      "name": "Route Display",
+      "description": "Uses MKDirections route data for ETA, distance, or route summary; uses MapPolyline or snapshot overlay drawing only if visible route geometry is requested.",
+      "max_score": 10
+    },
+    {
+      "name": "Bounded Location",
+      "description": "Avoids indefinite live location updates for a shareable preview and scopes any current-location use tightly.",
+      "max_score": 10
+    },
+    {
+      "name": "Cancellation",
+      "description": "Cancels or scopes snapshot, Look Around, and directions tasks to the view/export lifecycle.",
+      "max_score": 10
+    }
+  ]
+}

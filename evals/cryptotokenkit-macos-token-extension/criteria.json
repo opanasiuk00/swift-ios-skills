@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the CryptoTokenKit skill corrects smart-card token extension platform, Info.plist, registration, and authentication-session guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "macOS extension boundary",
+      "description": "States that the smart-card app extension flow for system login and keychain unlock is a macOS workflow, not an iOS token driver target.",
+      "max_score": 20
+    },
+    {
+      "name": "Smart-card extension classes",
+      "description": "Uses TKSmartCardTokenDriver, TKSmartCardToken, and TKSmartCardTokenSession for smart-card token extensions.",
+      "max_score": 15
+    },
+    {
+      "name": "Info.plist nesting",
+      "description": "Places com.apple.ctk.driver-class under NSExtension > NSExtensionAttributes and uses NSExtensionPointIdentifier com.apple.ctk-tokens.",
+      "max_score": 20
+    },
+    {
+      "name": "SecurityAgent registration",
+      "description": "Registers the extension by launching the host app as the _securityagent user during installation.",
+      "max_score": 15
+    },
+    {
+      "name": "Per-session auth state",
+      "description": "Warns not to share PIN or authentication state across TKTokenSession instances.",
+      "max_score": 20
+    },
+    {
+      "name": "No account-auth drift",
+      "description": "Does not drift into generic Sign in with Apple, passkey, or OAuth authentication guidance.",
+      "max_score": 10
+    }
+  ]
+}

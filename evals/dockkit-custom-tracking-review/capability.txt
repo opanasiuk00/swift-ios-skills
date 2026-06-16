@@ -1,0 +1,1 @@
+Review DockKit custom tracking plans for system tracking ownership, observation coordinates and types, track cadence, camera information, image overloads, and motor command rate limits.

@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the agent preserves boundaries between AudioAccessoryKit, AccessorySetupKit, and Core Bluetooth.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Direct no",
+      "description": "Clearly says AudioAccessoryKit should not own the entire setup, permission, BLE, firmware, and audio-switching flow.",
+      "max_score": 10
+    },
+    {
+      "name": "AccessorySetupKit routing",
+      "description": "Routes discovery, picker UI, and accessory authorization/setup to AccessorySetupKit.",
+      "max_score": 15
+    },
+    {
+      "name": "Core Bluetooth routing",
+      "description": "Routes BLE service discovery, GATT operations, or firmware communication to Core Bluetooth or the device transport layer.",
+      "max_score": 15
+    },
+    {
+      "name": "AudioAccessoryKit scope",
+      "description": "Limits AudioAccessoryKit to post-pairing audio accessory registration, placement, connected source identifiers, or automatic switching support.",
+      "max_score": 15
+    },
+    {
+      "name": "Pair first",
+      "description": "States that AccessorySetupKit pairing must happen before AudioAccessoryKit registration.",
+      "max_score": 10
+    },
+    {
+      "name": "ASAccessory handoff",
+      "description": "Mentions that the ASAccessory from setup is the value used for AudioAccessoryKit registration.",
+      "max_score": 10
+    },
+    {
+      "name": "No picker overreach",
+      "description": "Does not describe AudioAccessoryKit as providing the picker UI or broad Bluetooth permission flow.",
+      "max_score": 10
+    },
+    {
+      "name": "No transport overreach",
+      "description": "Does not describe AudioAccessoryKit as the BLE scanner, GATT API, or firmware transport.",
+      "max_score": 10
+    },
+    {
+      "name": "Route-away examples",
+      "description": "Includes concrete examples of tasks that should route away from AudioAccessoryKit.",
+      "max_score": 5
+    }
+  ]
+}

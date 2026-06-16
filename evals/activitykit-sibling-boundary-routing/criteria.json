@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the ActivityKit skill guidance is applied for sibling boundary routing.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "ActivityKit scope",
+      "description": "Keeps ActivityKit-specific guidance focused on Live Activity update tokens, push-to-start tokens, liveactivity push type, topic suffix, and content-state payloads.",
+      "max_score": 10
+    },
+    {
+      "name": "Generic APNs handoff",
+      "description": "Routes APNs auth key rotation or normal remote notification registration away from ActivityKit guidance to push notification/APNs guidance.",
+      "max_score": 10
+    },
+    {
+      "name": "WidgetKit handoff",
+      "description": "Routes ordinary widget timeline provider decisions away from ActivityKit guidance to WidgetKit guidance.",
+      "max_score": 10
+    },
+    {
+      "name": "No TimelineProvider",
+      "description": "Does not recommend TimelineProvider as the mechanism for Live Activity lifecycle updates.",
+      "max_score": 10
+    },
+    {
+      "name": "Payload Codable",
+      "description": "Mentions that Live Activity content-state payloads must match the actual ContentState Codable shape and must not assume Date or ClosedRange<Date> use Unix timestamp lowerBound/upperBound dictionaries unless explicitly coordinated.",
+      "max_score": 10
+    },
+    {
+      "name": "Token rotation",
+      "description": "Mentions ActivityKit update tokens can rotate and should be handled per Live Activity.",
+      "max_score": 10
+    },
+    {
+      "name": "Push headers",
+      "description": "Mentions ActivityKit-specific APNs liveactivity push type or topic suffix for Live Activity pushes.",
+      "max_score": 10
+    },
+    {
+      "name": "Boundary no code",
+      "description": "Does not produce implementation code for the APNs key rotation or WidgetKit timeline work.",
+      "max_score": 10
+    },
+    {
+      "name": "No domain collapse",
+      "description": "Does not collapse generic APNs setup or ordinary widget timelines into the ActivityKit skill/domain.",
+      "max_score": 10
+    },
+    {
+      "name": "References surfaces",
+      "description": "Keeps Live Activity display discussion to Lock Screen/Dynamic Island/ActivityKit surfaces rather than ordinary home-screen widgets.",
+      "max_score": 10
+    }
+  ]
+}

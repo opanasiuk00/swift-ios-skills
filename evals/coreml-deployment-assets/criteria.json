@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent gives current Core ML model deployment guidance for large app assets without stale ODR or cellular-download claims.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Background Assets default",
+      "description": "Prefers Background Assets for new large or updateable model assets and frames On-Demand Resources as legacy or existing-project guidance.",
+      "max_score": 22
+    },
+    {
+      "name": "No stale size rules",
+      "description": "Does not repeat a blanket 200 MB cellular download limit or a rule that models over 50 MB must use ODR.",
+      "max_score": 18
+    },
+    {
+      "name": "App Store caveats",
+      "description": "Mentions checking current App Store Connect size limits or gives iOS/iPadOS 18+ thinned app bundle and ODR asset-pack limits with appropriate caveats.",
+      "max_score": 18
+    },
+    {
+      "name": "Compiled model handling",
+      "description": "Recommends precompiled `.mlmodelc` assets where possible, compile-once caching for downloaded models, and physical-device memory/performance validation.",
+      "max_score": 22
+    },
+    {
+      "name": "Background compute guidance",
+      "description": "Softens `.cpuOnly` or background-inference guidance to policy, contention, thermal, energy, and legitimate background-mode constraints instead of claiming GPU or Neural Engine are categorically unavailable.",
+      "max_score": 20
+    }
+  ]
+}

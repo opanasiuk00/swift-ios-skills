@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether EventKit alarm guidance preserves the boundary between Calendar/Reminders alarms and app-owned UserNotifications or push-notification workflows.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "EventKit alarms",
+      "description": "Recommends attaching native alarms to calendar events or reminders when the alert belongs to the calendar/reminder item.",
+      "max_score": 25
+    },
+    {
+      "name": "Event alarms",
+      "description": "Mentions relative or absolute EventKit event alarms and adding them to the event.",
+      "max_score": 20
+    },
+    {
+      "name": "Location reminders",
+      "description": "Mentions structured-location reminder alarms when the reminder is triggered by entering or leaving a place.",
+      "max_score": 20
+    },
+    {
+      "name": "Notification handoff",
+      "description": "Hands app-owned local or remote notifications to the UserNotifications or push-notifications layer instead of expanding EventKit into APNs guidance.",
+      "max_score": 25
+    },
+    {
+      "name": "No push conflation",
+      "description": "Does not claim that native EventKit calendar or reminder alarms require app push-notification authorization.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the ios-networking skill distinguishes background URLSession upload/download transfers from WebSocket realtime networking and handles lifecycle constraints accurately.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Transfer Scope",
+      "description": "States that background URLSession is for HTTP/HTTPS upload and download transfers, not WebSocket durability or arbitrary JSON polling via data tasks.",
+      "max_score": 20
+    },
+    {
+      "name": "File-Backed Uploads",
+      "description": "States that background uploads must be file-backed and that in-memory Data or stream uploads are not the durable background pattern after app exit.",
+      "max_score": 15
+    },
+    {
+      "name": "Delegate Pattern",
+      "description": "Requires a delegate and task-based APIs for background sessions rather than async convenience APIs as the durable transfer pattern.",
+      "max_score": 15
+    },
+    {
+      "name": "Force Quit Limit",
+      "description": "Explains that user force-quit cancels background transfers and prevents automatic relaunch until the user opens the app.",
+      "max_score": 15
+    },
+    {
+      "name": "Downloaded File Handling",
+      "description": "Requires moving or opening a downloaded temporary file before urlSession(_:downloadTask:didFinishDownloadingTo:) returns.",
+      "max_score": 15
+    },
+    {
+      "name": "WebSocket Boundary",
+      "description": "Keeps WebSocket guidance to foreground/default-session realtime networking with reconnect behavior rather than promising background receipt after suspension or force-quit.",
+      "max_score": 15
+    },
+    {
+      "name": "Scope Control",
+      "description": "Keeps the review focused on networking lifecycle and transfer behavior rather than redesigning chat features or notification UI.",
+      "max_score": 5
+    }
+  ]
+}

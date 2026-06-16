@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the App Intents skill guidance is applied to Spotlight indexing and IndexedEntity production architecture.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Entity property metadata",
+      "description": "Uses AppEntity property metadata with `@Property(title:indexingKey:)`, `@Property(indexingKey:)`, or `@ComputedProperty(indexingKey:)` for entity-exposed searchable fields. Award full credit when the answer treats display titles as useful labels but not as a substitute for Spotlight `indexingKey` metadata, and avoids duplicating ordinary entity metadata only in Core Spotlight attributes.",
+      "max_score": 14
+    },
+    {
+      "name": "Key-path indexing keys",
+      "description": "Shows or describes indexing keys as key paths such as `\\.title` or `\\.contentDescription` instead of bare enum cases, strings, or unsupported property names.",
+      "max_score": 12
+    },
+    {
+      "name": "Named production index",
+      "description": "Recommends a named `CSSearchableIndex` for production AppEntity indexing and avoids presenting `CSSearchableIndex.default()` as the production path.",
+      "max_score": 14
+    },
+    {
+      "name": "Default attribute set",
+      "description": "Explains that a custom `attributeSet` replaces the default AppEntity-derived attributes and should start from or preserve `defaultAttributeSet` when display representation and property metadata should remain searchable.",
+      "max_score": 12
+    },
+    {
+      "name": "Duplicate indexing boundary",
+      "description": "Avoids indexing the same records through both `indexAppEntities` and a separate `CSSearchableItem` pipeline. Award full credit if the answer either chooses the AppEntity path or says an existing item pipeline should use `associateAppEntity(_:priority:)` instead.",
+      "max_score": 16
+    },
+    {
+      "name": "Opening path",
+      "description": "Includes an explicit route for opening results, such as an `OpenIntent` or equivalent app navigation path, rather than relying on a generic launch screen to infer the recipe.",
+      "max_score": 12
+    },
+    {
+      "name": "Stable IDs and query behavior",
+      "description": "Requires stable persistent entity identifiers and an `EntityQuery.entities(for:)` implementation that returns only entities that still exist for the requested IDs.",
+      "max_score": 10
+    },
+    {
+      "name": "Update and delete lifecycle",
+      "description": "Recommends incremental updates and deletes in the same named Spotlight index, with batching or client-state recovery when appropriate, rather than a blocking blind reindex on every launch.",
+      "max_score": 10
+    }
+  ]
+}

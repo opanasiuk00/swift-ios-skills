@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent corrects Core Bluetooth background scanning, background peripheral advertising, and state restoration claims.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "No nil background scan",
+      "description": "Rejects scanning with nil services in the background and requires explicit service UUIDs for bluetooth-central background scanning.",
+      "max_score": 20
+    },
+    {
+      "name": "Scan options background",
+      "description": "States that scan options such as allowDuplicates have no effect while scanning in the background.",
+      "max_score": 15
+    },
+    {
+      "name": "Background local name",
+      "description": "States that background peripheral advertising does not include the local name.",
+      "max_score": 15
+    },
+    {
+      "name": "Overflow service UUIDs",
+      "description": "States that service UUIDs are placed in the overflow area in background advertisements and require explicit service scans to discover.",
+      "max_score": 15
+    },
+    {
+      "name": "Peripheral background mode",
+      "description": "States that published service contents are disabled while suspended unless bluetooth-peripheral background mode is configured.",
+      "max_score": 15
+    },
+    {
+      "name": "Restoration dictionaries",
+      "description": "Recommends restoration identifiers and restored state dictionaries, including central restored peripherals/scan services/scan options and peripheral restored services/advertisement data.",
+      "max_score": 20
+    }
+  ]
+}

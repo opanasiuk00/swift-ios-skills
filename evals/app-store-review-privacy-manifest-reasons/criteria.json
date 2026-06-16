@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent chooses correct privacy manifest required-reason API categories and separates app-owned declarations from third-party SDK declarations.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "App UserDefaults",
+      "description": "Selects NSPrivacyAccessedAPICategoryUserDefaults with CA92.1 for app-owned settings or preferences accessible only to the app.",
+      "max_score": 18
+    },
+    {
+      "name": "Disk space",
+      "description": "Selects NSPrivacyAccessedAPICategoryDiskSpace with E174.1 for checking space before downloading or writing offline videos.",
+      "max_score": 18
+    },
+    {
+      "name": "Document timestamps",
+      "description": "Selects NSPrivacyAccessedAPICategoryFileTimestamp with 3B52.1 for metadata from files the user granted through a document picker.",
+      "max_score": 18
+    },
+    {
+      "name": "SDK wrapper",
+      "description": "Selects NSPrivacyAccessedAPICategoryUserDefaults with C56D.1 for a third-party SDK wrapper that accesses UserDefaults only when called by the app.",
+      "max_score": 18
+    },
+    {
+      "name": "Manifest placement",
+      "description": "States that app code declarations belong in the app manifest and SDK code declarations belong in the SDK manifest; the SDK cannot rely on the host app manifest for its own required-reason API use.",
+      "max_score": 18
+    },
+    {
+      "name": "Current docs",
+      "description": "Warns to re-check Apple's current required-reason API documentation and not invent broad or convenient reasons.",
+      "max_score": 10
+    }
+  ]
+}

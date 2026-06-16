@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the agent corrects stale Core NFC entitlement guidance and covers ISO 7816, FeliCa, usage description, and availability checks.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Formats TAG",
+      "description": "States that `com.apple.developer.nfc.readersession.formats` should use `TAG` as the current reader-session format value.",
+      "max_score": 15
+    },
+    {
+      "name": "Rejects NDEF",
+      "description": "Explicitly says not to include legacy `NDEF` in the formats entitlement.",
+      "max_score": 10
+    },
+    {
+      "name": "Usage description",
+      "description": "Requires a non-empty `NFCReaderUsageDescription` in Info.plist.",
+      "max_score": 10
+    },
+    {
+      "name": "ISO7816 AIDs",
+      "description": "Requires `com.apple.developer.nfc.readersession.iso7816.select-identifiers` entries for supported ISO 7816 application identifiers.",
+      "max_score": 15
+    },
+    {
+      "name": "FeliCa codes",
+      "description": "Requires `com.apple.developer.nfc.readersession.felica.systemcodes` entries for FeliCa.",
+      "max_score": 15
+    },
+    {
+      "name": "No wildcard",
+      "description": "States that wildcard FeliCa system codes are not allowed.",
+      "max_score": 10
+    },
+    {
+      "name": "NDEF availability",
+      "description": "Tells the team to check `NFCNDEFReaderSession.readingAvailable` before NDEF reader sessions.",
+      "max_score": 10
+    },
+    {
+      "name": "Tag availability",
+      "description": "Tells the team to check `NFCTagReaderSession.readingAvailable` before tag reader sessions.",
+      "max_score": 10
+    },
+    {
+      "name": "Xcode capability",
+      "description": "Mentions the Near Field Communication Tag Reading capability as the normal Xcode setup path.",
+      "max_score": 5
+    }
+  ]
+}

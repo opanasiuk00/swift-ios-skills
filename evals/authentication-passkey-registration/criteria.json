@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the authentication skill guidance is applied to iOS passkey registration, passkey sign-in, AutoFill-assisted suggestions, and physical security key fallback.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Associated Domains",
+      "description": "Requires an Associated Domains entitlement for the relying-party domain using the `webcredentials:` service.",
+      "max_score": 20
+    },
+    {
+      "name": "Platform passkey provider",
+      "description": "Uses `ASAuthorizationPlatformPublicKeyCredentialProvider(relyingPartyIdentifier:)` for platform passkeys and distinguishes registration requests from assertion requests.",
+      "max_score": 20
+    },
+    {
+      "name": "Server challenge and verification",
+      "description": "States that registration and assertion challenges come from the relying-party server and that the resulting credentials or assertions must be verified server-side before creating a session.",
+      "max_score": 25
+    },
+    {
+      "name": "AutoFill-assisted sign-in",
+      "description": "Uses a username field with `.username` text content type and calls `performAutoFillAssistedRequests()` for inline passkey suggestions.",
+      "max_score": 15
+    },
+    {
+      "name": "Security key fallback",
+      "description": "Uses `ASAuthorizationSecurityKeyPublicKeyCredentialProvider` only for physical security key fallback, not as the default platform passkey provider.",
+      "max_score": 10
+    },
+    {
+      "name": "Authorization UI plumbing",
+      "description": "Mentions `ASAuthorizationController` delegate and presentation context provider requirements for presenting the AuthenticationServices UI.",
+      "max_score": 10
+    }
+  ]
+}

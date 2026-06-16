@@ -1,0 +1,26 @@
+{
+  "context": "Tests whether the SensorKit skill keeps agents from overapplying SensorKit to ordinary consumer motion and health-data work.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Research restriction",
+      "description": "States that SensorKit is not appropriate without an Apple-approved research study and entitlement.",
+      "max_score": 25
+    },
+    {
+      "name": "Live motion",
+      "description": "Routes live step counts, tilt, pedometer, gyroscope, or activity-recognition features to CoreMotion.",
+      "max_score": 25
+    },
+    {
+      "name": "Workout data",
+      "description": "Routes workout and heart-rate records or summaries to HealthKit.",
+      "max_score": 25
+    },
+    {
+      "name": "No SensorKit buildout",
+      "description": "Avoids giving SensorKit entitlement, reader, or fetch implementation steps for the non-research fitness app.",
+      "max_score": 25
+    }
+  ]
+}

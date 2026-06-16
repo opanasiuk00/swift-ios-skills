@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent preserves the boundary between privacy-preserving AccessorySetupKit setup and direct Core Bluetooth GATT communication.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Routes picker",
+      "description": "Routes the first-run privacy-preserving accessory picker/discovery/authorization step to AccessorySetupKit.",
+      "max_score": 20
+    },
+    {
+      "name": "Routes GATT",
+      "description": "Routes post-selection GATT reads, writes, notifications, services, and characteristics to Core Bluetooth.",
+      "max_score": 20
+    },
+    {
+      "name": "No broad scan setup",
+      "description": "Does not recommend broad direct Core Bluetooth scanning for the initial privacy-preserving picker use case.",
+      "max_score": 20
+    },
+    {
+      "name": "No ASK GATT",
+      "description": "Does not expand AccessorySetupKit into characteristic read/write or notification implementation.",
+      "max_score": 20
+    },
+    {
+      "name": "Handoff",
+      "description": "Describes a concrete handoff from the selected accessory identity to Core Bluetooth communication.",
+      "max_score": 20
+    }
+  ]
+}

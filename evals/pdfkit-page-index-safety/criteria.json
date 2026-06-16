@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether PDFKit guidance treats page indices as exception-sensitive and validates all fixed-index PDFDocument page operations.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Zero-Based Indices",
+      "description": "States that PDFDocument page indices are zero-based.",
+      "max_score": 10
+    },
+    {
+      "name": "Exception Risk",
+      "description": "Explains that page(at:), insert(_:at:), removePage(at:), and exchangePage(at:withPageAt:) must not be called with out-of-range indices because out-of-range calls can raise exceptions.",
+      "max_score": 15
+    },
+    {
+      "name": "Navigation Guard",
+      "description": "Checks the selected page index is greater than or equal to zero and less than pageCount before calling page(at:).",
+      "max_score": 15
+    },
+    {
+      "name": "Remove Guard",
+      "description": "Checks the remove index is greater than or equal to zero and less than pageCount before calling removePage(at:).",
+      "max_score": 10
+    },
+    {
+      "name": "Insert Guard",
+      "description": "Allows insertion only when the target index is greater than or equal to zero and less than or equal to pageCount.",
+      "max_score": 10
+    },
+    {
+      "name": "Exchange Guard",
+      "description": "Validates both exchange indices are within 0..<pageCount before calling exchangePage(at:withPageAt:).",
+      "max_score": 10
+    },
+    {
+      "name": "No Nil Reliance",
+      "description": "Does not claim optional binding around page(at:) is sufficient protection for out-of-range page access.",
+      "max_score": 15
+    },
+    {
+      "name": "PDFKit Scope",
+      "description": "Keeps the answer focused on PDFKit document/page operations rather than routing the core issue to generic UIKit or SwiftUI guidance.",
+      "max_score": 15
+    }
+  ]
+}

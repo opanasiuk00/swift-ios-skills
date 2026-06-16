@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent handles MusicKit chart and library-write APIs accurately while preserving MediaPlayer and sibling-skill boundaries.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Chart initializer",
+      "description": "Uses or recommends MusicCatalogChartsRequest(genre:kinds:types:) with an explicit genre argument such as nil.",
+      "max_score": 20
+    },
+    {
+      "name": "Authorization before writes",
+      "description": "Checks MusicAuthorization.currentStatus or requests authorization before library mutations.",
+      "max_score": 15
+    },
+    {
+      "name": "Cloud library gate",
+      "description": "Checks MusicSubscription.current.hasCloudLibraryEnabled before adding songs, albums, or playlist entries to the user's library.",
+      "max_score": 25
+    },
+    {
+      "name": "Now Playing scope",
+      "description": "Explains that ApplicationMusicPlayer handles Now Playing metadata automatically for Apple Music content and keeps manual MPNowPlayingInfoCenter updates for custom audio or explicit MediaPlayer handling.",
+      "max_score": 20
+    },
+    {
+      "name": "Sibling boundary",
+      "description": "Does not broaden the answer into unrelated AVKit, CarPlay, or app-wide audio architecture advice.",
+      "max_score": 20
+    }
+  ]
+}

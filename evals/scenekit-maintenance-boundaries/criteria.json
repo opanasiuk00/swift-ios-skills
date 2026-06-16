@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent catches unsupported SceneKit scene attribute usage, fixes SCNPhysicsShape construction, and preserves GameKit as a boundary handoff rather than broadening SceneKit guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Rejects unit attribute",
+      "description": "Flags SCNScene.Attribute.unit as unsupported rather than accepting it as a valid scene attribute key.",
+      "max_score": 20
+    },
+    {
+      "name": "Uses load conversion",
+      "description": "Uses SCNSceneSource.LoadingOption.convertUnitsToMeters for load-time unit scaling or normalization.",
+      "max_score": 15
+    },
+    {
+      "name": "Names documented attributes",
+      "description": "Mentions documented SCNScene.Attribute metadata keys such as startTime, endTime, frameRate, and upAxis.",
+      "max_score": 15
+    },
+    {
+      "name": "Fixes initializer",
+      "description": "Corrects SCNPhysicsShape construction to include the options: parameter.",
+      "max_score": 20
+    },
+    {
+      "name": "Simplifies dynamic collision shape",
+      "description": "Advises using simplified collision geometry or an explicit shape option rather than full render mesh detail for dynamic bodies.",
+      "max_score": 10
+    },
+    {
+      "name": "GameKit boundary",
+      "description": "Keeps GameKit out of SceneKit rendering/gameplay scene-graph guidance except as a handoff for Game Center concerns such as authentication, leaderboards, achievements, or multiplayer.",
+      "max_score": 20
+    }
+  ]
+}

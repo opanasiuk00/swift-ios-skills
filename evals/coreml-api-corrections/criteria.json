@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent corrects current Core ML Swift integration APIs and availability without crossing into model-conversion guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Stateless prediction",
+      "description": "States that ordinary stateless `MLModel.prediction(from:)` calls are synchronous and avoids `await` on those calls.",
+      "max_score": 24
+    },
+    {
+      "name": "Async loading availability",
+      "description": "Uses `MLModel.load(contentsOf:configuration:)` for asynchronous model loading and notes iOS 15+ availability.",
+      "max_score": 16
+    },
+    {
+      "name": "Batch prediction label",
+      "description": "Uses `predictions(fromBatch:)` for no-options batch prediction and reserves `predictions(from:options:)` for the options overload.",
+      "max_score": 16
+    },
+    {
+      "name": "Runtime compilation availability",
+      "description": "If runtime compilation is discussed, notes that async `MLModel.compileModel(at:)` is iOS 16+ and avoids recompiling on every launch.",
+      "max_score": 14
+    },
+    {
+      "name": "Async prediction nuance",
+      "description": "Rejects iOS 17 stateless async prediction and, if async prediction is mentioned, scopes it to iOS 18+ stateful prediction with `MLState`.",
+      "max_score": 16
+    },
+    {
+      "name": "Integration boundary",
+      "description": "Stays focused on Swift Core ML app integration instead of Python-side conversion, quantization, or framework selection.",
+      "max_score": 14
+    }
+  ]
+}

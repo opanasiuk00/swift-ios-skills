@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the Core Motion skill covers advanced watchOS batched sensors, headphone motion, and water submersion setup with current Apple API constraints.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Batched support and authorization",
+      "description": "Uses CMBatchedSensorManager only after checking support and authorization.",
+      "max_score": 12
+    },
+    {
+      "name": "Read-only frequency",
+      "description": "Does not assign accelerometerDataFrequency or deviceMotionDataFrequency and treats them as reported read-only frequencies.",
+      "max_score": 14
+    },
+    {
+      "name": "Batched availability",
+      "description": "Mentions watchOS 10+ async batched update sequences or otherwise gates batched update APIs by availability.",
+      "max_score": 12
+    },
+    {
+      "name": "Headphone/submersion privacy",
+      "description": "Includes NSMotionUsageDescription for headphone motion and submersion access.",
+      "max_score": 12
+    },
+    {
+      "name": "Headphone connection handling",
+      "description": "Uses CMHeadphoneMotionManager delegate or connection-status updates for connect/disconnect behavior.",
+      "max_score": 12
+    },
+    {
+      "name": "Submersion availability",
+      "description": "Checks CMWaterSubmersionManager.waterSubmersionAvailable before instantiating the manager.",
+      "max_score": 14
+    },
+    {
+      "name": "Depth capability distinction",
+      "description": "Distinguishes Shallow Depth and Pressure capability for 6-meter dives from the full Submerged Depth and Pressure entitlement for 40-meter dives.",
+      "max_score": 14
+    },
+    {
+      "name": "Underwater background mode",
+      "description": "Adds WKBackgroundModes with underwater-depth for dive sessions/autolaunch and does not claim only Apple Watch Ultra can support shallow depth.",
+      "max_score": 10
+    }
+  ]
+}

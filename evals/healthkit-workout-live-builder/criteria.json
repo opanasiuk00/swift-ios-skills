@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether HealthKit workout guidance distinguishes session and live-builder availability, sensor behavior, mirroring, and locked-device data access.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Session availability",
+      "description": "Distinguishes HKWorkoutSession availability from HKLiveWorkoutBuilder availability.",
+      "max_score": 15
+    },
+    {
+      "name": "Live builder availability",
+      "description": "States that HKLiveWorkoutBuilder requires iOS/iPadOS 26 or watchOS 5 and should be gated for older iOS/iPadOS targets.",
+      "max_score": 25
+    },
+    {
+      "name": "iPhone and iPad heart rate",
+      "description": "States that iPhone and iPad need a paired external heart-rate sensor for live heart-rate collection.",
+      "max_score": 20
+    },
+    {
+      "name": "Apple Watch heart rate",
+      "description": "Mentions that Apple Watch can collect high-frequency heart-rate samples during workouts.",
+      "max_score": 10
+    },
+    {
+      "name": "Mirroring setup",
+      "description": "For mirroring, starts from the watchOS workout session and assigns workoutSessionMirroringStartHandler early in the iOS app.",
+      "max_score": 20
+    },
+    {
+      "name": "Locked-device access",
+      "description": "Mentions lock-screen or locked-device workout data access considerations when showing live iPhone metrics.",
+      "max_score": 10
+    }
+  ]
+}

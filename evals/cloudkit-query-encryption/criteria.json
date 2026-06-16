@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the agent distinguishes CloudKit encrypted field limits from queryable/public data and applies CKQuery predicate semantics.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Public database",
+      "description": "States encryptedValues are unavailable for public database records.",
+      "max_score": 15
+    },
+    {
+      "name": "New fields only",
+      "description": "States CloudKit can encrypt only new schema fields and cannot convert an existing deployed field name to encrypted storage.",
+      "max_score": 15
+    },
+    {
+      "name": "No encrypted queries",
+      "description": "States encrypted fields cannot be indexed, queried, filtered, or sorted.",
+      "max_score": 15
+    },
+    {
+      "name": "Private placement",
+      "description": "Recommends moving sensitive encrypted data to private or shared records instead of public records.",
+      "max_score": 10
+    },
+    {
+      "name": "Contains semantics",
+      "description": "Explains CKQuery CONTAINS is list membership except self CONTAINS tokenized full-text search.",
+      "max_score": 15
+    },
+    {
+      "name": "Search alternative",
+      "description": "Recommends BEGINSWITH for string prefixes or self CONTAINS for tokenized full-text search instead of title CONTAINS substring search.",
+      "max_score": 10
+    },
+    {
+      "name": "Asset handling",
+      "description": "States CKAsset data is encrypted by default or does not need encryptedValues.",
+      "max_score": 10
+    },
+    {
+      "name": "Reference caveat",
+      "description": "Mentions CKRecord.Reference fields are not encrypted because CloudKit needs them for server-side use, or avoids recommending encrypted references.",
+      "max_score": 10
+    }
+  ]
+}

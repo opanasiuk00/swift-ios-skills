@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether HealthKit setup guidance handles current platform availability and read/write authorization privacy correctly.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "iPad availability",
+      "description": "States that HealthKit data is available on iPadOS 17 or later and should not be described as categorically unsupported on iPad.",
+      "max_score": 20
+    },
+    {
+      "name": "Availability guard",
+      "description": "Requires calling HKHealthStore.isHealthDataAvailable() before using other HealthKit APIs and handling unavailable or restricted stores.",
+      "max_score": 20
+    },
+    {
+      "name": "Capability and purpose strings",
+      "description": "Mentions the HealthKit capability and the relevant NSHealthShareUsageDescription and/or NSHealthUpdateUsageDescription purpose strings.",
+      "max_score": 20
+    },
+    {
+      "name": "Write authorization boundary",
+      "description": "Explains that authorizationStatus(for:) reports write/share authorization and does not reveal whether read access was granted or denied.",
+      "max_score": 20
+    },
+    {
+      "name": "Read denial semantics",
+      "description": "Explains that denied read access can return samples the app saved, so empty or partial results are not a reliable denial signal.",
+      "max_score": 20
+    }
+  ]
+}

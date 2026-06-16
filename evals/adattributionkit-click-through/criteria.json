@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the ADAttributionKit skill guides custom-rendered publisher ad implementation without leaking into generic ad SDK advice. The scorer should evaluate only the files produced by the agent, especially adattributionkit-click-through.md.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Framework scope",
+      "description": "Uses AdAttributionKit as the framework for the custom install-ad attribution flow rather than generic analytics, App Tracking Transparency, or an ad SDK-only answer.",
+      "max_score": 10
+    },
+    {
+      "name": "JWS impression",
+      "description": "Creates an AppImpression from a compact JWS or signed impression string before handling the ad interaction.",
+      "max_score": 10
+    },
+    {
+      "name": "Support check",
+      "description": "Checks AppImpression.isSupported before attempting AppImpression handling APIs.",
+      "max_score": 10
+    },
+    {
+      "name": "One attribution view",
+      "description": "Places one UIEventAttributionView over each tappable custom ad or control rather than one broad overlay for the whole screen.",
+      "max_score": 10
+    },
+    {
+      "name": "Touch interception",
+      "description": "States the attribution view must cover the tappable area and not be hidden under another view that intercepts the tap.",
+      "max_score": 10
+    },
+    {
+      "name": "Validated tap",
+      "description": "Calls handleTap only after a user tap that the attribution view can validate.",
+      "max_score": 10
+    },
+    {
+      "name": "Fresh impression",
+      "description": "Mentions that click-through handleTap must happen within 15 minutes after creating the AppImpression.",
+      "max_score": 10
+    },
+    {
+      "name": "Stale fallback",
+      "description": "Recommends requesting or creating a fresh impression when the ad card has become stale or expired before the tap.",
+      "max_score": 10
+    },
+    {
+      "name": "StoreKit distinction",
+      "description": "Distinguishes custom-rendered handling from StoreKit-rendered ads supplied with an AppImpression.",
+      "max_score": 10
+    },
+    {
+      "name": "StoreKit timing",
+      "description": "States that StoreKit-rendered ads record view-through impressions after about two seconds of display and clicks on tap.",
+      "max_score": 10
+    }
+  ]
+}

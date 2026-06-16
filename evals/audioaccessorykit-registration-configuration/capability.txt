@@ -1,0 +1,1 @@
+AudioAccessoryKit registration and placement updates

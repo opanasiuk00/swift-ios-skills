@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the solver applies Swift API naming for side effects, mutating/nonmutating pairs, direct-object present participles, noun/form-noun operations, and public documentation comments.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Sort pair",
+      "description": "Uses an imperative mutating sort name and a past-participle nonmutating sort name, such as `sortLines()` and `sortedLines()`.",
+      "max_score": 11
+    },
+    {
+      "name": "No form sort",
+      "description": "Does not keep or recommend `formSortLines()` for the verb-described sort operation.",
+      "max_score": 8
+    },
+    {
+      "name": "Newline pair",
+      "description": "Uses `strippingNewlines()` or an equivalent present-participle name for the copy-returning newline-removal operation.",
+      "max_score": 13
+    },
+    {
+      "name": "Direct-object rationale",
+      "description": "Explains that the present participle is appropriate for the newline-removal operation because the verb takes a direct object or because the `-ed` form is ungrammatical in that pattern.",
+      "max_score": 12
+    },
+    {
+      "name": "Union pair",
+      "description": "Uses noun/form-noun pairing for the tag union operation: nonmutating `union...` and mutating `formUnion...`.",
+      "max_score": 13
+    },
+    {
+      "name": "No returning form",
+      "description": "Does not present a `formUnion...` method that returns the combined set as the corrected nonmutating design.",
+      "max_score": 8
+    },
+    {
+      "name": "Doc comments",
+      "description": "Adds documentation comments for every public member shown in the revised declaration.",
+      "max_score": 12
+    },
+    {
+      "name": "Summary kinds",
+      "description": "Documentation summaries describe methods by what they do or return and describe the computed property by what it is.",
+      "max_score": 9
+    },
+    {
+      "name": "Complexity note",
+      "description": "Documents nonconstant complexity for `totalCharacterCount` or clearly states why a complexity note is needed for that computed property.",
+      "max_score": 10
+    },
+    {
+      "name": "No implementation drift",
+      "description": "Keeps the answer focused on public API design rather than adding unrelated package architecture or UI code.",
+      "max_score": 4
+    }
+  ]
+}

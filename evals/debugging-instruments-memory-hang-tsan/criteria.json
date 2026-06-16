@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the debugging-instruments skill corrects common stale or overstated memory, hang, and Thread Sanitizer guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Leaks scope",
+      "description": "Explains that Leaks detects leaked allocations or isolated cycles but does not prove every still-reachable retain cycle.",
+      "max_score": 20
+    },
+    {
+      "name": "Memory graph workflow",
+      "description": "Recommends Memory Graph Debugger and Allocations generation marks for iOS retain-cycle or memory-growth triage.",
+      "max_score": 20
+    },
+    {
+      "name": "memgraph CLI workflow",
+      "description": "Uses exported .memgraph files with leaks for CLI memory-graph inspection instead of presenting --atExit as the default iOS app workflow.",
+      "max_score": 15
+    },
+    {
+      "name": "Hang threshold nuance",
+      "description": "States that a few hundred milliseconds can feel unresponsive and that Apple tools typically report main-run-loop busy periods over 250 ms, without labeling every 250 ms pause severe.",
+      "max_score": 20
+    },
+    {
+      "name": "TSan platform limit",
+      "description": "States that Thread Sanitizer for iOS-family apps runs in Simulator, while Apple documents device support only for 64-bit macOS apps.",
+      "max_score": 20
+    },
+    {
+      "name": "MetricKit boundary",
+      "description": "Does not expand into MetricKit payload handling beyond a concise handoff, if MetricKit is mentioned at all.",
+      "max_score": 5
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "context": "Tests whether Core Data staged migration guidance uses current iOS 17+ API shapes and store setup.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Checksum stages",
+      "description": "States that NSLightweightMigrationStage uses version checksums, not human-readable model names.",
+      "max_score": 25
+    },
+    {
+      "name": "Model reference initializer",
+      "description": "Uses NSManagedObjectModelReference with a required versionChecksum, such as name:in:versionChecksum:.",
+      "max_score": 30
+    },
+    {
+      "name": "Custom stage endpoints",
+      "description": "Includes both source and destination model references when constructing an NSCustomMigrationStage.",
+      "max_score": 20
+    },
+    {
+      "name": "Store option",
+      "description": "Shows or clearly describes adding NSPersistentStoreStagedMigrationManagerOptionKey before loading the persistent store.",
+      "max_score": 25
+    }
+  ]
+}

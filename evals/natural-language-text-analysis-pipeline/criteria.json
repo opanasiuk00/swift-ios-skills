@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether NaturalLanguage text analysis guidance uses current APIs and avoids common support and threading mistakes.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Tokenization",
+      "description": "Uses NLTokenizer with the correct token unit and assigns the analyzed string before token enumeration.",
+      "max_score": 15
+    },
+    {
+      "name": "Thread safety",
+      "description": "States that NLTokenizer and NLTagger instances should be confined to one thread or dispatch queue at a time, or recreated per concurrent task.",
+      "max_score": 15
+    },
+    {
+      "name": "Language recognition",
+      "description": "Uses NLLanguageRecognizer and recommends languageConstraints or languageHints for short text or known language sets.",
+      "max_score": 15
+    },
+    {
+      "name": "Tagging schemes",
+      "description": "Uses NLTagger with appropriate schemes such as .nameType and .sentimentScore and options such as .omitWhitespace, .omitPunctuation, and .joinNames.",
+      "max_score": 20
+    },
+    {
+      "name": "Optional results",
+      "description": "Treats sentiment, tags, available tag schemes, and unsupported languages as fallible instead of force-unwrapping or assuming results always exist.",
+      "max_score": 15
+    },
+    {
+      "name": "Embedding availability",
+      "description": "Checks NLEmbedding word or sentence embedding availability and does not assume embeddings exist for every language.",
+      "max_score": 15
+    },
+    {
+      "name": "No sibling overreach",
+      "description": "Does not route the answer into OCR, speech transcription, UI localization, or generative model implementation.",
+      "max_score": 5
+    }
+  ]
+}

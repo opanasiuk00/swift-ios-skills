@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether swift-codable guidance corrects API response model conformance, scoped decoder configuration, status validation, date decoding, key mapping, and generic envelope decoding without broad networking overreach.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Read-only conformance",
+      "description": "Uses Decodable rather than Codable for read-only API response models unless encoding is actually required.",
+      "max_score": 15
+    },
+    {
+      "name": "Status before decode",
+      "description": "Validates HTTPURLResponse status before attempting JSON decoding and treats HTTP failures separately from transport failures.",
+      "max_score": 15
+    },
+    {
+      "name": "Date strategy",
+      "description": "Configures JSONDecoder.dateDecodingStrategy to match ISO 8601 date strings instead of relying on the default date strategy.",
+      "max_score": 15
+    },
+    {
+      "name": "Initialism key mapping",
+      "description": "Definitively explains that convertFromSnakeCase maps image_url to imageUrl, not imageURL, and uses CodingKeys for the imageURL property.",
+      "max_score": 20
+    },
+    {
+      "name": "Scoped envelope decode",
+      "description": "Shows or describes generic APIResponse<T> envelope decoding with the decoder and response data in scope, explicitly correcting the out-of-scope decoder bug.",
+      "max_score": 20
+    },
+    {
+      "name": "Scope control",
+      "description": "Keeps the correction focused on Codable decoding rather than expanding into a full networking architecture redesign.",
+      "max_score": 15
+    }
+  ]
+}

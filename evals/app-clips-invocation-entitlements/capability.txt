@@ -1,0 +1,1 @@
+Review App Clip target setup, entitlement wiring, associated domains, App Store Connect experience requirements, and invocation URL routing across SwiftUI, UIKit, and the full app.

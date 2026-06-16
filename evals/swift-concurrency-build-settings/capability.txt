@@ -1,0 +1,1 @@
+Audit Swift 6.3 concurrency build settings and recommend source-grounded fixes for default actor isolation, strict concurrency, and off-main-actor work.

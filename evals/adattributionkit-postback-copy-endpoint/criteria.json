@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the ADAttributionKit skill gives precise advertised-app postback copy and re-engagement setup guidance. The scorer should evaluate only the generated postback copy setup file.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Top dictionary",
+      "description": "Shows the advertised app keys nested under a top-level AdAttributionKit Info.plist dictionary.",
+      "max_score": 10
+    },
+    {
+      "name": "Copy endpoint key",
+      "description": "Includes the AttributionCopyEndpoint key with an HTTPS URL value.",
+      "max_score": 10
+    },
+    {
+      "name": "Reengagement copy key",
+      "description": "Includes OptInForReengagementPostbackCopies as a Boolean opt-in for re-engagement postback copies.",
+      "max_score": 10
+    },
+    {
+      "name": "Well-known path",
+      "description": "States the server must accept HTTPS POST at /.well-known/appattribution/report-attribution/.",
+      "max_score": 10
+    },
+    {
+      "name": "Registrable domain",
+      "description": "States that the system derives the endpoint from the registrable domain and ignores subdomains.",
+      "max_score": 10
+    },
+    {
+      "name": "Valid SSL",
+      "description": "Mentions that the endpoint domain needs a valid SSL certificate.",
+      "max_score": 10
+    },
+    {
+      "name": "First update",
+      "description": "Recommends calling a conversion value update on first launch or as early as possible to start the conversion window.",
+      "max_score": 10
+    },
+    {
+      "name": "Window summary",
+      "description": "Summarizes the three postback windows as days 0-2, days 3-7, and days 8-35.",
+      "max_score": 10
+    },
+    {
+      "name": "Delay summary",
+      "description": "States the first postback delay is 24-48 hours and later postback delays are 24-144 hours.",
+      "max_score": 10
+    },
+    {
+      "name": "JSON spelling",
+      "description": "Uses the exact postback JSON conversion-type spelling re-engagement and distinguishes it from Swift API spelling such as .reengagement.",
+      "max_score": 10
+    }
+  ]
+}

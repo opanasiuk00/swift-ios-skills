@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the AppMigrationKit setup guidance is applied for an Android-to-iOS document migration brief.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "System orchestration",
+      "description": "States that the migration is system-orchestrated through an app extension and that the app does not manage the device-to-device session itself.",
+      "max_score": 10
+    },
+    {
+      "name": "Extension entry",
+      "description": "Uses an AppMigrationKit app extension entry point rather than placing migration work in ordinary app launch code.",
+      "max_score": 10
+    },
+    {
+      "name": "Import protocol",
+      "description": "Uses the resource import protocol for the Android-to-iOS destination path.",
+      "max_score": 10
+    },
+    {
+      "name": "Export protocol",
+      "description": "Names the resource export protocol choices for an optional iOS-to-other-platform export path.",
+      "max_score": 10
+    },
+    {
+      "name": "Entitlement key",
+      "description": "Names the App Migration data-container entitlement key.",
+      "max_score": 10
+    },
+    {
+      "name": "Entitlement value",
+      "description": "Shows or describes the entitlement value as a one-item string array containing only the containing app bundle identifier.",
+      "max_score": 10
+    },
+    {
+      "name": "Availability split",
+      "description": "Separates core framework availability from data-container entitlement availability.",
+      "max_score": 10
+    },
+    {
+      "name": "Container access",
+      "description": "Accesses containing app files through the migration data container exposed to the extension.",
+      "max_score": 10
+    },
+    {
+      "name": "Status check",
+      "description": "Checks the migration import result from the containing app on first launch.",
+      "max_score": 10
+    },
+    {
+      "name": "Status clearing",
+      "description": "Clears the migration import status after the app handles it.",
+      "max_score": 10
+    }
+  ]
+}

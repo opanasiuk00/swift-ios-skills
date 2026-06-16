@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether Swift Testing migration guidance corrects XCTestCase, fixture, availability, assertion, and UI-test boundary mistakes.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "No XCTestCase inheritance",
+      "description": "Rejects keeping XCTestCase inheritance for migrated Swift Testing unit tests and uses @Test functions or suites instead.",
+      "max_score": 15
+    },
+    {
+      "name": "Isolated fixtures",
+      "description": "Recommends per-test fixture setup using suite init, local helpers, actors, or other isolated fixtures instead of shared singleton mutable state.",
+      "max_score": 15
+    },
+    {
+      "name": "Availability placement",
+      "description": "States that @available belongs on individual @Test functions, not on suite types or containing types.",
+      "max_score": 15
+    },
+    {
+      "name": "Assertion migration",
+      "description": "Explains that not every XCTest assertion should become #expect and uses #require for required values or unwraps.",
+      "max_score": 15
+    },
+    {
+      "name": "Manual issue recording",
+      "description": "Maps unconditional manual failures such as XCTFail to Issue.record when that case is discussed.",
+      "max_score": 10
+    },
+    {
+      "name": "UI-test boundary",
+      "description": "Keeps XCUITest UI automation on XCTest rather than claiming Swift Testing replaces XCTest everywhere.",
+      "max_score": 15
+    },
+    {
+      "name": "Coexistence",
+      "description": "States that XCTest and Swift Testing can coexist during migration while recommending clear file or target organization when it reduces confusion.",
+      "max_score": 15
+    }
+  ]
+}

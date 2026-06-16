@@ -1,0 +1,1 @@
+Design App Intents Visual Intelligence integrations using `IntentValueQuery`, semantic content descriptors, `@UnionValue`, entities, opening flows, and bounded result behavior.

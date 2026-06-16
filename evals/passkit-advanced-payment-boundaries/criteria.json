@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent handles advanced Apple Pay request types and sibling-skill boundaries for a travel marketplace.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Advanced request exclusivity",
+      "description": "Notes that one `PKPaymentRequest` can set only one optional advanced request type and applies that limit to recurring, deferred, and multi-token contexts.",
+      "max_score": 15
+    },
+    {
+      "name": "Recurring payment",
+      "description": "Uses `PKRecurringPaymentRequest` with `PKRecurringPaymentSummaryItem`, interval unit/count, billing agreement or management URL, and `request.recurringPaymentRequest`.",
+      "max_score": 16
+    },
+    {
+      "name": "Coupon update",
+      "description": "Enables `supportsCouponCode`, handles `paymentAuthorizationController(_:didChangeCouponCode:handler:)`, and returns `PKPaymentRequestCouponCodeUpdate` with errors, payment summary items, and shipping methods.",
+      "max_score": 16
+    },
+    {
+      "name": "Multi-token contexts",
+      "description": "Uses `PKPaymentTokenContext` entries with merchant identifier, external identifier, merchant name/domain, and `NSDecimalNumber` amounts for multi-merchant tokens.",
+      "max_score": 16
+    },
+    {
+      "name": "Deferred payment",
+      "description": "Uses `PKDeferredPaymentRequest` with `PKDeferredPaymentSummaryItem`, deferred or cancellation date details, and a management URL.",
+      "max_score": 15
+    },
+    {
+      "name": "Sibling boundaries",
+      "description": "Keeps FinanceKit financial-data access and StoreKit digital purchase implementation outside the PassKit guidance.",
+      "max_score": 10
+    },
+    {
+      "name": "Checkout split",
+      "description": "Recommends separate Apple Pay requests or flows when recurring, multi-token, and deferred modes cannot be combined, and keeps token processing or payment orchestration on the backend.",
+      "max_score": 12
+    }
+  ]
+}

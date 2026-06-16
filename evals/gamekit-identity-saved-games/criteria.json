@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether GameKit guidance corrects stale identity verification, saved-game, and match-data assumptions.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Current async identity API",
+      "description": "Uses `fetchItemsForIdentityVerificationSignature()` for async identity verification and does not keep the stale `fetchItems(forIdentityVerificationSignature:)` async call shape.",
+      "max_score": 15
+    },
+    {
+      "name": "Server signature fields",
+      "description": "States that verification covers `teamPlayerID` or Apple Arcade `gamePlayerID`, bundle ID, big-endian timestamp, and salt, and rejects stale timestamps.",
+      "max_score": 20
+    },
+    {
+      "name": "Saved-game prerequisites",
+      "description": "Mentions the player's iCloud account, iCloud Drive, and app iCloud capability/container requirements for GameKit saved games.",
+      "max_score": 15
+    },
+    {
+      "name": "Saved-game overwrite and conflicts",
+      "description": "Explains that saving with an existing filename overwrites and duplicate same-name saves are conflicts to resolve, not ordinary separate save slots.",
+      "max_score": 15
+    },
+    {
+      "name": "Async array return handling",
+      "description": "Does not use nil-coalescing such as `?? []` on async GameKit APIs that return non-optional arrays, including `fetchSavedGames()`.",
+      "max_score": 10
+    },
+    {
+      "name": "Match data size source",
+      "description": "Uses the relevant GameKit object's data-size limit such as `match.matchDataMaximumSize` instead of hard-coding 64 KB.",
+      "max_score": 15
+    },
+    {
+      "name": "No unrelated overreach",
+      "description": "Keeps the output to GameKit client/server guidance and does not create an app project, backend service, or unrelated storage architecture.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the CallKit skill handles current PushKit VoIP metadata behavior and APNs invite settings.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Metadata delegate",
+      "description": "Uses the iOS 26.4+ PKPushRegistryDelegate method with PKVoIPPushMetadata when available.",
+      "max_score": 15
+    },
+    {
+      "name": "Must report semantics",
+      "description": "Checks PKVoIPPushMetadata.mustReport and explains that false means the app is not required to report the push to CallKit or LiveCommunicationKit.",
+      "max_score": 20
+    },
+    {
+      "name": "Older fallback",
+      "description": "Keeps the older pushRegistry(_:didReceiveIncomingPushWith:for:completion:) path for iOS 26.0-26.3 or older deployment targets.",
+      "max_score": 15
+    },
+    {
+      "name": "Required reporting",
+      "description": "Reports required VoIP call pushes with CXProvider.reportNewIncomingCall before completing PushKit handling.",
+      "max_score": 20
+    },
+    {
+      "name": "Failure consequences",
+      "description": "Mentions that apps built with the iOS 13 SDK or later must use CallKit for PushKit VoIP calls and repeated report failures can stop VoIP push delivery.",
+      "max_score": 15
+    },
+    {
+      "name": "Short expiration",
+      "description": "Recommends apns-expiration 0 or only a few seconds for VoIP push requests.",
+      "max_score": 15
+    }
+  ]
+}

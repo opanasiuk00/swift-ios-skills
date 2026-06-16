@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether GameKit guidance preserves sibling framework boundaries and handles deprecated voice chat correctly.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "GameKit ownership",
+      "description": "Keeps GameKit ownership to Game Center authentication, restrictions, access point/dashboard, leaderboards, achievements, matchmaking, match data, turns, invites, challenges, saved games, and server identity verification.",
+      "max_score": 20
+    },
+    {
+      "name": "Sibling framework boundaries",
+      "description": "Routes SpriteKit rendering, SceneKit 3D scenes, TabletopKit board/rules logic, and full GroupActivities session design to sibling framework guidance instead of expanding GameKit scope.",
+      "max_score": 20
+    },
+    {
+      "name": "Modern social audio default",
+      "description": "Marks `GKVoiceChat` as deprecated and recommends SharePlay for new voice or social audio work.",
+      "max_score": 15
+    },
+    {
+      "name": "Legacy voice requirements",
+      "description": "For legacy `GKVoiceChat`, includes microphone usage description, audio session activation, `GKVoiceChat.isVoIPAllowed()`, channel start, and `isActive` microphone control.",
+      "max_score": 20
+    },
+    {
+      "name": "Player restriction gates",
+      "description": "Checks local player restrictions before multiplayer or personalized communication features.",
+      "max_score": 10
+    },
+    {
+      "name": "Match data safety",
+      "description": "Treats received `GKMatch` data as untrusted input and chooses reliable versus unreliable data modes by message criticality.",
+      "max_score": 15
+    }
+  ]
+}

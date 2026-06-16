@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the RealityKit skill preserves boundaries with visionOS ARKit provider APIs and SceneKit node-based scenes.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "visionOS provider boundary",
+      "description": "States that ARKitSession, WorldTrackingProvider, and PlaneDetectionProvider are visionOS-specific and are not the iOS RealityKit path.",
+      "max_score": 25
+    },
+    {
+      "name": "iOS RealityKit path",
+      "description": "Uses RealityViewCameraContent, ARWorldTrackingConfiguration.isSupported, entities, and AnchorEntity patterns for iOS RealityKit work.",
+      "max_score": 25
+    },
+    {
+      "name": "SceneKit API boundary",
+      "description": "Does not claim that SCNView, SCNNode, or SCNPhysicsBody APIs can be patched directly with RealityKit entity APIs.",
+      "max_score": 20
+    },
+    {
+      "name": "Migration framing",
+      "description": "Frames SceneKit work as a separate maintenance path or an explicit migration to RealityKit, not as mixed API usage in the same scene graph.",
+      "max_score": 15
+    },
+    {
+      "name": "Adjacent handoffs",
+      "description": "Keeps detailed SwiftUI gesture composition or accessibility policy as handoff topics while still naming RealityKit requirements such as InputTargetComponent, CollisionComponent, and AccessibilityComponent when relevant.",
+      "max_score": 15
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the debugging-instruments skill uses current Instruments template names and valid xctrace command syntax.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Time Profiler selection",
+      "description": "Recommends Time Profiler for CPU or slow interaction triage.",
+      "max_score": 15
+    },
+    {
+      "name": "Power Profiler naming",
+      "description": "Recommends Power Profiler, not Energy Log, for battery or energy-impact analysis.",
+      "max_score": 20
+    },
+    {
+      "name": "Physical device guidance",
+      "description": "Mentions profiling on a physical device for realistic measurements.",
+      "max_score": 15
+    },
+    {
+      "name": "Launch separator",
+      "description": "Shows xcrun xctrace record using --launch -- before the app command or bundle path.",
+      "max_score": 20
+    },
+    {
+      "name": "Additional instrument syntax",
+      "description": "Uses --instrument for adding Allocations to a Time Profiler recording instead of repeating --template.",
+      "max_score": 20
+    },
+    {
+      "name": "No stale template claim",
+      "description": "Does not claim that Energy Log is the current Instruments template name.",
+      "max_score": 10
+    }
+  ]
+}

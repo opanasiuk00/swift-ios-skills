@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether AppMigrationKit testing guidance uses the test-only tester correctly and preserves the boundary around real system migration sessions.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Tester type",
+      "description": "Uses the AppMigrationKit tester for automated validation.",
+      "max_score": 10
+    },
+    {
+      "name": "Test host",
+      "description": "Runs tester-based tests from unit tests hosted by the containing app.",
+      "max_score": 10
+    },
+    {
+      "name": "Export controller",
+      "description": "Exercises the export controller resource export method in the test flow.",
+      "max_score": 10
+    },
+    {
+      "name": "Import controller",
+      "description": "Exercises the import controller resource import method in the test flow.",
+      "max_score": 10
+    },
+    {
+      "name": "Optional requests",
+      "description": "Accounts for optional migration or import requests and progress parameters in tester calls.",
+      "max_score": 10
+    },
+    {
+      "name": "Completion registration",
+      "description": "Registers import completion in tests that verify first-launch migration status behavior.",
+      "max_score": 10
+    },
+    {
+      "name": "Status verification",
+      "description": "Checks migration status handling after registering test import completion.",
+      "max_score": 10
+    },
+    {
+      "name": "Production exclusion",
+      "description": "States that tester APIs and synthetic test triggers must not ship in production code.",
+      "max_score": 10
+    },
+    {
+      "name": "No real trigger",
+      "description": "Avoids claiming the shipping app can directly start or manage a real device-to-device migration session.",
+      "max_score": 10
+    },
+    {
+      "name": "Manual QA scope",
+      "description": "Limits manual app-side validation to diagnostics or first-launch status handling rather than real migration initiation.",
+      "max_score": 10
+    }
+  ]
+}

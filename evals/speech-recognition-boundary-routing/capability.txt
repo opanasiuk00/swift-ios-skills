@@ -1,0 +1,1 @@
+Route mixed speech transcription, text analysis, translation, playback, and Apple Intelligence requests to speech-recognition or the correct sibling skills.

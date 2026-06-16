@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether MetricKit guidance preserves boundaries with SwiftUI performance and Instruments debugging skills.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "MetricKit stays in scope",
+      "description": "Keeps MXMetricManager setup, MXMetricPayload and MXDiagnosticPayload handling, MXHangDiagnostic or MXCrashDiagnostic processing, and backend upload guidance in MetricKit scope.",
+      "max_score": 20
+    },
+    {
+      "name": "SwiftUI handoff",
+      "description": "Routes SwiftUI view invalidation, body-cost, identity, and code-level remediation patterns to the swiftui-performance skill.",
+      "max_score": 20
+    },
+    {
+      "name": "Instruments handoff",
+      "description": "Routes local Instruments capture, LLDB, Memory Graph, and xctrace workflow details to the debugging-instruments skill.",
+      "max_score": 20
+    },
+    {
+      "name": "Symbolication triage",
+      "description": "Mentions MXCallStackTree JSON plus dSYMs or an analytics symbolication pipeline for crash and hang triage.",
+      "max_score": 15
+    },
+    {
+      "name": "Production telemetry cadence",
+      "description": "Frames MetricKit as production telemetry rather than immediate local debugging, including daily aggregation or non-realtime behavior.",
+      "max_score": 15
+    },
+    {
+      "name": "No sibling collapse",
+      "description": "Does not expand into a full SwiftUI refactor or full Instruments tutorial.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent can review a modern SwiftUI StoreKit 2 paywall and correct purchase, transaction, entitlement, restore, and verification mistakes.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Preferred purchase path",
+      "description": "Uses StoreKit views or SwiftUI PurchaseAction for custom SwiftUI buttons, while allowing direct product.purchase(options:) for lower-level custom flows.",
+      "max_score": 18
+    },
+    {
+      "name": "Launch transaction listener",
+      "description": "Requires Transaction.updates to start at app launch and notes it catches Ask to Buy approvals, renewals, refunds, revocations, Family Sharing changes, purchases from other devices, and unfinished transactions.",
+      "max_score": 20
+    },
+    {
+      "name": "Verification and finish order",
+      "description": "Verifies VerificationResult before granting access and calls transaction.finish() only after delivering content or enabling the entitlement.",
+      "max_score": 20
+    },
+    {
+      "name": "Entitlement scope",
+      "description": "Explains that Transaction.currentEntitlements covers non-consumables, active or grace-period auto-renewable subscriptions, and non-renewing subscriptions, but not consumable delivery history.",
+      "max_score": 18
+    },
+    {
+      "name": "Pending and restore handling",
+      "description": "Handles pending and user-cancelled purchase results without unlocking content and provides a visible restore path and subscription policy links.",
+      "max_score": 16
+    },
+    {
+      "name": "Revocation handling",
+      "description": "Excludes refunded or revoked transactions from active entitlement state and updates entitlement state when refunds or revocations arrive.",
+      "max_score": 8
+    }
+  ]
+}

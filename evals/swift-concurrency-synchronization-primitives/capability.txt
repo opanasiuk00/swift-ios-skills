@@ -1,0 +1,1 @@
+Choose modern Swift synchronization primitives for iOS 16-26 code while avoiding locks inside actors, locks across await, and false NSLock Sendable claims.

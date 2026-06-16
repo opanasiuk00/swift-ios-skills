@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether swift-concurrency gives behavior-preserving diagnostic remediation and avoids over-broad sibling-skill scope.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Isolated Conformance",
+      "description": "Uses @MainActor isolation or an isolated conformance such as extension StickerModel: @MainActor Exportable for UI-bound protocol conformance diagnostics.",
+      "max_score": 25
+    },
+    {
+      "name": "Processor Isolation Choice",
+      "description": "Explains when PhotoProcessor can stay on the caller's actor and when CPU-heavy work should move to @concurrent/nonisolated async code.",
+      "max_score": 25
+    },
+    {
+      "name": "Sendable Restraint",
+      "description": "Prefers value immutability, actor isolation, or synchronization over adding @unchecked Sendable by default.",
+      "max_score": 20
+    },
+    {
+      "name": "Preconcurrency Bridge",
+      "description": "Treats @preconcurrency import as a temporary bridge for third-party modules and includes a removal plan.",
+      "max_score": 15
+    },
+    {
+      "name": "Sibling Boundaries",
+      "description": "Routes architecture, navigation implementation, and detailed SwiftUI state ownership to sibling skills instead of expanding this skill's scope.",
+      "max_score": 15
+    }
+  ]
+}

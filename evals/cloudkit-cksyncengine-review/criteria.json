@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the agent corrects a CKSyncEngine migration using CloudKit-specific database, entitlement, delegate, batching, and persistence guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Database scope",
+      "description": "States that CKSyncEngine should target a private or shared database and not the public database.",
+      "max_score": 15
+    },
+    {
+      "name": "Remote notifications",
+      "description": "States that Remote notifications background mode is required in addition to CloudKit for background delivery.",
+      "max_score": 15
+    },
+    {
+      "name": "Async delegate",
+      "description": "Uses async CKSyncEngineDelegate method signatures for both event handling and record-zone batch callbacks.",
+      "max_score": 15
+    },
+    {
+      "name": "Scoped batches",
+      "description": "Filters pending record-zone changes to the send context scope, such as the context options' zone IDs.",
+      "max_score": 15
+    },
+    {
+      "name": "State persistence",
+      "description": "Persists stateSerialization from state updates and restores it when creating the engine.",
+      "max_score": 15
+    },
+    {
+      "name": "Sync timing",
+      "description": "Explains automatic CKSyncEngine timing is system-determined and immediate work should use manual fetch/send calls.",
+      "max_score": 10
+    },
+    {
+      "name": "Subscription behavior",
+      "description": "Keeps subscription guidance narrow by explaining CKSyncEngine handles database subscription discovery or creation.",
+      "max_score": 5
+    },
+    {
+      "name": "App-owned conflicts",
+      "description": "Mentions application-specific errors such as server record conflicts still need app handling.",
+      "max_score": 10
+    }
+  ]
+}

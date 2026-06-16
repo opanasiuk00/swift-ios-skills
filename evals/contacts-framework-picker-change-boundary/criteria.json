@@ -1,0 +1,26 @@
+{
+  "context": "Tests whether the Contacts skill keeps picker semantics separate from store authorization and rejects unsupported Swift change-history snippets.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Picker authorization",
+      "description": "States that CNContactPickerViewController does not require full Contacts authorization and gives the app access only to the user's final selection.",
+      "max_score": 25
+    },
+    {
+      "name": "Picker predicates",
+      "description": "Mentions configuring predicateForEnablingContact, predicateForSelectionOfContact, predicateForSelectionOfProperty, or displayedPropertyKeys before presenting the picker.",
+      "max_score": 25
+    },
+    {
+      "name": "Reject nonexistent Swift API",
+      "description": "Rejects store.enumerateChanges(matching:) as nonexistent Contacts Swift API rather than presenting it as valid code.",
+      "max_score": 25
+    },
+    {
+      "name": "Swift-safe change handling",
+      "description": "Explains that the change-history enumerator is Objective-C-only or unavailable in Swift and recommends CNContactStoreDidChange refetching or an explicit Objective-C bridge for true incremental history.",
+      "max_score": 25
+    }
+  ]
+}

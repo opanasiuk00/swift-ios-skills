@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether BrowserEngineKit stale API snippets are corrected against the current Swift overlay and Apple docs.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Extension protocol conformance",
+      "description": "Corrects WebContentExtension to a protocol conformance with handle(xpcConnection:) and no override.",
+      "max_score": 20
+    },
+    {
+      "name": "XPC activation",
+      "description": "Uses xpc_connection_activate rather than xpc_connection_resume.",
+      "max_score": 15
+    },
+    {
+      "name": "Minimal bookmark",
+      "description": "Uses a minimal bookmark from the host app and resolves it with .withoutUI in the extension.",
+      "max_score": 20
+    },
+    {
+      "name": "Stop file access",
+      "description": "Calls stopAccessingSecurityScopedResource after resolving and using the bookmark.",
+      "max_score": 10
+    },
+    {
+      "name": "Memory entitlement values",
+      "description": "States that memory transfer_send and transfer_accept entitlement values are the host browser app bundle identifier rather than true.",
+      "max_score": 20
+    },
+    {
+      "name": "CoreML availability",
+      "description": "Guards RenderingExtensionFeature.coreML / enableFeature(.coreML) with iOS 26.2+ availability.",
+      "max_score": 15
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+iOS localization String Catalog generated symbols and plural placeholder migration

@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent preserves sibling-skill boundaries when a prompt mentions accessories but primarily needs HomeKit/Matter guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Routes HomeKit",
+      "description": "Identifies HomeKit/Matter or the homekit skill/domain as the owner for the smart-home implementation.",
+      "max_score": 10
+    },
+    {
+      "name": "Homes rooms",
+      "description": "States that homes, rooms, and smart-home accessory organization belong to HomeKit/Matter guidance.",
+      "max_score": 10
+    },
+    {
+      "name": "Characteristics",
+      "description": "States that reading and writing HMAccessory characteristics belongs to HomeKit guidance.",
+      "max_score": 10
+    },
+    {
+      "name": "Automations",
+      "description": "States that action sets, triggers, or automations belong to HomeKit guidance.",
+      "max_score": 10
+    },
+    {
+      "name": "Matter onboarding",
+      "description": "States that Matter commissioning/onboarding belongs to HomeKit/MatterSupport guidance, not AccessorySetupKit.",
+      "max_score": 10
+    },
+    {
+      "name": "ASK boundary",
+      "description": "Limits AccessorySetupKit to Bluetooth/Wi-Fi discovery, picker authorization, session events, and migration.",
+      "max_score": 10
+    },
+    {
+      "name": "Post-setup handoff",
+      "description": "Explains that post-setup communication can hand off to CoreBluetooth or NetworkExtension, not HomeKit automation logic.",
+      "max_score": 10
+    },
+    {
+      "name": "No code",
+      "description": "Does not produce implementation code for the smart-home app.",
+      "max_score": 10
+    },
+    {
+      "name": "Route examples",
+      "description": "Includes examples of tasks that should route away from AccessorySetupKit, such as rooms, characteristics, automations, or Matter commissioning.",
+      "max_score": 10
+    },
+    {
+      "name": "No collapse",
+      "description": "Does not collapse HomeKit/Matter guidance into the lower-level accessory discovery skill.",
+      "max_score": 10
+    }
+  ]
+}

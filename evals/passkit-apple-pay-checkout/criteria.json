@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the agent gives source-grounded Apple Pay checkout guidance for a SwiftUI physical-goods app.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Capability setup",
+      "description": "Covers Apple Pay capability, Merchant ID, payment processing certificate, and merchant entitlement.",
+      "max_score": 12
+    },
+    {
+      "name": "Availability checks",
+      "description": "Checks both `PKPaymentAuthorizationController.canMakePayments()` and `canMakePayments(usingNetworks:capabilities:)` before offering Apple Pay.",
+      "max_score": 12
+    },
+    {
+      "name": "System button",
+      "description": "Uses `PayWithApplePayButton` or `PKPaymentButton` and avoids custom Apple Pay logo or text buttons.",
+      "max_score": 10
+    },
+    {
+      "name": "Payment request amounts",
+      "description": "Builds `PKPaymentRequest`, `PKPaymentSummaryItem`, and `PKShippingMethod` examples with `NSDecimalNumber` money values.",
+      "max_score": 14
+    },
+    {
+      "name": "Summary total",
+      "description": "Keeps the final `paymentSummaryItems` entry as the merchant or business total shown on the Pay line.",
+      "max_score": 10
+    },
+    {
+      "name": "Shipping and contact",
+      "description": "Requests relevant shipping or billing contact fields or shipping methods for a physical-goods Apple Pay checkout.",
+      "max_score": 10
+    },
+    {
+      "name": "Controller lifetime",
+      "description": "Presents with `PKPaymentAuthorizationController`, retains it while visible, assigns the weak delegate, and clears retained state after dismissal or failed presentation.",
+      "max_score": 14
+    },
+    {
+      "name": "Authorization processing",
+      "description": "Sends `payment.token` or `payment.token.paymentData` to a backend or payment processor and completes with `PKPaymentAuthorizationResult`.",
+      "max_score": 10
+    },
+    {
+      "name": "StoreKit boundary",
+      "description": "Explains that StoreKit is for digital goods, app features, and digital-content subscriptions while PassKit covers physical goods, real-world services, and donations.",
+      "max_score": 8
+    }
+  ]
+}

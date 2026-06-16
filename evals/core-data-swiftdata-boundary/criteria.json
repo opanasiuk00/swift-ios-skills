@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the Core Data skill preserves the SwiftData coexistence and migration boundary.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "SwiftData route",
+      "description": "States that Core Data plus SwiftData coexistence or migration should use the swiftdata skill.",
+      "max_score": 30
+    },
+    {
+      "name": "No overreach",
+      "description": "Avoids turning the answer into a full SwiftData migration guide.",
+      "max_score": 20
+    },
+    {
+      "name": "Store alignment",
+      "description": "Gives high-level guidance about matching the existing store URL and schema.",
+      "max_score": 15
+    },
+    {
+      "name": "Model alignment",
+      "description": "Mentions matching entity and property names or using rename mapping such as @Attribute(originalName:).",
+      "max_score": 20
+    },
+    {
+      "name": "Standalone Core Data scope",
+      "description": "Preserves standalone Core Data as the right scope for apps that have not adopted SwiftData.",
+      "max_score": 15
+    }
+  ]
+}

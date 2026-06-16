@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether MetricKit telemetry setup guidance uses current payload delivery, persistence, and startup-backfill patterns.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Startup subscriber lifetime",
+      "description": "Recommends registering a long-lived MXMetricManagerSubscriber during app startup rather than inside a view or dashboard lifecycle.",
+      "max_score": 15
+    },
+    {
+      "name": "Both payload streams",
+      "description": "Requires handling both MXMetricPayload and MXDiagnosticPayload subscriber callbacks.",
+      "max_score": 15
+    },
+    {
+      "name": "Raw persistence first",
+      "description": "Persists jsonRepresentation() before parsing, symbolication, upload, or analytics enrichment work.",
+      "max_score": 15
+    },
+    {
+      "name": "Callback work stays small",
+      "description": "Keeps expensive parsing, uploads, and retry work out of the subscriber callback after raw persistence.",
+      "max_score": 15
+    },
+    {
+      "name": "Startup backfill",
+      "description": "Uses pastPayloads and pastDiagnosticPayloads, or equivalent startup backfill, for reports generated since the last allocation of the shared manager.",
+      "max_score": 15
+    },
+    {
+      "name": "Delivery cadence",
+      "description": "Does not present daily metric payloads as immediate local debug signals and distinguishes MetricKit production telemetry from Instruments-style debugging.",
+      "max_score": 15
+    },
+    {
+      "name": "No dashboard coupling",
+      "description": "Does not leave ingestion coupled to the dashboard view or treat missed reports as safe to ignore.",
+      "max_score": 10
+    }
+  ]
+}

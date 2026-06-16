@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the SensorKit skill makes an agent correct the approval, entitlement, Info.plist, authorization, and data-hold requirements for a research study setup.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Study approval",
+      "description": "States that SensorKit is restricted to Apple-approved research studies before sensor data is accessible.",
+      "max_score": 10
+    },
+    {
+      "name": "Reader entitlement",
+      "description": "Requires the com.apple.developer.sensorkit.reader.allow entitlement and says it must list only approved sensors.",
+      "max_score": 15
+    },
+    {
+      "name": "Manual signing",
+      "description": "Specifies manual signing with an explicit App ID and provisioning profile that has the SensorKit capability.",
+      "max_score": 10
+    },
+    {
+      "name": "Privacy keys",
+      "description": "Includes NSSensorKitUsageDescription and NSSensorKitPrivacyPolicyURL as required Info.plist keys.",
+      "max_score": 15
+    },
+    {
+      "name": "Usage detail",
+      "description": "Requires per-sensor NSSensorKitUsageDetail entries rather than a single broad explanation.",
+      "max_score": 10
+    },
+    {
+      "name": "ECG PPG keys",
+      "description": "Uses the ECG and PPG usage-detail keys SRSensorUsageECG and SRSensorUsagePPG.",
+      "max_score": 15
+    },
+    {
+      "name": "Authorization",
+      "description": "Calls for SRSensorReader.requestAuthorization and per-sensor Research Sensor & Usage Data approval.",
+      "max_score": 10
+    },
+    {
+      "name": "Data hold",
+      "description": "Accounts for SensorKit's 24-hour data holding period before newly recorded data can be fetched.",
+      "max_score": 15
+    }
+  ]
+}

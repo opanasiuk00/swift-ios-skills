@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the RealityKit skill correctly handles iOS AR camera setup, runtime support, permission, and required-device capability tradeoffs.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Camera usage description",
+      "description": "Requires NSCameraUsageDescription for camera-based AR and explains that ARKit/RealityKit camera access is privacy-gated.",
+      "max_score": 20
+    },
+    {
+      "name": "Runtime support gate",
+      "description": "Checks ARWorldTrackingConfiguration.isSupported or another relevant ARConfiguration.isSupported before presenting AR-only UI.",
+      "max_score": 20
+    },
+    {
+      "name": "Unavailable fallback",
+      "description": "Handles denied camera permission or unavailable AR with user-facing fallback UI instead of treating a black camera view as only a model-loading failure.",
+      "max_score": 20
+    },
+    {
+      "name": "Required capability tradeoff",
+      "description": "Explains that the arkit UIRequiredDeviceCapabilities value is appropriate only when AR is required for the whole app; otherwise runtime gating is preferred.",
+      "max_score": 20
+    },
+    {
+      "name": "RealityViewCameraContent behavior",
+      "description": "Mentions that RealityViewCameraContent uses an AR camera view by default on iOS and can fall back to non-AR mode when AR or camera access is unavailable.",
+      "max_score": 20
+    }
+  ]
+}

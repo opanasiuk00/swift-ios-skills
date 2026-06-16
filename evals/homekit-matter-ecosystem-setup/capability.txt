@@ -1,0 +1,1 @@
+MatterSupport commissioning setup for a third-party smart-home ecosystem

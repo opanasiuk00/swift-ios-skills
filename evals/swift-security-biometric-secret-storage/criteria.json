@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the solver applies swift-security biometric storage guidance rather than treating LocalAuthentication as a standalone secret boundary.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Bool gate rejected",
+      "description": "States that the LocalAuthentication success value alone must not release the stored secret.",
+      "max_score": 10
+    },
+    {
+      "name": "Preferences rejected",
+      "description": "Rejects preferences/defaults storage for the account detail.",
+      "max_score": 10
+    },
+    {
+      "name": "Keychain binding",
+      "description": "Requires storing the secret in Keychain and enforcing access at Keychain read time.",
+      "max_score": 10
+    },
+    {
+      "name": "Access control",
+      "description": "Uses SecAccessControl or equivalent access-control wording for the protected item.",
+      "max_score": 10
+    },
+    {
+      "name": "Biometry policy",
+      "description": "Chooses or compares biometric/current-user and user-presence policy options based on threat model.",
+      "max_score": 10
+    },
+    {
+      "name": "Usage string",
+      "description": "Requires a Face ID usage description in app metadata.",
+      "max_score": 10
+    },
+    {
+      "name": "Enrollment recovery",
+      "description": "Describes recovery or re-enrollment behavior when biometric enrollment changes or local auth is unavailable.",
+      "max_score": 10
+    },
+    {
+      "name": "Status handling",
+      "description": "Requires handling Keychain and authentication statuses such as user cancel, auth failed, missing item, or interaction not allowed.",
+      "max_score": 10
+    },
+    {
+      "name": "Attribute exclusivity",
+      "description": "Avoids or warns against setting both a standalone accessibility attribute and access-control object on the same add query.",
+      "max_score": 10
+    },
+    {
+      "name": "Threading note",
+      "description": "Notes that Keychain/authentication work should not block UI updates or should hop back to the main actor for UI.",
+      "max_score": 10
+    }
+  ]
+}

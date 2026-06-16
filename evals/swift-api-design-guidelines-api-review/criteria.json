@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the solver reviews a Swift public API using call-site clarity, grammatical argument labels, role-based names, needless-word removal, and factory naming guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Grammatical add",
+      "description": "Recommends an unlabeled first argument for the add-color operation, such as `add(_:)` or `add(_ color:)`.",
+      "max_score": 12
+    },
+    {
+      "name": "Position label",
+      "description": "Recommends a prepositional position label for removal, such as `remove(at:)`, rather than leaving the index unlabeled or type-like.",
+      "max_score": 12
+    },
+    {
+      "name": "Role naming",
+      "description": "Replaces the vague `string` parameter with a role-bearing name for the color lookup key or name.",
+      "max_score": 12
+    },
+    {
+      "name": "Lookup call",
+      "description": "Reworks the color lookup method into a clear call site such as `color(named:)`, `color(forName:)`, or an equivalent role-based phrase.",
+      "max_score": 12
+    },
+    {
+      "name": "Needless words",
+      "description": "Removes redundant type words from at least one name where the parameter or return type already supplies that information.",
+      "max_score": 10
+    },
+    {
+      "name": "Factory prefix",
+      "description": "Uses a `make`-style name for the default palette factory rather than `create` or `build`.",
+      "max_score": 12
+    },
+    {
+      "name": "Updated calls",
+      "description": "Includes revised call-site examples that match the proposed declarations.",
+      "max_score": 10
+    },
+    {
+      "name": "Guideline rationale",
+      "description": "Explains the changes in terms of Swift API design concepts such as call-site clarity, grammatical phrases, prepositions, or role-based naming.",
+      "max_score": 14
+    },
+    {
+      "name": "No lint detour",
+      "description": "Does not turn the answer into SwiftLint configuration or generic style-rule setup.",
+      "max_score": 6
+    }
+  ]
+}

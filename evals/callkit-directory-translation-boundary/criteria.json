@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the CallKit skill keeps Call Directory, translation, and APNs responsibilities separated.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "No per-call lookup",
+      "description": "States that Call Directory extensions load bulk caller ID/blocking data in beginRequest(with:) and are not invoked for per-call web lookups.",
+      "max_score": 20
+    },
+    {
+      "name": "Phone number representation",
+      "description": "Represents CXCallDirectoryPhoneNumber as country code followed by digits and requires sorted or sequential entries.",
+      "max_score": 20
+    },
+    {
+      "name": "Manager settings",
+      "description": "Mentions checking extension status and opening Call Blocking & Identification settings with CXCallDirectoryManager when needed.",
+      "max_score": 15
+    },
+    {
+      "name": "Translation APIs",
+      "description": "Covers iOS 26 call translation with supportsAudioTranslation and CXSetTranslatingCallAction at a concise CallKit level.",
+      "max_score": 15
+    },
+    {
+      "name": "Translation mute audio",
+      "description": "Warns not to deactivate upstream audio on mute while call translation is active.",
+      "max_score": 15
+    },
+    {
+      "name": "APNs boundary",
+      "description": "Routes generic APNs auth-key rotation or normal remote-notification registration to push-notifications guidance instead of expanding CallKit scope.",
+      "max_score": 15
+    }
+  ]
+}

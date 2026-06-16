@@ -1,0 +1,1 @@
+Swift Codable snake-case key strategy initialisms

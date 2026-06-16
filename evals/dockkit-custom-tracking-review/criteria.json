@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent catches common DockKit custom tracking mistakes and uses current API details.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "System tracking disabled",
+      "description": "Explains that custom DockAccessory.track calls require disabling system tracking first.",
+      "max_score": 15
+    },
+    {
+      "name": "Track cadence",
+      "description": "Corrects the 5 fps or 1 fps cadence to the supported 10-30 fps range for track(_:cameraInformation:).",
+      "max_score": 15
+    },
+    {
+      "name": "Observation coordinates",
+      "description": "Corrects UIKit view coordinates to normalized observation rectangles with DockKit/Vision lower-left origin coordinates.",
+      "max_score": 15
+    },
+    {
+      "name": "Camera information",
+      "description": "Builds DockAccessory.CameraInformation from the active AVCaptureDevice type, position, orientation, intrinsics, and reference dimensions as available.",
+      "max_score": 15
+    },
+    {
+      "name": "Image overload shape",
+      "description": "States that CVPixelBuffer is supplied through separate image: overloads and is required when those overloads are chosen, not an optional parameter on every track call.",
+      "max_score": 15
+    },
+    {
+      "name": "Orientation animation rate",
+      "description": "Warns that animate(motion:) and setOrientation(_:duration:relative:) should not be called more than twice per second.",
+      "max_score": 15
+    },
+    {
+      "name": "Observation type cases",
+      "description": "Uses .humanFace, .humanBody, or .object observation types appropriately and avoids inventing unsupported observation cases.",
+      "max_score": 10
+    }
+  ]
+}

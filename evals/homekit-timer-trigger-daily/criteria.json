@@ -1,0 +1,31 @@
+{
+  "context": "Tests HomeKit timer trigger guidance and the corrected recurrence-interval pattern.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "HomeKit setup",
+      "description": "Mentions HomeKit capability, NSHomeKitUsageDescription, and waiting for HMHomeManagerDelegate before using homes.",
+      "max_score": 20
+    },
+    {
+      "name": "Action set",
+      "description": "Creates or uses an HMActionSet and adds HMCharacteristicWriteAction values for writable characteristics.",
+      "max_score": 20
+    },
+    {
+      "name": "First fire date",
+      "description": "Computes the first fire date from the next 10:30 PM wall-clock time.",
+      "max_score": 20
+    },
+    {
+      "name": "Daily recurrence",
+      "description": "Uses a recurrence interval such as DateComponents(day: 1) instead of reusing hour/minute components as the recurrence.",
+      "max_score": 25
+    },
+    {
+      "name": "No sibling overreach",
+      "description": "Does not route the HomeKit automation task into Matter commissioning or AccessorySetupKit.",
+      "max_score": 15
+    }
+  ]
+}

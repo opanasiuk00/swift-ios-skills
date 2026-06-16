@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent builds custom AVKit PiP around AVPictureInPictureController and user-initiated controls.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Uses PiP controller",
+      "description": "Uses AVPictureInPictureController with AVPlayerLayer or a content source rather than subclassing AVPlayerViewController.",
+      "max_score": 20
+    },
+    {
+      "name": "Device support",
+      "description": "Checks AVPictureInPictureController.isPictureInPictureSupported before exposing or configuring PiP UI.",
+      "max_score": 15
+    },
+    {
+      "name": "Current possibility",
+      "description": "Checks or observes isPictureInPicturePossible before enabling or starting PiP.",
+      "max_score": 20
+    },
+    {
+      "name": "User interaction",
+      "description": "Starts custom PiP only from an explicit user interaction such as a PiP button action.",
+      "max_score": 20
+    },
+    {
+      "name": "Restore delegate",
+      "description": "Implements restoreUserInterfaceForPictureInPictureStopWithCompletionHandler and calls the completion handler.",
+      "max_score": 15
+    },
+    {
+      "name": "Playback setup",
+      "description": "Includes playback audio session and Audio/AirPlay/PiP background mode prerequisites.",
+      "max_score": 10
+    }
+  ]
+}

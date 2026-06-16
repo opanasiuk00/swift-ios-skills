@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the ios-simulator skill corrects launch environment, simulated push, and privacy-permission misconceptions.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Launch environment",
+      "description": "Replaces the `spawn env` app-launch pattern with `SIMCTL_CHILD_` environment variables passed to `simctl launch`.",
+      "max_score": 25
+    },
+    {
+      "name": "Spawn boundary",
+      "description": "Clarifies that `simctl spawn` is for arbitrary simulator processes and is not the preferred path for launching an installed app with environment variables.",
+      "max_score": 15
+    },
+    {
+      "name": "Push scope",
+      "description": "States that `simctl push` simulates local application remote push delivery only and does not prove APNs token registration, entitlements, server delivery, or unsupported push types.",
+      "max_score": 25
+    },
+    {
+      "name": "Payload constraints",
+      "description": "Includes the relevant `simctl push` payload constraints, including a top-level JSON object, a valid `aps` dictionary, and the 4096-byte size limit.",
+      "max_score": 15
+    },
+    {
+      "name": "Privacy caveat",
+      "description": "Warns that `simctl privacy` grants do not remove the need for valid Info.plist usage description keys or normal prompt-flow testing.",
+      "max_score": 20
+    }
+  ]
+}

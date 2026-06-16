@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent catches stale StoreKit subscription offer APIs and explains current eligibility, promotional offer, analytics, and testing patterns.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Current status API",
+      "description": "Replaces Product.SubscriptionInfo.Status.status(for:) with Product.SubscriptionInfo.status(for:).",
+      "max_score": 18
+    },
+    {
+      "name": "Win-back eligibility",
+      "description": "Explains that winBackOffers is a raw product offer list and filters it through verified renewalInfo.eligibleWinBackOfferIDs before display or purchase.",
+      "max_score": 24
+    },
+    {
+      "name": "Promotional offer APIs",
+      "description": "Uses the iOS 26 SwiftUI subscriptionPromotionalOffer closure plus compactJWS closure for StoreKit views, and distinguishes that from lower-level Product.SubscriptionOffer.Signature purchase options.",
+      "max_score": 24
+    },
+    {
+      "name": "Applied offer analytics",
+      "description": "Uses transaction.offer?.type and transaction.offer?.id instead of stale transaction.offerType or transaction.offerID properties.",
+      "max_score": 20
+    },
+    {
+      "name": "Testing guidance",
+      "description": "Mentions StoreKit configuration or sandbox testing for promotional, win-back, offer code, Ask to Buy, and renewal-state flows.",
+      "max_score": 14
+    }
+  ]
+}

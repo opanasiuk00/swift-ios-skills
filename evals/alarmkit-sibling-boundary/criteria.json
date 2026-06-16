@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the AlarmKit skill stays in its domain and routes adjacent WidgetKit, ActivityKit, and push-notification work correctly.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "AlarmKit ownership",
+      "description": "Centers AlarmKit on authorization, AlarmManager scheduling/state, AlarmAttributes, AlarmPresentation, and AlarmPresentationState for alarm experiences.",
+      "max_score": 15
+    },
+    {
+      "name": "System alert boundary",
+      "description": "States that AlarmKit alerting UI is system-managed and not a general custom notification UI surface.",
+      "max_score": 10
+    },
+    {
+      "name": "Countdown widget boundary",
+      "description": "Routes custom countdown or paused alarm UI to an AlarmKit widget extension while keeping it tied to AlarmAttributes and AlarmPresentationState.",
+      "max_score": 15
+    },
+    {
+      "name": "Supported surfaces",
+      "description": "Names Lock Screen, Dynamic Island, StandBy, and paired Apple Watch as supported AlarmKit countdown/Live Activity surfaces when relevant.",
+      "max_score": 10
+    },
+    {
+      "name": "Avoids Smart Stack overclaim",
+      "description": "Does not claim AlarmKit provides Smart Stack presentation or that Smart Stack is an AlarmKit surface.",
+      "max_score": 10
+    },
+    {
+      "name": "WidgetKit handoff",
+      "description": "Routes ordinary Home Screen widgets, timelines, widget families, and generic widget layout details to the WidgetKit skill rather than expanding AlarmKit into all widget work.",
+      "max_score": 10
+    },
+    {
+      "name": "ActivityKit handoff",
+      "description": "Routes generic Live Activity lifecycle, push-to-start, remote update payloads, and non-alarm ActivityKit behavior to the ActivityKit skill.",
+      "max_score": 10
+    },
+    {
+      "name": "Push handoff",
+      "description": "Routes APNs configuration, alert pushes, notification categories, and UNUserNotificationCenter behavior to the push-notifications skill unless specifically tied to AlarmKit state.",
+      "max_score": 10
+    },
+    {
+      "name": "AlarmKit setup boundary",
+      "description": "Mentions NSAlarmKitUsageDescription for AlarmKit scheduling and avoids inventing extra AlarmKit entitlements or setup keys for adjacent features.",
+      "max_score": 10
+    }
+  ]
+}

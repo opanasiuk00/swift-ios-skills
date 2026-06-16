@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent uses the framework selection router and preserves boundaries between Foundation Models, Core ML conversion, MLX Swift, llama.cpp, and the sibling Core ML integration skill.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Foundation Models",
+      "description": "Selects the system on-device language model path for summarization when Apple Intelligence is available.",
+      "max_score": 12
+    },
+    {
+      "name": "Availability fallback",
+      "description": "Includes fallback behavior when the system model is unavailable, disabled, not ready, or unsupported on the device.",
+      "max_score": 10
+    },
+    {
+      "name": "Classifier routing",
+      "description": "Routes the already-trained sentiment classifier through Core ML conversion/optimization rather than prompt-based generation.",
+      "max_score": 12
+    },
+    {
+      "name": "MLX choice",
+      "description": "Uses MLX Swift for Apple Silicon open-source LLM fallback when maximum local throughput and device memory permit it.",
+      "max_score": 10
+    },
+    {
+      "name": "llama.cpp choice",
+      "description": "Uses llama.cpp/GGUF when cross-platform compatibility or the GGUF model ecosystem matters.",
+      "max_score": 10
+    },
+    {
+      "name": "Memory lifecycle",
+      "description": "Mentions MLX memory/cache limits and unloading local models when the app backgrounds.",
+      "max_score": 12
+    },
+    {
+      "name": "Physical devices",
+      "description": "Requires physical-device validation for Metal-dependent local LLM behavior.",
+      "max_score": 8
+    },
+    {
+      "name": "Coordinator",
+      "description": "Serializes access to multiple model backends through a coordinator or equivalent model-access boundary.",
+      "max_score": 8
+    },
+    {
+      "name": "Sibling boundary",
+      "description": "Hands off detailed Swift Core ML app integration, model loading, Vision request wiring, and prediction lifecycle details to the sibling Core ML skill.",
+      "max_score": 12
+    },
+    {
+      "name": "Privacy framing",
+      "description": "Keeps private journal content on device unless the product explicitly chooses a nonlocal fallback.",
+      "max_score": 6
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent preserves speech-recognition boundaries when adjacent NaturalLanguage, AVKit, localization, and Apple Intelligence tasks appear together.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Speech scope",
+      "description": "Keeps microphone capture, speech authorization, SpeechAnalyzer or SFSpeechRecognizer transcription, and transcript result handling in the speech-recognition scope.",
+      "max_score": 25
+    },
+    {
+      "name": "NaturalLanguage handoff",
+      "description": "Routes language detection, sentiment, text embeddings, and translation to the natural-language skill after transcription exists.",
+      "max_score": 25
+    },
+    {
+      "name": "AVKit handoff",
+      "description": "Routes playback UI, captions during media playback, or AVPlayer/AVKit concerns to the avkit skill while allowing Speech to provide transcript timing data.",
+      "max_score": 20
+    },
+    {
+      "name": "Apple Intelligence handoff",
+      "description": "Routes Apple Intelligence or Foundation Models summarization to the apple-on-device-ai skill.",
+      "max_score": 15
+    },
+    {
+      "name": "No scope inversion",
+      "description": "Does not present NaturalLanguage as a speech-to-text framework or Speech as a general text-analysis framework.",
+      "max_score": 15
+    }
+  ]
+}

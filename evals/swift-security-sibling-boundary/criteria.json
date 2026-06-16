@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the solver keeps swift-security focused on client-side storage, cryptographic primitives, hardware-backed keys, and trust while routing adjacent areas to sibling skills.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Keychain owned",
+      "description": "Keeps refresh-token storage and Keychain policy in the security scope.",
+      "max_score": 10
+    },
+    {
+      "name": "Secure Enclave owned",
+      "description": "Keeps Secure Enclave key policy, constraints, or hardware-backed key handling in the security scope.",
+      "max_score": 10
+    },
+    {
+      "name": "Crypto owned",
+      "description": "Keeps custom end-to-end CryptoKit document encryption guidance in the security scope.",
+      "max_score": 10
+    },
+    {
+      "name": "Trust owned",
+      "description": "Keeps certificate trust or pinning guidance in the security scope.",
+      "max_score": 10
+    },
+    {
+      "name": "Auth routed",
+      "description": "Routes Sign in with Apple, passkey UI/account flows, or passkey server verification to authentication.",
+      "max_score": 10
+    },
+    {
+      "name": "Integrity routed",
+      "description": "Routes App Attest or DeviceCheck work to device-integrity.",
+      "max_score": 10
+    },
+    {
+      "name": "Networking routed",
+      "description": "Routes URLSession transport, ATS, TLS configuration, or request architecture to ios-networking.",
+      "max_score": 10
+    },
+    {
+      "name": "Review routed",
+      "description": "Routes privacy manifests, ATT, App Review, or submission readiness to app-store-review.",
+      "max_score": 10
+    },
+    {
+      "name": "Availability noted",
+      "description": "Mentions iOS 26 availability for at least one relevant post-quantum CryptoKit API or workflow.",
+      "max_score": 10
+    },
+    {
+      "name": "No monolith",
+      "description": "Presents a routed checklist rather than a single monolithic implementation plan owned entirely by security.",
+      "max_score": 10
+    }
+  ]
+}

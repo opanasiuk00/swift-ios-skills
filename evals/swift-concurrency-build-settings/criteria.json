@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether swift-concurrency separates current Xcode build settings, strict-concurrency mode behavior, and @concurrent offloading guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Approachable vs Default Isolation",
+      "description": "Separates Xcode's Approachable Concurrency setting from Default Actor Isolation and states that MainActor-by-default requires Default Actor Isolation = MainActor.",
+      "max_score": 25
+    },
+    {
+      "name": "Swift 6 Strict Concurrency",
+      "description": "States that Swift 6 / 6.3 language mode uses complete strict concurrency and produces errors, while Targeted or Minimal are Swift 5 migration settings.",
+      "max_score": 25
+    },
+    {
+      "name": "Nonisolated Nonsending",
+      "description": "Explains that nonisolated async functions stay on the caller's actor under nonisolated(nonsending) behavior unless @concurrent is used.",
+      "max_score": 20
+    },
+    {
+      "name": "CPU Offloading",
+      "description": "Recommends @concurrent and an explicitly nonisolated context for CPU-heavy work instead of leaving that work on MainActor.",
+      "max_score": 20
+    },
+    {
+      "name": "Scope Control",
+      "description": "Keeps the recommendation focused on concurrency settings and code-level remediation rather than expanding into broad app architecture or SwiftUI state redesign.",
+      "max_score": 10
+    }
+  ]
+}

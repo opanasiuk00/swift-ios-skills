@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent uses current iOS 26 FinanceKit background delivery APIs and keeps sibling domains separate.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Availability and target",
+      "description": "States that FinanceKit background delivery is iOS/iPadOS 26+ and uses a Background Delivery Extension target.",
+      "max_score": 14
+    },
+    {
+      "name": "Entitlements and App Groups",
+      "description": "Adds the FinanceKit entitlement to both app and extension targets and uses the same App Group for app, extension, and widget shared data.",
+      "max_score": 18
+    },
+    {
+      "name": "Authorization inheritance",
+      "description": "Notes that authorization is requested in the main app and inherited by the background delivery extension.",
+      "max_score": 14
+    },
+    {
+      "name": "Registration API correctness",
+      "description": "Calls `enableBackgroundDelivery(for:frequency:)`, `disableBackgroundDelivery(for:)`, and `disableAllBackgroundDelivery()` without `try` or `await`.",
+      "max_score": 18
+    },
+    {
+      "name": "Data types and frequencies",
+      "description": "Uses documented background data types such as `.transactions`, `.accountBalances`, and `.accounts` with `.hourly`, `.daily`, or `.weekly` update frequency.",
+      "max_score": 12
+    },
+    {
+      "name": "Extension lifecycle",
+      "description": "Implements async `didReceiveData(for:)` and `willTerminate()` on `BackgroundDeliveryExtension` and explains that returning from `didReceiveData` ends the extension's work.",
+      "max_score": 16
+    },
+    {
+      "name": "Sibling boundaries",
+      "description": "Keeps WidgetKit UI/timeline code, PassKit Apple Pay checkout, and order-tracking email optimization outside FinanceKit's core background delivery guidance.",
+      "max_score": 8
+    }
+  ]
+}

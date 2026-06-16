@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the skill handles SQL-level Core Data changes, persistent history, and concurrency boundaries.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Batch merge",
+      "description": "Explains that batch inserts, updates, and deletes bypass normal context change tracking and require object-ID merging or persistent history consumption.",
+      "max_score": 20
+    },
+    {
+      "name": "History tracking",
+      "description": "Recommends enabling persistent history tracking for shared multi-target or multi-process stores.",
+      "max_score": 15
+    },
+    {
+      "name": "Remote changes",
+      "description": "Mentions remote change notifications when consumers need to react to store changes.",
+      "max_score": 15
+    },
+    {
+      "name": "Token ownership",
+      "description": "States that each target or history consumer should persist its own history token.",
+      "max_score": 15
+    },
+    {
+      "name": "Object boundaries",
+      "description": "States that managed objects must not cross context or thread boundaries and recommends passing NSManagedObjectID then re-fetching.",
+      "max_score": 20
+    },
+    {
+      "name": "Deny delete",
+      "description": "Mentions that batch delete is incompatible with the Deny delete rule or bypasses relevant validation.",
+      "max_score": 15
+    }
+  ]
+}

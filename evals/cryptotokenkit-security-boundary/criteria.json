@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the CryptoTokenKit skill keeps a narrow token/smart-card scope and routes adjacent authentication and security work to sibling skills.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "CryptoTokenKit ownership",
+      "description": "Keeps CryptoTokenKit focused on security tokens, smart cards, token sessions, token-backed keychain items, and certificate-based smart-card authentication.",
+      "max_score": 20
+    },
+    {
+      "name": "Authentication handoff",
+      "description": "Routes passkeys/WebAuthn and user-facing account sign-in flows to the authentication skill.",
+      "max_score": 20
+    },
+    {
+      "name": "Swift-security handoff",
+      "description": "Routes Secure Enclave key generation, CryptoKit primitives, keychain storage architecture, and certificate pinning/trust policy to swift-security.",
+      "max_score": 20
+    },
+    {
+      "name": "Token-backed keychain detail",
+      "description": "Explains that token-backed keychain items are queried with kSecAttrTokenID when a token is present.",
+      "max_score": 15
+    },
+    {
+      "name": "Token presence tracking",
+      "description": "Mentions that normal token presence/removal should be tracked with TKTokenWatcher.",
+      "max_score": 15
+    },
+    {
+      "name": "No scope expansion",
+      "description": "Does not broaden CryptoTokenKit into a general mobile security or account-authentication guide.",
+      "max_score": 10
+    }
+  ]
+}

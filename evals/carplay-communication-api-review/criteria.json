@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent corrects stale CPMessageListItem usage and preserves the system-managed Siri communication flow instead of treating message rows like normal selectable list items.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Top-level leading config",
+      "description": "Replaces nested leading configuration usage with CPMessageListItemLeadingConfiguration.",
+      "max_score": 10
+    },
+    {
+      "name": "Top-level trailing config",
+      "description": "Replaces nested trailing configuration usage with CPMessageListItemTrailingConfiguration.",
+      "max_score": 10
+    },
+    {
+      "name": "Leading enum",
+      "description": "Uses CPMessageLeadingItem-supported values rather than invented text-style leading accessory objects.",
+      "max_score": 10
+    },
+    {
+      "name": "Trailing enum",
+      "description": "Uses CPMessageTrailingItem-supported values rather than invented text-style trailing accessory objects.",
+      "max_score": 10
+    },
+    {
+      "name": "Current initializer",
+      "description": "Uses the current conversation initializer shape with detailText and trailingText.",
+      "max_score": 10
+    },
+    {
+      "name": "Image placement",
+      "description": "Does not pass trailingImage as a CPMessageListItem initializer argument; puts optional images in the configuration objects when used.",
+      "max_score": 10
+    },
+    {
+      "name": "No handler",
+      "description": "States that CPMessageListItem does not use a custom selection handler.",
+      "max_score": 10
+    },
+    {
+      "name": "Siri flow",
+      "description": "Explains that selecting CPMessageListItem invokes Siri compose, read, or reply behavior based on the item configuration.",
+      "max_score": 10
+    },
+    {
+      "name": "Custom detail alternative",
+      "description": "If app-owned drill-in content is required, recommends a suitable CarPlay list/template pattern instead of CPMessageListItem.",
+      "max_score": 10
+    },
+    {
+      "name": "Communication boundary",
+      "description": "Keeps the advice scoped to CarPlay communication app behavior rather than broad messaging UI or unrelated app domains.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Route iOS Simulator versus real-device test coverage for hardware-dependent features.

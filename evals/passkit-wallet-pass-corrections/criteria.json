@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent corrects common Wallet pass presentation, access, and update mistakes.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "System Add to Wallet UI",
+      "description": "Replaces the custom SwiftUI button with `AddPassToWalletButton`, `PKAddPassButton`, or `PKAddPassesViewController`.",
+      "max_score": 15
+    },
+    {
+      "name": "Add-pass capability",
+      "description": "Uses `PKAddPassesViewController.canAddPasses()` to decide whether the device can add passes.",
+      "max_score": 15
+    },
+    {
+      "name": "Library availability scope",
+      "description": "Uses `PKPassLibrary.isPassLibraryAvailable()` only for pass-library operations, not as the add-pass capability check.",
+      "max_score": 12
+    },
+    {
+      "name": "Signed pass data",
+      "description": "States that `PKPass(data:)` expects signed `.pkpass` data and handles pass loading or signature validation failures.",
+      "max_score": 16
+    },
+    {
+      "name": "Entitlement-limited passes",
+      "description": "Explains that `PKPassLibrary.passes()` does not list every Wallet pass and returns only passes the app can access.",
+      "max_score": 14
+    },
+    {
+      "name": "Stable pass identity",
+      "description": "Keeps the same `passTypeIdentifier` and `serialNumber` when updating an existing pass.",
+      "max_score": 14
+    },
+    {
+      "name": "Replace result handling",
+      "description": "Checks the Boolean result from `PKPassLibrary.replacePass(with:)` or otherwise handles replacement failure.",
+      "max_score": 14
+    }
+  ]
+}

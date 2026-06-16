@@ -1,0 +1,1 @@
+Correct iOS Simulator launch environment, simulated push, and privacy-permission plans.

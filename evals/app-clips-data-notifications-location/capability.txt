@@ -1,0 +1,1 @@
+Design App Clip handoff, Sign in with Apple migration, ephemeral notification routing, and physical-location confirmation without leaking secrets or over-requesting location.

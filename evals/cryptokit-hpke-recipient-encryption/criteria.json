@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the CryptoKit skill handles HPKE as the modern recipient public-key encryption path instead of hand-rolled ECDH+HKDF+AEAD.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "HPKE recommendation",
+      "description": "Recommends HPKE for iOS 17+ recipient public-key encryption and avoids presenting manual ECDH+HKDF+AEAD as the preferred default.",
+      "max_score": 20
+    },
+    {
+      "name": "Stateful sender recipient",
+      "description": "Shows or states that HPKE.Sender and HPKE.Recipient are stateful and should be var because seal/open mutate nonce state.",
+      "max_score": 20
+    },
+    {
+      "name": "Encapsulated key transport",
+      "description": "Explains that sender.encapsulatedKey is separate from the ciphertext and must be transmitted to the recipient.",
+      "max_score": 20
+    },
+    {
+      "name": "AAD and ordering",
+      "description": "Uses or explains additional authenticated data and same-order opening for multi-message HPKE exchanges.",
+      "max_score": 20
+    },
+    {
+      "name": "Availability and ciphersuite",
+      "description": "Mentions iOS 17+ HPKE availability and chooses a valid CryptoKit ciphersuite such as Curve25519_SHA256_ChachaPoly or P256_SHA256_AES_GCM_256.",
+      "max_score": 20
+    }
+  ]
+}

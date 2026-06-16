@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the answer preserves the PencilKit/PaperKit sibling boundary for annotation and markup work.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "PencilKit Scope",
+      "description": "Keeps PencilKit scope to freehand drawing, signatures, PKCanvasView, PKToolPicker, PKDrawing serialization/export, and stroke inspection.",
+      "max_score": 25
+    },
+    {
+      "name": "PaperKit Scope",
+      "description": "Routes text boxes, arrows, shapes, images, stickers, loupes, and system-standard markup toolbar needs to PaperKit.",
+      "max_score": 25
+    },
+    {
+      "name": "Bridge Points",
+      "description": "Mentions that PaperMarkupViewController.drawingTool accepts a PKTool and PaperMarkup can append PKDrawing.",
+      "max_score": 20
+    },
+    {
+      "name": "No Overclaiming",
+      "description": "Does not claim PencilKit directly owns structured markup elements such as movable text boxes, stickers, or the PaperKit markup toolbar.",
+      "max_score": 20
+    },
+    {
+      "name": "Handoff Plan",
+      "description": "Provides a practical handoff plan between saved PKDrawing content and a PaperKit markup workflow.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the ios-networking skill routes REST, Network.framework, ATS, certificate pinning, NWPathMonitor, and NetworkConnection guidance to the right boundaries.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "URLSession Default",
+      "description": "Recommends URLSession for ordinary REST or HTTP API calls and reserves Network.framework for lower-level TCP, UDP, listeners, Bonjour, path monitoring, WebSocket protocol work, or iOS 26 NetworkConnection needs.",
+      "max_score": 20
+    },
+    {
+      "name": "ATS Responsibility",
+      "description": "States that ATS applies to the URL Loading system and that Network.framework callers are responsible for configuring secure connections correctly.",
+      "max_score": 15
+    },
+    {
+      "name": "Narrow Exceptions",
+      "description": "Rejects global NSAllowsArbitraryLoads as a default and recommends fixing servers or using the narrowest justified ATS exception.",
+      "max_score": 15
+    },
+    {
+      "name": "Pinning Boundary",
+      "description": "Corrects raw SecKeyCopyExternalRepresentation hashing as insufficient for SPKI pinning and routes deep certificate-trust implementation to the security skill.",
+      "max_score": 20
+    },
+    {
+      "name": "Path Monitoring",
+      "description": "Uses NWPathMonitor as AsyncSequence on current OS targets or explicitly labels a wrapper as fallback or custom projection.",
+      "max_score": 10
+    },
+    {
+      "name": "NetworkConnection Async",
+      "description": "For iOS 26 NetworkConnection QUIC streams, treats openStream and inboundStreams as async throwing APIs.",
+      "max_score": 10
+    },
+    {
+      "name": "Scope Control",
+      "description": "Preserves sibling-skill boundaries and avoids expanding into a full Security framework or backend TLS guide.",
+      "max_score": 10
+    }
+  ]
+}

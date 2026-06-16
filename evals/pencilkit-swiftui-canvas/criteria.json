@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the answer builds a current SwiftUI PencilKit canvas with correct PKToolPicker observer and state synchronization behavior.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Representable",
+      "description": "Wraps PKCanvasView in UIViewRepresentable and uses a Coordinator as PKCanvasViewDelegate.",
+      "max_score": 20
+    },
+    {
+      "name": "Tool Picker Retention",
+      "description": "Retains PKToolPicker outside a local function scope, such as on the coordinator or view controller.",
+      "max_score": 15
+    },
+    {
+      "name": "Observer Setup",
+      "description": "Adds the canvas as a PKToolPicker observer before showing the picker or making the canvas first responder.",
+      "max_score": 20
+    },
+    {
+      "name": "Drawing Policy",
+      "description": "Chooses or explains .default, .anyInput, and .pencilOnly in a way that supports Pencil-primary and optional finger drawing modes.",
+      "max_score": 15
+    },
+    {
+      "name": "Persistence",
+      "description": "Saves with PKDrawing.dataRepresentation() and reloads with PKDrawing(data:).",
+      "max_score": 15
+    },
+    {
+      "name": "Update Loop Guard",
+      "description": "Avoids SwiftUI/UIKit synchronization loops by checking drawing equality before assigning back to the canvas.",
+      "max_score": 15
+    }
+  ]
+}

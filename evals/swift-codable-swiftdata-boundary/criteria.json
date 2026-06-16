@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether swift-codable guidance handles SwiftData and AppStorage integration boundaries without unsupported availability claims or sibling-skill overreach.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "SwiftData compatibility wording",
+      "description": "States that @Model types can persist compatible noncomputed stored properties and explicitly includes Codable structs or enums as stored model properties; this is sufficient SwiftData compatibility wording.",
+      "max_score": 20
+    },
+    {
+      "name": "No unsupported availability",
+      "description": "Does not assert an unsupported iOS 18+ threshold for Codable value-type SwiftData storage.",
+      "max_score": 15
+    },
+    {
+      "name": "No transformable overclaim",
+      "description": "Does not propose @Attribute(.transformable), encoded Data, or encoded String blob storage as a fallback for the Codable value-type model property.",
+      "max_score": 15
+    },
+    {
+      "name": "AppStorage bridge",
+      "description": "Uses a complete RawRepresentable JSON String raw value bridge, including init?(rawValue:) and rawValue self-encoding/decoding, so @AppStorage can bind the typed Codable preference directly.",
+      "max_score": 20
+    },
+    {
+      "name": "Missing default behavior",
+      "description": "Explains that synthesized Decodable does not use stored property defaults for missing nonoptional keys, so empty or partial JSON needs custom decoding or fallback handling.",
+      "max_score": 20
+    },
+    {
+      "name": "Boundary control",
+      "description": "Keeps detailed SwiftData schema, migration, relationship, and SwiftUI state-management guidance out of scope.",
+      "max_score": 10
+    }
+  ]
+}

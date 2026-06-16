@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the AlarmKit skill guides state synchronization and lifecycle operations accurately.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Throwing alarms getter",
+      "description": "States that AlarmManager.shared.alarms is a throwing getter and examples handle it with try, do/catch, or error propagation.",
+      "max_score": 15
+    },
+    {
+      "name": "Updates as synchronization",
+      "description": "Uses alarmUpdates or an equivalent synchronization flow to keep app UI aligned with AlarmKit state rather than treating a launch snapshot as permanent source of truth.",
+      "max_score": 10
+    },
+    {
+      "name": "State-gated operations",
+      "description": "Explains that AlarmKit lifecycle operations throw for invalid states and should be gated by current Alarm.State instead of assuming invalid calls are ignored.",
+      "max_score": 10
+    },
+    {
+      "name": "Pause state",
+      "description": "Identifies pause(id:) as valid for alarms in countdown state.",
+      "max_score": 10
+    },
+    {
+      "name": "Resume state",
+      "description": "Identifies resume(id:) as valid for alarms in paused state.",
+      "max_score": 10
+    },
+    {
+      "name": "Countdown state",
+      "description": "Identifies countdown(id:) as valid for alerting alarms, such as moving an alert into its post-alert countdown path.",
+      "max_score": 10
+    },
+    {
+      "name": "Stop semantics",
+      "description": "Explains that stop(id:) removes one-shot alarms but repeating alarms are scheduled again for their next occurrence.",
+      "max_score": 15
+    },
+    {
+      "name": "Cancel semantics",
+      "description": "Explains that cancel(id:) removes an alarm completely, including repeating alarms.",
+      "max_score": 10
+    },
+    {
+      "name": "Missing update interpretation",
+      "description": "Avoids claiming that a missing alarm from alarmUpdates proves user cancellation; frames it as no longer scheduled with AlarmKit unless reconciled against app-persisted IDs or intent.",
+      "max_score": 10
+    }
+  ]
+}

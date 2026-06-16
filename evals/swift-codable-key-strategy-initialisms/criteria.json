@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether swift-codable guidance distinguishes simple snake_case conversion from acronym and initialism spelling cases that still need CodingKeys.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Simple strategy allowed",
+      "description": "States that convertFromSnakeCase is appropriate for simple snake_case to lower-camel mappings such as display_name to displayName.",
+      "max_score": 20
+    },
+    {
+      "name": "Initialism limitation",
+      "description": "States that convertFromSnakeCase cannot infer capitalization for initialisms or acronyms such as URL, URI, or ID.",
+      "max_score": 25
+    },
+    {
+      "name": "Explicit CodingKeys",
+      "description": "Keeps or adds explicit CodingKeys for avatarURL, baseURI, userID, or equivalent initialism-spelled properties.",
+      "max_score": 30
+    },
+    {
+      "name": "No blanket boilerplate",
+      "description": "Avoids replacing the key strategy with manual CodingKeys for every simple property when the strategy is sufficient.",
+      "max_score": 15
+    },
+    {
+      "name": "Practical code",
+      "description": "Provides corrected Swift model code or a directly actionable mapping example.",
+      "max_score": 10
+    }
+  ]
+}

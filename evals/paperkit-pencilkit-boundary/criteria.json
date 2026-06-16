@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent preserves PaperKit/PencilKit boundaries instead of treating PaperKit as a complete replacement for low-level drawing workflows.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Structured markup",
+      "description": "Recommends PaperKit for structured markup such as text boxes, shapes, images, arrows, callouts, and system-standard insertion UI.",
+      "max_score": 20
+    },
+    {
+      "name": "PencilKit ownership",
+      "description": "Keeps custom brush behavior, raw PKDrawing/PKStroke analytics, and low-level lasso workflows in PencilKit.",
+      "max_score": 25
+    },
+    {
+      "name": "Drawing migration",
+      "description": "Mentions coexistence or migration using PaperMarkup.append(contentsOf: PKDrawing) for existing PencilKit drawings.",
+      "max_score": 15
+    },
+    {
+      "name": "Document background",
+      "description": "Suggests using contentView or an equivalent background view for annotating PDF/document pages with PaperKit.",
+      "max_score": 15
+    },
+    {
+      "name": "No entitlement",
+      "description": "Does not claim PaperKit requires special entitlements or Info.plist keys.",
+      "max_score": 10
+    },
+    {
+      "name": "No full replacement",
+      "description": "Does not recommend replacing the entire PencilKit-heavy canvas with PaperKit when low-level stroke behavior remains central.",
+      "max_score": 15
+    }
+  ]
+}

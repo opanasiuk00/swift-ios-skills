@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the agent applies the on-device Foundation Models guidance for availability, locale, structured generation, tool calling, streaming, context budgeting, and error handling.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Availability cases",
+      "description": "Uses SystemLanguageModel availability gating and distinguishes disabled intelligence, `.modelNotReady` system-asset readiness, and ineligible-device fallback paths.",
+      "max_score": 15
+    },
+    {
+      "name": "Locale support",
+      "description": "Uses a locale support check before generation and prefers a fallback-aware locale API rather than relying only on a raw language list.",
+      "max_score": 10
+    },
+    {
+      "name": "Structured schema",
+      "description": "Models the result as typed generated content with guided fields and avoids asking for loose JSON text as the main integration path.",
+      "max_score": 15
+    },
+    {
+      "name": "Streaming partials",
+      "description": "Uses structured streaming or partial generated content and notes that SwiftUI must tolerate incomplete fields while streaming.",
+      "max_score": 10
+    },
+    {
+      "name": "Tool setup",
+      "description": "Defines a small, necessary tool set at session creation and treats tool implementations as concurrency-safe.",
+      "max_score": 10
+    },
+    {
+      "name": "Tool autonomy",
+      "description": "Explains that the model decides whether and when to call tools, and recommends pre-running deterministic required lookups when the result must be used.",
+      "max_score": 10
+    },
+    {
+      "name": "Context budget",
+      "description": "Accounts for the shared input/output context window, including schema/tool context cost and token or context-size checks.",
+      "max_score": 10
+    },
+    {
+      "name": "Session lifecycle",
+      "description": "Mentions stateful sessions, prewarming before interaction, and avoiding concurrent requests on a single session.",
+      "max_score": 10
+    },
+    {
+      "name": "Generation errors",
+      "description": "Maps generation failures such as guardrails/refusal, context overflow, unsupported guide or locale, unavailable assets, rate limiting, and decoding failure to fallback or retry behavior.",
+      "max_score": 10
+    }
+  ]
+}

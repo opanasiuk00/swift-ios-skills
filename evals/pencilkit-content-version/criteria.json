@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the answer follows PencilKit serialization and content-version guidance for drawings synced across OS versions.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Drawing save",
+      "description": "Uses PKDrawing.dataRepresentation() to persist editable drawing data.",
+      "max_score": 10
+    },
+    {
+      "name": "Drawing load",
+      "description": "Loads editable drawing data with throwing PKDrawing(data:) and handles load failures.",
+      "max_score": 10
+    },
+    {
+      "name": "Required version",
+      "description": "Checks requiredContentVersion before syncing or exposing editable data to older clients.",
+      "max_score": 15
+    },
+    {
+      "name": "Canvas maximum",
+      "description": "Sets maximumSupportedContentVersion on PKCanvasView when constraining drawing compatibility.",
+      "max_score": 10
+    },
+    {
+      "name": "Picker maximum",
+      "description": "Sets maximumSupportedContentVersion on PKToolPicker as well as on the canvas.",
+      "max_score": 15
+    },
+    {
+      "name": "Version one",
+      "description": "Maps version1 to older marker, pen, and pencil content.",
+      "max_score": 10
+    },
+    {
+      "name": "Version two",
+      "description": "Maps version2 to iPadOS 17-era inks including monoline, fountain pen, watercolor, and crayon.",
+      "max_score": 10
+    },
+    {
+      "name": "Later versions",
+      "description": "Recognizes later content versions as covering barrel-roll and Reed Pen-era features rather than the older iPadOS 17 inks.",
+      "max_score": 10
+    },
+    {
+      "name": "Fallback policy",
+      "description": "Provides a fallback/read-only preview or alternate drawing policy instead of assuming old clients can edit unsupported drawings.",
+      "max_score": 10
+    }
+  ]
+}

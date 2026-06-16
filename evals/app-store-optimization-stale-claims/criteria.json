@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the agent catches stale or unsupported App Store Optimization claims and replaces them with current skill guidance.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "CPP limit",
+      "description": "Corrects Custom Product Pages to the current 70-page limit.",
+      "max_score": 15
+    },
+    {
+      "name": "CPP search",
+      "description": "States that approved Custom Product Pages can appear in App Store search for assigned keywords, not only direct links.",
+      "max_score": 15
+    },
+    {
+      "name": "PPO treatments",
+      "description": "Corrects Product Page Optimization to up to three treatments against the original product page.",
+      "max_score": 15
+    },
+    {
+      "name": "PPO localizations",
+      "description": "Mentions selected localizations or that all supported localizations are selected by default.",
+      "max_score": 10
+    },
+    {
+      "name": "No position folklore",
+      "description": "Rejects unsupported keyword-position ranking claims and repeated-keyword tactics.",
+      "max_score": 15
+    },
+    {
+      "name": "Description conversion",
+      "description": "Keeps description guidance conversion-focused and avoids keyword stuffing.",
+      "max_score": 10
+    },
+    {
+      "name": "Event copy",
+      "description": "Frames In-App Event name and short description as visible event-card/search-result copy rather than a hidden keyword field.",
+      "max_score": 10
+    },
+    {
+      "name": "No hard thresholds",
+      "description": "Removes generic cross-locale English-indexing and fixed rating-threshold claims while preserving per-market research and ratings/reviews as signals.",
+      "max_score": 10
+    }
+  ]
+}

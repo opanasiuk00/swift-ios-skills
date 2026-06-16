@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent corrects common RelevanceKit permission and availability mistakes using source-grounded details.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Location target setup",
+      "description": "Places location purpose strings and the location authorization request in the containing app while adding `NSWidgetWantsLocation` to the widget extension.",
+      "max_score": 20
+    },
+    {
+      "name": "Widget location check",
+      "description": "Checks `CLLocationManager.isAuthorizedForWidgetUpdates` before relying on widget location clues.",
+      "max_score": 15
+    },
+    {
+      "name": "Optional POI context",
+      "description": "Handles the optional result from `RelevantContext.location(category:)` instead of force-unwrapping it.",
+      "max_score": 15
+    },
+    {
+      "name": "Activity rings HealthKit types",
+      "description": "Maps `.fitness(.activityRingsIncomplete)` to `appleExerciseTime`, `appleMoveTime`, and `appleStandTime` HealthKit read types.",
+      "max_score": 20
+    },
+    {
+      "name": "Active workout HealthKit type",
+      "description": "Mentions `HKWorkoutType` as the HealthKit type needed for `.fitness(.workoutActive)` when active-workout relevance is used.",
+      "max_score": 15
+    },
+    {
+      "name": "watchOS effect boundary",
+      "description": "States that RelevanceKit clues only affect Smart Stack behavior on watchOS even though some APIs compile on other platforms.",
+      "max_score": 15
+    }
+  ]
+}

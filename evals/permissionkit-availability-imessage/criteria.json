@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent handles PermissionKit availability, setup, and iMessage-only communication routing accurately.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Core 26.0 APIs",
+      "description": "States that core PermissionKit topic, handle, question, response, choice, and CommunicationLimits APIs are available starting in iOS/iPadOS 26.0.",
+      "max_score": 20
+    },
+    {
+      "name": "Later 26.x APIs",
+      "description": "States that AskError starts in iOS/iPadOS 26.1 and AskCenter, ask/responses, PermissionButton, and SignificantAppUpdateTopic require iOS/iPadOS 26.2 or availability checks.",
+      "max_score": 25
+    },
+    {
+      "name": "iMessage limitation",
+      "description": "Says PermissionKit communication experiences are available only through iMessage and cannot be routed through an arbitrary in-app DM system.",
+      "max_score": 25
+    },
+    {
+      "name": "No invented entitlement",
+      "description": "Rejects the custom PermissionKit entitlement and tells the team to verify current Apple docs/Xcode capabilities instead of inventing signing keys.",
+      "max_score": 20
+    },
+    {
+      "name": "Boundary preserved",
+      "description": "Keeps the answer focused on PermissionKit rather than expanding into general chat moderation or family-account architecture.",
+      "max_score": 10
+    }
+  ]
+}

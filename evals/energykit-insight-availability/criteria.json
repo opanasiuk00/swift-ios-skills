@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the agent handles EnergyKit insight API availability, option sets, and granularity windows accurately.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Core availability",
+      "description": "Treats core EnergyKit insight service/query APIs as available on iOS/iPadOS 26.0 rather than marking all insight APIs as 26.1-only.",
+      "max_score": 10
+    },
+    {
+      "name": "Cleanliness availability",
+      "description": "Marks grid-cleanliness insight fields or breakdowns as iOS/iPadOS 26.1+.",
+      "max_score": 15
+    },
+    {
+      "name": "Availability guard",
+      "description": "Guards or omits cleanliness field access for iOS/iPadOS 26.0 support.",
+      "max_score": 15
+    },
+    {
+      "name": "Hourly week",
+      "description": "Uses hourly granularity or equivalent guidance for a seven-day view.",
+      "max_score": 15
+    },
+    {
+      "name": "Daily month",
+      "description": "States that daily insight granularity requires at least a calendar month of data.",
+      "max_score": 15
+    },
+    {
+      "name": "Empty options",
+      "description": "Explains that an empty ElectricityInsightQuery options set returns totals only without cleanliness or tariff breakdowns.",
+      "max_score": 10
+    },
+    {
+      "name": "Breakdown options",
+      "description": "Requests cleanliness and tariff options only when those breakdowns are needed by the UI.",
+      "max_score": 10
+    },
+    {
+      "name": "No invented API",
+      "description": "Does not invent unrelated or nonexistent APIs such as a generic EnergyStore insight facade.",
+      "max_score": 10
+    }
+  ]
+}

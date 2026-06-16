@@ -1,0 +1,36 @@
+{
+  "context": "",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Invocation and size constraints",
+      "description": "Explains the size implications for the prompted QR/NFC venue entry and demo-link requirements. Award full credit if the answer says physical QR/NFC invocations have a smaller App Clip size budget than iOS 17+ digital-only flows, demo links can use the current larger limit for testing, and final sizing should be verified with the App Thinning Size Report.",
+      "max_score": 16
+    },
+    {
+      "name": "Large media feasibility",
+      "description": "Warns that large bundled videos, large media catalogs, or downloads required before useful check-in work are poor App Clip fits. Award full credit if the answer moves those requirements to streaming/server-backed content, post-task assets, or the full app.",
+      "max_score": 12
+    },
+    {
+      "name": "CloudKit boundary",
+      "description": "States that venue data in the App Clip can use CloudKit public database reads with `CloudKit-Anonymous` on iOS 16+, but public writes, iCloud Documents, key-value storage, private/shared containers, full CloudKit sync, or durable offline state belong outside the App Clip. Award full credit for equivalent wording that keeps CloudKit use read-only/public and moves durable sync or writes out of the App Clip.",
+      "max_score": 14
+    },
+    {
+      "name": "Live Activity boundary",
+      "description": "Explains that Live Activities can belong to the App Clip only through an App Clip-only widget extension that contains only Live Activities and uses the App Clip Extension capability / `com.apple.developer.on-demand-install-capable`. Award full credit if the answer also keeps detailed ActivityKit or WidgetKit implementation in sibling guidance.",
+      "max_score": 18
+    },
+    {
+      "name": "Prompted unsupported features",
+      "description": "Addresses the prompted unsupported features explicitly. Award full credit if the answer says App Intents/Siri start, in-app purchases, BackgroundTasks cleanup, SKAdNetwork/ad attribution, App Tracking Transparency tracking prompts, and custom URL schemes are not App Clip runtime features and should move to the full app or an appropriate sibling domain.",
+      "max_score": 29
+    },
+    {
+      "name": "Sibling and full-app handoff",
+      "description": "Keeps the review at App Clip feasibility and boundary level. Award full credit if the answer routes StoreKit purchases, BackgroundTasks cleanup, CloudKit schema/sync, ActivityKit/WidgetKit details, and full-app implementation work to sibling or full-app domains without expanding into detailed implementation.",
+      "max_score": 11
+    }
+  ]
+}

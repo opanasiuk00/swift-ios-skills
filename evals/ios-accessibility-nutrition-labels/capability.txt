@@ -1,0 +1,1 @@
+iOS accessibility audit for App Store Accessibility Nutrition Labels, not general App Review policy; covers assistive technology support, common-task evidence, Dynamic Type, visual accessibility, captions, transcripts, and audio descriptions.

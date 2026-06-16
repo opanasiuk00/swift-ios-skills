@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the answer preserves ios-architecture scope while routing implementation detail to sibling skills.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Architecture Scope",
+      "description": "Keeps pattern selection, module boundaries, dependency direction, and migration strategy in ios-architecture scope.",
+      "max_score": 20
+    },
+    {
+      "name": "SwiftUI Patterns Handoff",
+      "description": "Routes detailed @State, @Bindable, @Environment, view composition, and SwiftUI MV implementation mechanics to swiftui-patterns.",
+      "max_score": 15
+    },
+    {
+      "name": "Navigation Handoff",
+      "description": "Routes deep links, tabs, sheets, NavigationStack, NavigationSplitView, and route-model implementation to swiftui-navigation.",
+      "max_score": 15
+    },
+    {
+      "name": "Concurrency Handoff",
+      "description": "Routes actor isolation, Sendable, strict-concurrency diagnostics, and default MainActor isolation details to swift-concurrency.",
+      "max_score": 15
+    },
+    {
+      "name": "Testing Handoff",
+      "description": "Routes detailed Swift Testing syntax, fixtures, parameterized tests, and suite organization to swift-testing.",
+      "max_score": 15
+    },
+    {
+      "name": "Actionable Recommendation",
+      "description": "Provides a concise architecture-level recommendation after the boundary split rather than only listing handoffs.",
+      "max_score": 20
+    }
+  ]
+}

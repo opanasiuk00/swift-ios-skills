@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent follows AccessorySetupKit migration sequencing and avoids the CoreBluetooth initialization gotcha.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Migration item",
+      "description": "Uses ASMigrationDisplayItem for existing accessories rather than normal ASPickerDisplayItem only.",
+      "max_score": 10
+    },
+    {
+      "name": "Peripheral ID",
+      "description": "Sets the migration item's peripheralIdentifier from the existing CBPeripheral or CBPeer identifier.",
+      "max_score": 10
+    },
+    {
+      "name": "Descriptor included",
+      "description": "Creates a discovery descriptor for the migrated accessory type with Bluetooth values aligned to property-list declarations.",
+      "max_score": 10
+    },
+    {
+      "name": "No early central",
+      "description": "Explicitly says not to initialize CBCentralManager before migration completes.",
+      "max_score": 10
+    },
+    {
+      "name": "Prototype fix",
+      "description": "The Startup changes section removes or defers the prototype's app-start CBCentralManager creation.",
+      "max_score": 10
+    },
+    {
+      "name": "Migration event",
+      "description": "Handles migrationComplete as the point where migration has finished.",
+      "max_score": 10
+    },
+    {
+      "name": "Session activation",
+      "description": "Activates ASAccessorySession before showing the migration picker and handles events through the session handler.",
+      "max_score": 10
+    },
+    {
+      "name": "Picker behavior",
+      "description": "Mentions that a picker containing only migration items shows an informational migration page rather than normal discovery.",
+      "max_score": 10
+    },
+    {
+      "name": "Resume BLE",
+      "description": "Explains that normal CoreBluetooth communication resumes only after migration is complete, using the authorized accessory information.",
+      "max_score": 10
+    },
+    {
+      "name": "Scoped output",
+      "description": "Does not add unrelated UI architecture or a full app implementation beyond the requested migration plan and snippets.",
+      "max_score": 10
+    }
+  ]
+}

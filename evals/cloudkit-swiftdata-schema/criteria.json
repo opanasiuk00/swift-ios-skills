@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the agent applies SwiftData CloudKit compatibility rules without overcorrecting scalar properties.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Unique unsupported",
+      "description": "Flags @Attribute(.unique), @Unique, or unique constraints as incompatible with SwiftData CloudKit sync.",
+      "max_score": 15
+    },
+    {
+      "name": "Optional relationship",
+      "description": "Flags the required relationship and recommends making relationships optional for CloudKit sync.",
+      "max_score": 15
+    },
+    {
+      "name": "Deny delete",
+      "description": "Flags the deny delete rule as incompatible with CloudKit-backed SwiftData sync.",
+      "max_score": 15
+    },
+    {
+      "name": "External storage",
+      "description": "Recommends external storage for large Data such as image blobs.",
+      "max_score": 10
+    },
+    {
+      "name": "No scalar overcorrection",
+      "description": "Does not claim every scalar attribute must be optional.",
+      "max_score": 15
+    },
+    {
+      "name": "Corrected sketch",
+      "description": "Provides a corrected model sketch or specific replacement lines for the incompatible fields.",
+      "max_score": 10
+    },
+    {
+      "name": "Schema rollout",
+      "description": "Mentions CloudKit production schema promotion or additive-schema constraints.",
+      "max_score": 10
+    },
+    {
+      "name": "Capabilities",
+      "description": "Mentions iCloud CloudKit and Remote notifications/background setup for automatic sync.",
+      "max_score": 10
+    }
+  ]
+}

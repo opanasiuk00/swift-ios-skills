@@ -1,0 +1,1 @@
+Design DockKit camera-app setup, system tracking, framing, manual motor control, and accessory button handling while preserving DockKit-specific setup boundaries.

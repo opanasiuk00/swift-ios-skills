@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent corrects SFSpeechRecognizer live microphone transcription setup without broadening into unrelated audio or NLP domains.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Privacy keys",
+      "description": "Requires both NSSpeechRecognitionUsageDescription and NSMicrophoneUsageDescription for live microphone transcription.",
+      "max_score": 15
+    },
+    {
+      "name": "Permission ordering",
+      "description": "Requests speech recognition authorization and microphone record permission before activating the audio session or starting AVAudioEngine.",
+      "max_score": 20
+    },
+    {
+      "name": "Availability changes",
+      "description": "Uses SFSpeechRecognizerDelegate or equivalent availability handling for recognition service changes.",
+      "max_score": 15
+    },
+    {
+      "name": "On-device support",
+      "description": "Checks supportsOnDeviceRecognition before setting requiresOnDeviceRecognition and gives a fallback or clear failure when unsupported.",
+      "max_score": 15
+    },
+    {
+      "name": "Task duration limits",
+      "description": "Accounts for SFSpeechRecognizer recognition duration or service limits instead of running one unbounded task forever.",
+      "max_score": 15
+    },
+    {
+      "name": "Cleanup",
+      "description": "Stops AVAudioEngine, removes the input tap, ends audio, and cancels or clears the recognition task during cleanup.",
+      "max_score": 20
+    }
+  ]
+}

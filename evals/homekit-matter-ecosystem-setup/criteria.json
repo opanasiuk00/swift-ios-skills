@@ -1,0 +1,36 @@
+{
+  "context": "Tests MatterSupport commissioning guidance and required discovery/setup configuration.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Extension setup",
+      "description": "Requires a MatterSupport extension target with a MatterAddDeviceExtensionRequestHandler principal handler.",
+      "max_score": 15
+    },
+    {
+      "name": "Bonjour services",
+      "description": "Includes NSBonjourServices entries for _matter._tcp, _matterc._udp, and _matterd._udp.",
+      "max_score": 20
+    },
+    {
+      "name": "Request flow",
+      "description": "Checks MatterAddDeviceRequest.isSupported and builds a topology with ecosystem name and homes before perform().",
+      "max_score": 15
+    },
+    {
+      "name": "Setup payload entitlement",
+      "description": "Limits com.apple.developer.matter.allow-setup-payload to programmatic setup-code payloads and mentions MTRSetupPayload from Matter for that case.",
+      "max_score": 20
+    },
+    {
+      "name": "Extension callbacks",
+      "description": "Names relevant extension callbacks including validation, rooms, commissioning, configuration, and optional Wi-Fi or Thread network selection.",
+      "max_score": 20
+    },
+    {
+      "name": "No HomeKit setup confusion",
+      "description": "Does not present MatterSupport ecosystem commissioning as ordinary HMHome accessory setup or AccessorySetupKit discovery.",
+      "max_score": 10
+    }
+  ]
+}

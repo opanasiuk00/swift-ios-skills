@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the iOS localization skill correctly handles Swift Package resource bundle lookup for String Catalogs.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Bundle cause",
+      "description": "States that code outside the main app bundle needs an explicit bundle for package-owned localized resources.",
+      "max_score": 10
+    },
+    {
+      "name": "String localized bundle",
+      "description": "Recommends String(localized: \"settings.title\", bundle: .module) or an equivalent package-bundle lookup for Swift Package code.",
+      "max_score": 10
+    },
+    {
+      "name": "Text bundle",
+      "description": "Recommends SwiftUI Text with an explicit package bundle, such as Text(\"Save\", bundle: .module), or an equivalent localized-label wrapper.",
+      "max_score": 10
+    },
+    {
+      "name": "No automatic module claim",
+      "description": "Does not claim SwiftUI Text inside a package automatically uses Bundle.module.",
+      "max_score": 10
+    },
+    {
+      "name": "Resource inclusion",
+      "description": "Mentions verifying the .xcstrings file is included in the package target resources.",
+      "max_score": 10
+    },
+    {
+      "name": "Default localization",
+      "description": "Mentions Package.swift defaultLocalization when relevant to package localization setup.",
+      "max_score": 10
+    },
+    {
+      "name": "Ownership boundary",
+      "description": "Distinguishes package-owned strings from app-owned strings and avoids resolving package resources through Bundle.main.",
+      "max_score": 10
+    },
+    {
+      "name": "Scoped guidance",
+      "description": "Keeps the answer focused on localization lookup rather than unrelated package architecture.",
+      "max_score": 10
+    },
+    {
+      "name": "No generated-symbol distraction",
+      "description": "Does not make generated String Catalog symbols the primary fix for the bundle lookup failure.",
+      "max_score": 10
+    },
+    {
+      "name": "Concrete snippets",
+      "description": "Includes concrete Swift snippets for the corrected Text and String(localized:) calls.",
+      "max_score": 10
+    }
+  ]
+}

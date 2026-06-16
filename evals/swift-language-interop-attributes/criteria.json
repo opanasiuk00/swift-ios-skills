@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the solver follows swift-language guidance for Swift 6.3 C interop, specialization, inlining, and module-selector syntax.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Rejects buffer pointer",
+      "description": "States that UnsafeBufferPointer is a Swift struct and should not appear in an @c exported C-compatible signature.",
+      "max_score": 18
+    },
+    {
+      "name": "C-compatible export",
+      "description": "Shows an @c example using C-compatible pointer and scalar parameters, optionally with a custom C symbol name.",
+      "max_score": 18
+    },
+    {
+      "name": "C type limits",
+      "description": "Mentions that Swift-only types such as String, Array, closures, generic placeholders, or UnsafeBufferPointer do not belong in the exported signature.",
+      "max_score": 12
+    },
+    {
+      "name": "Specialized spelling",
+      "description": "Uses @specialized, not @specialize, for explicit generic specialization.",
+      "max_score": 16
+    },
+    {
+      "name": "Inline guarantee",
+      "description": "Explains that Swift 6.3 @inline(always) is a guarantee for direct-call inlining and can be diagnosed when impossible, rather than just a hint.",
+      "max_score": 16
+    },
+    {
+      "name": "Module selector",
+      "description": "Uses ModuleName::symbol syntax for module selectors.",
+      "max_score": 12
+    },
+    {
+      "name": "No underscored fallback",
+      "description": "Does not recommend @_cdecl or @_specialize as the primary modern spelling for the corrected examples.",
+      "max_score": 8
+    }
+  ]
+}

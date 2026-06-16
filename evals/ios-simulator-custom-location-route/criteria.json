@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the ios-simulator skill uses current simctl route commands and safe Simulator automation patterns.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Custom route command",
+      "description": "Uses `xcrun simctl location <device> start` for command-line custom waypoint routes rather than only repeated fixed-location updates or predefined scenarios.",
+      "max_score": 25
+    },
+    {
+      "name": "Scenario and GPX boundary",
+      "description": "Explains that `simctl location run` accepts predefined scenario names and is not the command for GPX route files.",
+      "max_score": 15
+    },
+    {
+      "name": "Install workflow",
+      "description": "Boots or waits for the simulator before install/launch and installs a simulator-built `.app` bundle rather than an `.ipa`.",
+      "max_score": 20
+    },
+    {
+      "name": "Device selection",
+      "description": "Uses an explicit UDID lookup or controlled `booted` usage instead of hardcoding a simulator UDID.",
+      "max_score": 15
+    },
+    {
+      "name": "Cleanup",
+      "description": "Clears simulated location and shuts down or deletes owned test simulators during teardown.",
+      "max_score": 25
+    }
+  ]
+}

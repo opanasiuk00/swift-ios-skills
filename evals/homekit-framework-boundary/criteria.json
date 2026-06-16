@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent preserves HomeKit, MatterSupport, AccessorySetupKit, CoreBluetooth, and NetworkExtension boundaries.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "HomeKit and Matter owner",
+      "description": "Identifies HomeKit/MatterSupport as the owner for homes, rooms, HomeKit characteristics, action sets, triggers, automations, and Matter commissioning.",
+      "max_score": 25
+    },
+    {
+      "name": "AccessorySetupKit boundary",
+      "description": "Limits AccessorySetupKit to Bluetooth or Wi-Fi discovery descriptors, privacy-preserving picker authorization, or ASAccessorySession setup events.",
+      "max_score": 20
+    },
+    {
+      "name": "CoreBluetooth handoff",
+      "description": "Routes post-selection BLE service and characteristic communication to CoreBluetooth/GATT.",
+      "max_score": 20
+    },
+    {
+      "name": "NetworkExtension handoff",
+      "description": "Routes joining or configuring a temporary Wi-Fi setup network to NetworkExtension.",
+      "max_score": 20
+    },
+    {
+      "name": "No implementation code",
+      "description": "Does not provide code blocks, executable snippets, lifecycle recipes, setup procedures, or ordered method-call sequences; representative API names are acceptable only as routing labels.",
+      "max_score": 15
+    }
+  ]
+}

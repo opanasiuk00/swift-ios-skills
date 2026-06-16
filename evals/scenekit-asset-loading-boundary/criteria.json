@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent corrects stale SceneKit asset-loading guidance and routes USD/USDZ or substantial modernization work to RealityKit while preserving existing SceneKit maintenance scope.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Rejects USDZ SceneKit default",
+      "description": "Does not present direct USDZ loading through SCNScene(url:) as the default or recommended SceneKit runtime-loading path.",
+      "max_score": 15
+    },
+    {
+      "name": "Rejects OBJ app contract",
+      "description": "Does not recommend OBJ as the app-facing SceneKit runtime asset contract and treats it only as a possible source/interchange format if mentioned.",
+      "max_score": 10
+    },
+    {
+      "name": "Names documented formats",
+      "description": "Names .scn, .dae, and .abc as the documented SceneKit scene-source formats to plan around.",
+      "max_score": 15
+    },
+    {
+      "name": "Uses bundled asset guidance",
+      "description": "Recommends .scnassets for bundled SceneKit scene files and asset catalogs or equivalent Xcode-optimized resources for textures.",
+      "max_score": 10
+    },
+    {
+      "name": "Shows valid loading snippet",
+      "description": "Provides a SceneKit loading snippet using SCNScene(named:), SCNScene(url:options:), SCNSceneSource, or SCNReferenceNode with a documented SceneKit format.",
+      "max_score": 15
+    },
+    {
+      "name": "RealityKit handoff",
+      "description": "Frames USD/USDZ-first pipelines, new 3D product-viewer work, SCN-to-USD conversion, or significant modernization as RealityKit or migration work rather than SceneKit loading work.",
+      "max_score": 20
+    },
+    {
+      "name": "SceneKit maintenance boundary",
+      "description": "Explains that SceneKit remains appropriate for maintaining existing SCNView/SCNScene/SCNNode scenes while new projects or major updates should evaluate RealityKit.",
+      "max_score": 15
+    }
+  ]
+}

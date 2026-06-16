@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the background-processing skill guidance is applied to BGTaskScheduler registration, plist setup, expiration, completion, and rescheduling.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Launch registration",
+      "description": "States that BGTaskScheduler launch handlers must be registered before app launch completes, such as in App initialization or UIApplicationDelegate launch, not from a view task.",
+      "max_score": 15
+    },
+    {
+      "name": "Permitted identifiers",
+      "description": "Requires every submitted task identifier to be listed under BGTaskSchedulerPermittedIdentifiers and keeps code/plist strings aligned.",
+      "max_score": 15
+    },
+    {
+      "name": "Background modes",
+      "description": "Requires the appropriate UIBackgroundModes values: fetch for BGAppRefreshTask and processing for BGProcessingTask.",
+      "max_score": 15
+    },
+    {
+      "name": "Expiration handling",
+      "description": "Adds an expirationHandler that cancels or stops in-flight work and handles cleanup.",
+      "max_score": 15
+    },
+    {
+      "name": "Completion reporting",
+      "description": "Calls setTaskCompleted(success:) on success, failure, and expiration paths.",
+      "max_score": 15
+    },
+    {
+      "name": "Rescheduling pattern",
+      "description": "Schedules the next request from inside the task handler rather than assuming one submission repeats forever.",
+      "max_score": 10
+    },
+    {
+      "name": "Reasonable timing",
+      "description": "Treats earliestBeginDate as a hint and avoids promising exact launch times or overly frequent refreshes.",
+      "max_score": 10
+    },
+    {
+      "name": "Scope control",
+      "description": "Keeps the answer focused on BackgroundTasks setup rather than drifting into unrelated app architecture.",
+      "max_score": 5
+    }
+  ]
+}

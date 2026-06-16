@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether GameKit advanced matchmaking, achievements, and challenge guidance uses current APIs and avoids stale examples.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Rule-based availability",
+      "description": "Marks `queueName`, request properties, recipient properties, and match/player properties as iOS 17.2+ or equivalent platform release features.",
+      "max_score": 15
+    },
+    {
+      "name": "Queue and property constraints",
+      "description": "Uses reverse-DNS-style queue names and notes JSON-serializable properties, recipient-property key coverage, and the reserved `gc` key.",
+      "max_score": 20
+    },
+    {
+      "name": "Rule-based API shape",
+      "description": "Shows `GKMatchRequest.queueName`, `properties`, and `recipientProperties` with `GKMatchmaker.shared().findMatch(for:)`, then calls `finishMatchmaking(for:)` for programmatic matches.",
+      "max_score": 15
+    },
+    {
+      "name": "Player attributes semantics",
+      "description": "Explains that nonzero `playerAttributes` must combine across players with bitwise OR equal to `0xFFFFFFFF`, or recommends rule-based matchmaking for modern role logic.",
+      "max_score": 15
+    },
+    {
+      "name": "Queue ignores legacy fields",
+      "description": "States that when `queueName` is set, GameKit ignores `playerGroup` and `playerAttributes`.",
+      "max_score": 10
+    },
+    {
+      "name": "Achievement progress",
+      "description": "Reports achievement progress as an integer in 0...100 even though `percentComplete` is a `Double` property.",
+      "max_score": 15
+    },
+    {
+      "name": "Challenge compose return shape",
+      "description": "Treats `challengeComposeController(withMessage:players:completion:)` as returning a view controller to present, not an optional to unwrap.",
+      "max_score": 10
+    }
+  ]
+}

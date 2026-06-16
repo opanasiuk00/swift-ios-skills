@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether Focus Engine guidance separates visionOS connected-device focus from gaze hover and RealityKit input targets, while routing accessibility-specific focus to the correct sibling skill.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Hover is not focus",
+      "description": "States that visionOS gaze hover is not the focus system and that connected devices such as keyboards or game controllers use focus navigation.",
+      "max_score": 25
+    },
+    {
+      "name": "Input target requirements",
+      "description": "Frames InputTargetComponent plus CollisionComponent as enabling RealityKit entities to receive system input.",
+      "max_score": 20
+    },
+    {
+      "name": "Hover effect role",
+      "description": "Frames HoverEffectComponent as hover feedback for gaze, direct touch, or pointer hover, not focus.",
+      "max_score": 20
+    },
+    {
+      "name": "No gaze-driven FocusState",
+      "description": "Does not claim that gaze should programmatically move SwiftUI @FocusState between controls.",
+      "max_score": 20
+    },
+    {
+      "name": "Accessibility sibling boundary",
+      "description": "Routes VoiceOver, Switch Control, or accessibility-specific focus details to the ios-accessibility skill.",
+      "max_score": 15
+    }
+  ]
+}

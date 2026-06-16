@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent uses NFCTagReaderSession correctly for native tag protocols and preserves the payment-card boundary.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Uses tag session",
+      "description": "Uses `NFCTagReaderSession` for native ISO 7816, ISO 15693, MIFARE, and FeliCa access.",
+      "max_score": 10
+    },
+    {
+      "name": "Availability guard",
+      "description": "Checks `NFCTagReaderSession.readingAvailable` before creating the session.",
+      "max_score": 10
+    },
+    {
+      "name": "ISO14443 mapping",
+      "description": "Maps `.iso14443` to ISO 7816-compatible and MIFARE tags.",
+      "max_score": 10
+    },
+    {
+      "name": "ISO15693 mapping",
+      "description": "Maps `.iso15693` to ISO 15693 tags.",
+      "max_score": 10
+    },
+    {
+      "name": "ISO18092 mapping",
+      "description": "Maps `.iso18092` to FeliCa tags.",
+      "max_score": 10
+    },
+    {
+      "name": "Connect first",
+      "description": "Connects to a detected tag before sending protocol commands.",
+      "max_score": 10
+    },
+    {
+      "name": "Switches tag cases",
+      "description": "Switches over `NFCTag` cases for ISO 7816, ISO 15693, MIFARE, and FeliCa.",
+      "max_score": 10
+    },
+    {
+      "name": "Multi-tag handling",
+      "description": "Handles multiple detected tags by prompting removal and restarting polling rather than blindly processing all tags.",
+      "max_score": 10
+    },
+    {
+      "name": "Payment boundary",
+      "description": "States that `NFCTagReaderSession` does not support payment-related AIDs.",
+      "max_score": 10
+    },
+    {
+      "name": "Payment route",
+      "description": "Routes eligible EU payment use cases to `NFCPaymentTagReaderSession` instead of generic tag sessions.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the solver applies the swift-language skill's modern Swift idioms to a small helper while preserving behavior and avoiding unrelated domains.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Typed throws",
+      "description": "Uses or explicitly recommends typed throws for the single clear ValidationError domain.",
+      "max_score": 16
+    },
+    {
+      "name": "Guard preconditions",
+      "description": "Uses guard-style early exits for title validation preconditions.",
+      "max_score": 16
+    },
+    {
+      "name": "Switch expression",
+      "description": "Rewrites the priority icon selection without a mutable temporary variable, using a switch expression or equivalent direct return.",
+      "max_score": 16
+    },
+    {
+      "name": "Collection count",
+      "description": "Counts matching tags with count(where:) or its trailing-closure form instead of a manual loop.",
+      "max_score": 16
+    },
+    {
+      "name": "Behavior preserved",
+      "description": "Preserves the original validation order and keeps trimming after validation.",
+      "max_score": 12
+    },
+    {
+      "name": "Compatibility note",
+      "description": "Mentions Swift version compatibility for typed throws or other modern syntax when relevant.",
+      "max_score": 12
+    },
+    {
+      "name": "Scope control",
+      "description": "Does not expand into SwiftUI, concurrency, architecture, lint configuration, or full package scaffolding.",
+      "max_score": 12
+    }
+  ]
+}

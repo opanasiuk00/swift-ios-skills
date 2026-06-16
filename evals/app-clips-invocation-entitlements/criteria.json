@@ -1,0 +1,36 @@
+{
+  "context": "",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Bundle identifier and target relationship",
+      "description": "Explains that the App Clip is a separate target, is embedded in the full app archive, and has a bundle identifier prefixed by the full app bundle identifier.",
+      "max_score": 15
+    },
+    {
+      "name": "Raw entitlement keys",
+      "description": "Names the App Clip on-demand install entitlement `com.apple.developer.on-demand-install-capable`, App Clip parent app entitlement `com.apple.developer.parent-application-identifiers`, and full app associated App Clip entitlement `com.apple.developer.associated-appclip-app-identifiers`.",
+      "max_score": 20
+    },
+    {
+      "name": "Associated domains and AASA",
+      "description": "Requires `appclips:` associated domains on both full app and App Clip targets plus a website AASA file for custom URL invocations and advanced experiences.",
+      "max_score": 15
+    },
+    {
+      "name": "Experience configuration",
+      "description": "Distinguishes the required default App Clip experience from optional advanced experiences needed for per-location routing, Maps, and production App Clip Codes, while allowing the short demo link for demo App Clip Codes.",
+      "max_score": 15
+    },
+    {
+      "name": "SwiftUI and UIKit invocation routing",
+      "description": "Uses SwiftUI `.onContinueUserActivity(NSUserActivityTypeBrowsingWeb)` and correctly distinguishes UIKit cold launch via `scene(_:willConnectTo:options:)` connection options from activity handling in `scene(_:continue:)`, without treating `scene(_:willContinueUserActivityWithType:)` as the URL handler.",
+      "max_score": 20
+    },
+    {
+      "name": "Full app takeover",
+      "description": "States that after installation the full app replaces the App Clip for future invocations and therefore must handle every App Clip invocation URL.",
+      "max_score": 15
+    }
+  ]
+}

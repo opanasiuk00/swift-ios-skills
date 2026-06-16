@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the ActivityKit skill guidance is applied for live activity implementation.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Plist enablement",
+      "description": "Specifies that the host app declares NSSupportsLiveActivities = YES.",
+      "max_score": 10
+    },
+    {
+      "name": "Attributes split",
+      "description": "Defines ActivityAttributes with static outer data and nested Codable, Hashable ContentState for dynamic data.",
+      "max_score": 10
+    },
+    {
+      "name": "Small state",
+      "description": "States that ContentState should stay small because updates and push payloads serialize it.",
+      "max_score": 10
+    },
+    {
+      "name": "ActivityContent lifecycle",
+      "description": "Uses ActivityContent-based Activity.request, update, and end APIs rather than deprecated contentState lifecycle APIs.",
+      "max_score": 10
+    },
+    {
+      "name": "Stale handling",
+      "description": "Sets staleDate and handles context.isStale or equivalent stale fallback UI.",
+      "max_score": 10
+    },
+    {
+      "name": "Lock Screen first",
+      "description": "Treats Lock Screen as the primary Live Activity surface and does not rely on Dynamic Island availability.",
+      "max_score": 10
+    },
+    {
+      "name": "Dynamic Island modes",
+      "description": "Includes compact, minimal, and expanded Dynamic Island presentations for devices that support Dynamic Island.",
+      "max_score": 10
+    },
+    {
+      "name": "Token rotation",
+      "description": "Observes activity.pushTokenUpdates and forwards every token to the server because tokens can rotate.",
+      "max_score": 10
+    },
+    {
+      "name": "Ending paths",
+      "description": "Ends the Live Activity on success/completion, error, and cancellation paths.",
+      "max_score": 10
+    },
+    {
+      "name": "Duration limits",
+      "description": "Distinguishes active lifetime up to 8 hours, possible system-ended Lock Screen presence up to 12 hours total, and app-ended default dismissal up to 4 hours.",
+      "max_score": 10
+    }
+  ]
+}

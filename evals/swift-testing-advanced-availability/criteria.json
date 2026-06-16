@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether Swift Testing advanced API guidance names current spelling, toolchain gates, and runtime platform limits.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Exit-test spelling",
+      "description": "Replaces stale #expect(exitsWith:) with #expect(processExitsWith:) and awaits the macro.",
+      "max_score": 15
+    },
+    {
+      "name": "Exit-test availability",
+      "description": "States that exit testing requires Swift 6.2 / Xcode 26.0 or newer and is not supported on iOS, tvOS, or watchOS runtime targets.",
+      "max_score": 20
+    },
+    {
+      "name": "Exit-test capture values",
+      "description": "Mentions Swift 6.3 capture-list requirements when discussing captured parent-process values in exit tests.",
+      "max_score": 10
+    },
+    {
+      "name": "Test.cancel shape and gate",
+      "description": "Marks the Test.cancel sample async throws when it awaits work and explains Test.cancel requires Swift 6.3 / Xcode 26.4-era support.",
+      "max_score": 20
+    },
+    {
+      "name": "Warning issue recording",
+      "description": "Uses Issue.record(..., severity: .warning), explains warning severity does not fail the test, and names Swift 6.3 / Xcode 26.4-era support.",
+      "max_score": 15
+    },
+    {
+      "name": "Image attachment recording",
+      "description": "Uses Attachment.record(image, named: ..., as: .png), names supported iOS image types or relevant imports, and names Swift 6.3 / Xcode 26.4-era support.",
+      "max_score": 20
+    }
+  ]
+}

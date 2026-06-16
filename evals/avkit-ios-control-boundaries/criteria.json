@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent avoids tvOS-only AVKit APIs in an iOS-focused skill and uses iOS-safe AVFoundation replacements.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Skip boundary",
+      "description": "Flags isSkipForwardEnabled, isSkipBackwardEnabled, and skippingBehavior as tvOS-focused APIs inappropriate for iOS transport controls.",
+      "max_score": 20
+    },
+    {
+      "name": "iOS seeking",
+      "description": "Recommends standard AVPlayerViewController controls or AVPlayer.seek for iOS custom seeking.",
+      "max_score": 20
+    },
+    {
+      "name": "Subtitle boundary",
+      "description": "Flags allowedSubtitleOptionLanguages and requiresFullSubtitles as tvOS-only controls and avoids the tvOS media-selection delegate callback for iOS.",
+      "max_score": 20
+    },
+    {
+      "name": "iOS subtitles",
+      "description": "Uses AVAsset loadMediaSelectionGroup(for: .legible) and AVPlayerItem.select for iOS default subtitle selection.",
+      "max_score": 15
+    },
+    {
+      "name": "Interstitial scheduling",
+      "description": "States that iOS interstitial ranges must be stream-defined or scheduled with AVPlayerInterstitialEventController.",
+      "max_score": 15
+    },
+    {
+      "name": "No direct assignment recipe",
+      "description": "Does not present direct playerItem.interstitialTimeRanges assignment as the primary iOS scheduling solution.",
+      "max_score": 10
+    }
+  ]
+}

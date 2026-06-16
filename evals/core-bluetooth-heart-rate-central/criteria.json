@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent produces source-grounded Core Bluetooth central guidance for scanning, connecting, parsing notifications, and writing safely.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Authorization and poweredOn",
+      "description": "Includes NSBluetoothAlwaysUsageDescription or Bluetooth authorization guidance and gates BLE operations on the manager reaching poweredOn.",
+      "max_score": 15
+    },
+    {
+      "name": "Service scan",
+      "description": "Scans for Heart Rate service UUID 180D instead of using a nil production scan.",
+      "max_score": 15
+    },
+    {
+      "name": "Peripheral retention",
+      "description": "Retains the discovered CBPeripheral strongly before connecting.",
+      "max_score": 15
+    },
+    {
+      "name": "Discovery order",
+      "description": "Sets CBPeripheralDelegate before discovering services and discovers/filters characteristics before reading or subscribing.",
+      "max_score": 15
+    },
+    {
+      "name": "Notification parsing",
+      "description": "Subscribes to characteristic 2A37 and parses heart-rate bytes with guards for the flags byte and 16-bit payload length.",
+      "max_score": 20
+    },
+    {
+      "name": "Safe writes",
+      "description": "Checks characteristic write properties, maximumWriteValueLength(for:), and canSendWriteWithoutResponse before writeValue, and distinguishes withResponse confirmation from withoutResponse flow control.",
+      "max_score": 20
+    }
+  ]
+}

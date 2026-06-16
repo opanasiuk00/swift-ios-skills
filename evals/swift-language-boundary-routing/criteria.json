@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the solver keeps swift-language focused on core Swift type-system semantics and routes neighboring Codable, FormatStyle/localization, and API naming concerns to sibling skills.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Language owner",
+      "description": "Says swift-language owns the core some/any/Never type-system decision.",
+      "max_score": 15
+    },
+    {
+      "name": "Some guidance",
+      "description": "Uses some for generic parameters or opaque returns when one concrete type is preserved by the compiler.",
+      "max_score": 12
+    },
+    {
+      "name": "Any guidance",
+      "description": "Uses any for heterogeneous storage, dynamic type erasure, or runtime flexibility.",
+      "max_score": 12
+    },
+    {
+      "name": "Never caveat",
+      "description": "Explains that Never is uninhabited or bottom-like only in appropriate expression/generic contexts and does not implicitly conform to arbitrary protocols.",
+      "max_score": 18
+    },
+    {
+      "name": "Codable route",
+      "description": "Routes full API response models, snake_case key strategy, and date decoding to swift-codable.",
+      "max_score": 14
+    },
+    {
+      "name": "Format route",
+      "description": "Routes detailed market-sensitive formatting to swift-formatstyle and mentions ios-localization for market, copy, or localized-display review.",
+      "max_score": 14
+    },
+    {
+      "name": "Naming route",
+      "description": "Routes public helper names, labels, and documentation-comment review to swift-api-design-guidelines when that work appears.",
+      "max_score": 8
+    },
+    {
+      "name": "No sibling implementation",
+      "description": "May include concise sibling-owner examples or rules, but does not provide an end-to-end decoding pipeline, formatting matrix, localization plan, or complete API naming rewrite.",
+      "max_score": 7
+    }
+  ]
+}

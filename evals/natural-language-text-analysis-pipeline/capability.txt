@@ -1,0 +1,1 @@
+Design NaturalLanguage text analysis pipelines for language identification, tokenization, named entity recognition, sentiment, and embeddings while handling support limits and thread safety.

@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent catches AccessorySetupKit descriptor and property-list failure modes instead of treating descriptors as ordinary optional filters.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "SSID exclusivity",
+      "description": "Flags setting both ssid and ssidPrefix on the same descriptor as invalid or crash-prone and recommends using exactly one.",
+      "max_score": 10
+    },
+    {
+      "name": "WiFi support",
+      "description": "States that Wi-Fi discovery requires WiFi in NSAccessorySetupSupports.",
+      "max_score": 10
+    },
+    {
+      "name": "BLE identifier",
+      "description": "States that a Bluetooth descriptor needs bluetoothCompanyIdentifier or bluetoothServiceUUID.",
+      "max_score": 10
+    },
+    {
+      "name": "Manufacturer dependency",
+      "description": "States that manufacturer data blob and mask require a Bluetooth company identifier.",
+      "max_score": 10
+    },
+    {
+      "name": "Mask length",
+      "description": "Flags that the manufacturer data blob and mask must be provided together and have the same length.",
+      "max_score": 10
+    },
+    {
+      "name": "Company plist",
+      "description": "Includes NSAccessorySetupBluetoothCompanyIdentifiers in property list guidance for company-identifier-based discovery.",
+      "max_score": 10
+    },
+    {
+      "name": "Plist alignment",
+      "description": "States that Bluetooth names, services, or company identifiers used in descriptors must be declared in Info.plist.",
+      "max_score": 10
+    },
+    {
+      "name": "Crash scope",
+      "description": "Connects undeclared Bluetooth discovery values or invalid Wi-Fi descriptor configuration to AccessorySetupKit discovery-time crashes or invalid requests.",
+      "max_score": 10
+    },
+    {
+      "name": "Corrected snippets",
+      "description": "Provides corrected Swift snippets for both Wi-Fi and BLE descriptors.",
+      "max_score": 10
+    },
+    {
+      "name": "No broad tutorial",
+      "description": "Keeps the review focused on AccessorySetupKit setup rather than explaining general CoreBluetooth or Wi-Fi networking concepts.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent keeps metadata guidance inside App Review compliance boundaries while routing ASO strategy to the sibling skill domain.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "ASO boundary",
+      "description": "States that keyword research, ranking strategy, conversion optimization, screenshot ordering, and A/B testing belong in an ASO strategy pass rather than App Review compliance.",
+      "max_score": 20
+    },
+    {
+      "name": "Metadata accuracy",
+      "description": "Gives App Review metadata guardrails: accurate app name/subtitle/keywords/description, screenshots showing real UI, no misleading or unavailable features, no prices in description, and no competitor names or irrelevant keywords.",
+      "max_score": 25
+    },
+    {
+      "name": "Field limits",
+      "description": "Mentions the 30-character app name limit, 30-character subtitle limit, and 100-character keyword field limit with comma-separated keywords and no spaces after commas.",
+      "max_score": 20
+    },
+    {
+      "name": "Screenshot compliance",
+      "description": "Mentions current screenshot-size compliance, including 6.9-inch iPhone screenshots and 13-inch iPad screenshots when applicable.",
+      "max_score": 20
+    },
+    {
+      "name": "No keyword plan",
+      "description": "Does not provide a full keyword strategy, search-volume analysis, screenshot-caption rewrite, or marketing-copy plan.",
+      "max_score": 15
+    }
+  ]
+}

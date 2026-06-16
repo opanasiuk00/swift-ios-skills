@@ -1,0 +1,46 @@
+{
+  "context": "Tests PDFKit overlay guidance for weak provider ownership, visible-page lifecycle, save integration, and PencilKit boundary handling.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Strong Provider Ownership",
+      "description": "States that PDFView.pageOverlayViewProvider is weak and the provider must be retained by a controller, SwiftUI coordinator, or another owner.",
+      "max_score": 15
+    },
+    {
+      "name": "Overlay Creation Callback",
+      "description": "Uses pdfView(_:overlayViewFor:) as the callback that creates or supplies per-page overlay views.",
+      "max_score": 10
+    },
+    {
+      "name": "Lifecycle Persistence Callback",
+      "description": "Uses pdfView(_:willEndDisplayingOverlayView:for:) or an equivalent lifecycle hook to capture overlay state before a page overlay leaves display.",
+      "max_score": 15
+    },
+    {
+      "name": "External Per-Page State",
+      "description": "Keeps overlay state in a model keyed by page or page identity rather than only inside transient overlay views.",
+      "max_score": 10
+    },
+    {
+      "name": "Not Automatically Saved",
+      "description": "States that UIKit/AppKit overlay views are not automatically written into the PDF by write(to:) or dataRepresentation().",
+      "max_score": 15
+    },
+    {
+      "name": "Save Conversion",
+      "description": "Recommends converting overlay data into PDF annotations, custom annotation appearance streams, rendered page content, or burned-in annotations before saving.",
+      "max_score": 15
+    },
+    {
+      "name": "Burn-In Use",
+      "description": "Mentions burn-in only for cases where saved annotations should become permanent page content.",
+      "max_score": 10
+    },
+    {
+      "name": "PencilKit Boundary",
+      "description": "Routes Apple Pencil canvas, tool picker, stroke, and drawing-policy details to PencilKit while keeping PDFKit responsible for overlay lifecycle and PDF persistence.",
+      "max_score": 10
+    }
+  ]
+}

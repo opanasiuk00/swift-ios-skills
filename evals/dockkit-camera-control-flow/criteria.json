@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether DockKit camera app guidance preserves setup/privacy boundaries and current DockKit API details.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "DockKit-specific setup boundary",
+      "description": "States that DockKit itself has no special entitlement or DockKit-specific Info.plist key, while camera capture still needs normal camera privacy such as NSCameraUsageDescription.",
+      "max_score": 15
+    },
+    {
+      "name": "Accessory discovery",
+      "description": "Uses DockAccessoryManager.shared.accessoryStateChanges to obtain a DockAccessory and handles both docked and undocked states.",
+      "max_score": 15
+    },
+    {
+      "name": "System tracking lifecycle",
+      "description": "Uses setSystemTrackingEnabled(_:) and notes that desired tracking state should be reapplied after lifecycle changes because it is not guaranteed to persist.",
+      "max_score": 15
+    },
+    {
+      "name": "Framing default",
+      "description": "Identifies .automatic as the documented default framing mode and .center as an explicit opt-in mode.",
+      "max_score": 15
+    },
+    {
+      "name": "Coordinate handling",
+      "description": "Uses normalized unit video-frame coordinates for selectSubject(at:) and normalized upper-left-origin video-frame coordinates for region of interest.",
+      "max_score": 10
+    },
+    {
+      "name": "Manual motor ownership",
+      "description": "Disables system tracking before manual setAngularVelocity or setOrientation motor control.",
+      "max_score": 10
+    },
+    {
+      "name": "Accessory event availability",
+      "description": "Marks accessoryEvents as iOS 17.4+ and iterates it as a throwing async sequence.",
+      "max_score": 10
+    },
+    {
+      "name": "No sibling overreach",
+      "description": "Does not turn the answer into generic Bluetooth pairing, AccessorySetupKit picker, or AVFoundation-only setup guidance.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent preserves app-store-optimization boundaries and routes compliance, privacy, ATT, and StoreKit implementation work to sibling domains.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "ASO scope",
+      "description": "Keeps ASO focused on the listing-growth concerns in the task: keyword strategy, App Store description copy, screenshot/caption strategy, promotional text, Custom Product Pages, and public listing message fit.",
+      "max_score": 25
+    },
+    {
+      "name": "Review routing",
+      "description": "Routes screenshot/mockup rejection risk, PrivacyInfo.xcprivacy, ATT wording, and submission compliance to App Store review/compliance guidance.",
+      "max_score": 25
+    },
+    {
+      "name": "StoreKit routing",
+      "description": "Routes subscription paywall code, purchase handling, entitlement checks, and StoreKit setup or implementation to StoreKit guidance.",
+      "max_score": 20
+    },
+    {
+      "name": "Safe cross-check",
+      "description": "Gives app-store-optimization a pre-submission consistency check that public listing claims, metadata, and screenshot messaging match the real app.",
+      "max_score": 15
+    },
+    {
+      "name": "No bad tactics",
+      "description": "Does not recommend competitor names, unrelated keywords, or misleading screenshots as ASO tactics.",
+      "max_score": 15
+    }
+  ]
+}

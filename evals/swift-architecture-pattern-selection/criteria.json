@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the answer chooses the smallest appropriate SwiftUI architecture and avoids premature complexity.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "MV Default",
+      "description": "Recommends MV with @Observable as the default starting point for the described simple SwiftUI app.",
+      "max_score": 20
+    },
+    {
+      "name": "Avoids Premature Complexity",
+      "description": "Rejects defaulting to TCA, Clean Architecture, or VIPER solely because they sound more testable.",
+      "max_score": 15
+    },
+    {
+      "name": "MVVM Trigger",
+      "description": "Explains that MVVM becomes useful when view-specific transformed state or business logic needs testing outside views.",
+      "max_score": 15
+    },
+    {
+      "name": "TCA Trigger",
+      "description": "Explains that TCA is justified by deterministic state transitions, side effects, feature composition, or strong reducer testing needs.",
+      "max_score": 15
+    },
+    {
+      "name": "Clean Architecture Trigger",
+      "description": "Explains that Clean Architecture is justified by strict domain boundaries, shared business logic, enterprise or regulated constraints, not by a small CRUD app.",
+      "max_score": 15
+    },
+    {
+      "name": "Coordinator Trigger",
+      "description": "Names complex UIKit or hybrid navigation, deep links, or conditional flows as reasons to add Coordinator-style ownership.",
+      "max_score": 10
+    },
+    {
+      "name": "Sibling Handoff",
+      "description": "Routes detailed SwiftUI state-wrapper or navigation implementation to swiftui-patterns or swiftui-navigation instead of expanding the architecture memo.",
+      "max_score": 10
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the device-integrity skill corrects lifecycle and error-handling mistakes without expanding into sibling security domains.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "DeviceCheck token reuse",
+      "description": "States that `DCDevice.generateToken()` tokens are single-use and should not be cached for the full install.",
+      "max_score": 20
+    },
+    {
+      "name": "App Attest key scope",
+      "description": "Requires App Attest keys to be unique per user account on each device and warns that unnecessary key generation affects risk metrics.",
+      "max_score": 20
+    },
+    {
+      "name": "Attestation retry behavior",
+      "description": "For `serverUnavailable`, retries later with the same key and same `clientDataHash`; for other attestation errors, discards the key identifier before a new-key retry.",
+      "max_score": 20
+    },
+    {
+      "name": "Invalid key handling",
+      "description": "Describes `invalidKey` using Apple-documented causes: already-attested key, unattested assertion key, or service rejection, without attributing it to OS updates or Secure Enclave resets.",
+      "max_score": 20
+    },
+    {
+      "name": "Sibling boundaries",
+      "description": "Keeps OAuth/session-token design, certificate pinning, and broad networking security out of the device-integrity checklist except as handoffs.",
+      "max_score": 20
+    }
+  ]
+}

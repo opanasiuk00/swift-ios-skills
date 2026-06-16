@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the Core Motion skill corrects pedometer/activity/altimeter permission, authorization, activity-confidence, and altitude misconceptions without drifting into sibling skills.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Motion privacy key",
+      "description": "Requires NSMotionUsageDescription for Core Motion APIs in the plan, not only for activity recognition.",
+      "max_score": 15
+    },
+    {
+      "name": "Authorization checks",
+      "description": "Checks authorization status through relevant pedometer, activity, or altimeter manager APIs before relying on data.",
+      "max_score": 15
+    },
+    {
+      "name": "Activity flags",
+      "description": "Explains that CMMotionActivity flags are not mutually exclusive and should be interpreted with confidence.",
+      "max_score": 20
+    },
+    {
+      "name": "Absolute altitude semantics",
+      "description": "Describes absolute altitude as altitude relative to sea level, not GPS-based altitude.",
+      "max_score": 20
+    },
+    {
+      "name": "Absolute altitude hardware",
+      "description": "Mentions that absolute altitude requires supported hardware such as iPhone 12 or later or Apple Watch Series 6/SE or later.",
+      "max_score": 15
+    },
+    {
+      "name": "Sibling boundary",
+      "description": "Keeps the answer in Core Motion scope rather than turning it into a HealthKit workout or SensorKit research guide.",
+      "max_score": 15
+    }
+  ]
+}

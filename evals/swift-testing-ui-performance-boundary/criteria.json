@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether Swift Testing guidance keeps unit tests in Swift Testing while preserving XCTest, XCUITest, performance, and snapshot boundaries.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Unit logic ownership",
+      "description": "Uses Swift Testing for pure unit or business logic tests such as the price calculator.",
+      "max_score": 20
+    },
+    {
+      "name": "Async event testing",
+      "description": "Uses confirmation or Swift concurrency patterns for async coupon events instead of sleeps.",
+      "max_score": 20
+    },
+    {
+      "name": "UI automation boundary",
+      "description": "Keeps UI automation with XCTest and XCUITest.",
+      "max_score": 20
+    },
+    {
+      "name": "Performance boundary",
+      "description": "Keeps performance measurement with XCTest measure or XCTMetric-style tooling.",
+      "max_score": 15
+    },
+    {
+      "name": "Snapshot boundary",
+      "description": "Keeps common visual snapshot testing flows in XCTest or dedicated snapshot tooling and includes dark mode and large Dynamic Type coverage.",
+      "max_score": 15
+    },
+    {
+      "name": "Migration organization",
+      "description": "States that XCTest and Swift Testing can coexist during migration while recommending clear file or target organization when it reduces confusion.",
+      "max_score": 10
+    }
+  ]
+}

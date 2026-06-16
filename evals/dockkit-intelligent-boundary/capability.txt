@@ -1,0 +1,1 @@
+Route DockKit intelligent tracking, battery, accessory events, SwiftUI state, and BLE accessory setup to the correct framework boundaries with accurate availability.

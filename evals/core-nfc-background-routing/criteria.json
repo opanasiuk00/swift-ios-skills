@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the agent explains Core NFC background tag reading using URI records and universal links, not bundle IDs or arbitrary content types.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "URI record",
+      "description": "Says background tag reading looks for an NDEF URI record.",
+      "max_score": 15
+    },
+    {
+      "name": "Well-known U",
+      "description": "Specifies `.nfcWellKnown` type name format and type `U` for the URI record.",
+      "max_score": 15
+    },
+    {
+      "name": "First URI",
+      "description": "States that if multiple URI records exist, iOS uses the first URI record.",
+      "max_score": 10
+    },
+    {
+      "name": "Universal links",
+      "description": "Uses universal links for app-specific background tag routing.",
+      "max_score": 15
+    },
+    {
+      "name": "Associated domains",
+      "description": "Requires Associated Domains configuration for the universal link domain.",
+      "max_score": 10
+    },
+    {
+      "name": "Reject custom schemes",
+      "description": "States that custom URL schemes are not supported for background tag reading.",
+      "max_score": 10
+    },
+    {
+      "name": "Reject bundle/content",
+      "description": "Rejects routing by bundle ID or arbitrary NDEF content type.",
+      "max_score": 10
+    },
+    {
+      "name": "User activity",
+      "description": "Handles delivery through `NSUserActivityTypeBrowsingWeb` and `NSUserActivity.ndefMessagePayload`.",
+      "max_score": 10
+    },
+    {
+      "name": "Empty guard",
+      "description": "Includes a guard for the empty NDEF payload returned by non-background user activities.",
+      "max_score": 5
+    }
+  ]
+}

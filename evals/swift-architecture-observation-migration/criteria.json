@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the answer gives an incremental architecture migration plan grounded in modern Observation and module boundaries.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Observation Migration",
+      "description": "Describes replacing ObservableObject/@Published with @Observable where iOS 17+ or equivalent platform support is available.",
+      "max_score": 15
+    },
+    {
+      "name": "SwiftUI Ownership",
+      "description": "Explains State for owned observable objects, plain properties for read-only injected observable objects, and Bindable only when bindings are needed.",
+      "max_score": 15
+    },
+    {
+      "name": "MainActor Safety",
+      "description": "Notes that UI-observed @Observable app state should be isolated to @MainActor for Swift 6 data-race safety.",
+      "max_score": 15
+    },
+    {
+      "name": "Coordinator Preservation",
+      "description": "Keeps Coordinators for UIKit or hybrid complex navigation and does not force their immediate removal.",
+      "max_score": 10
+    },
+    {
+      "name": "VIPER Boundary",
+      "description": "Treats VIPER as a legacy or strict-boundary maintenance pattern, not as the default for new SwiftUI modules.",
+      "max_score": 15
+    },
+    {
+      "name": "Module Consistency",
+      "description": "Allows different architecture patterns by feature module while requiring consistency inside each module.",
+      "max_score": 15
+    },
+    {
+      "name": "Sibling Handoffs",
+      "description": "Routes detailed concurrency diagnostics, SwiftUI navigation implementation, and test-suite mechanics to swift-concurrency, swiftui-navigation, and swift-testing.",
+      "max_score": 15
+    }
+  ]
+}

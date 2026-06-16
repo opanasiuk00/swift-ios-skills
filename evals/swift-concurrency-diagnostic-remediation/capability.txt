@@ -1,0 +1,1 @@
+Remediate Swift 6.3 concurrency diagnostics involving MainActor isolation, isolated conformances, Sendable, @preconcurrency, and sibling-skill boundaries.

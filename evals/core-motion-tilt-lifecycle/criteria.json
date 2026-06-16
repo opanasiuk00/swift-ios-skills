@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the Core Motion skill guides CMMotionManager lifecycle, availability, privacy, and reference-frame choices for SwiftUI tilt controls.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Motion usage description",
+      "description": "Calls out that the app should include NSMotionUsageDescription before accessing motion data.",
+      "max_score": 15
+    },
+    {
+      "name": "Single motion manager",
+      "description": "Uses or recommends one shared CMMotionManager instead of creating independent managers per SwiftUI view.",
+      "max_score": 20
+    },
+    {
+      "name": "Availability checks",
+      "description": "Checks isDeviceMotionAvailable or the relevant accelerometer/gyro availability before starting updates.",
+      "max_score": 15
+    },
+    {
+      "name": "Battery-aware rate",
+      "description": "Chooses a reasonable update interval for tilt controls and avoids assuming the highest possible sample rate is appropriate.",
+      "max_score": 15
+    },
+    {
+      "name": "Lifecycle stop",
+      "description": "Stops the matching Core Motion updates when the view or service is no longer active.",
+      "max_score": 20
+    },
+    {
+      "name": "Reference frame check",
+      "description": "Checks available attitude reference frames before requesting a specific north-based or corrected frame.",
+      "max_score": 15
+    }
+  ]
+}

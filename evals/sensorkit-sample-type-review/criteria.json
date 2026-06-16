@@ -1,0 +1,51 @@
+{
+  "context": "Tests whether the SensorKit skill corrects stale or easy-to-misremember sample types and delegate callback coverage.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Accelerometer array",
+      "description": "Corrects accelerometer results to arrays of CMRecordedAccelerometerData, not live CMAccelerometerData.",
+      "max_score": 15
+    },
+    {
+      "name": "Rotation array",
+      "description": "Corrects rotation-rate results to arrays of CMRecordedRotationRateData, not CMGyroData.",
+      "max_score": 15
+    },
+    {
+      "name": "Wrist session",
+      "description": "Corrects wrist temperature to SRWristTemperatureSession as the fetched sample object.",
+      "max_score": 15
+    },
+    {
+      "name": "Wrist readings",
+      "description": "Explains that SRWristTemperature readings are contained inside the wrist-temperature session.",
+      "max_score": 10
+    },
+    {
+      "name": "ECG array",
+      "description": "Corrects ECG results to arrays of SRElectrocardiogramSample.",
+      "max_score": 10
+    },
+    {
+      "name": "PPG array",
+      "description": "Corrects PPG results to arrays of SRPhotoplethysmogramSample.",
+      "max_score": 10
+    },
+    {
+      "name": "Device callbacks",
+      "description": "Includes both successful device discovery and fetchDevicesDidFailWithError handling.",
+      "max_score": 10
+    },
+    {
+      "name": "Fetch callbacks",
+      "description": "Includes didFetchResult, didCompleteFetch, and fetching failedWithError callbacks.",
+      "max_score": 10
+    },
+    {
+      "name": "Recording failure",
+      "description": "Includes stopRecordingFailedWithError as part of the recording callback checklist.",
+      "max_score": 5
+    }
+  ]
+}

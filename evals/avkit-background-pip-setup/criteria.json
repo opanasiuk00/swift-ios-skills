@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether the agent corrects AVKit playback setup for PiP, AirPlay, and background audio without overclaiming.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Background mode",
+      "description": "Declares Background Modes > Audio, AirPlay, and Picture in Picture, represented by UIBackgroundModes audio.",
+      "max_score": 25
+    },
+    {
+      "name": "Playback category",
+      "description": "Uses AVAudioSession category .playback with mode .moviePlayback for movie playback.",
+      "max_score": 20
+    },
+    {
+      "name": "Activation timing",
+      "description": "Defers setActive(true) until playback begins instead of activating at app launch.",
+      "max_score": 25
+    },
+    {
+      "name": "Standard player behavior",
+      "description": "Explains that AVPlayerViewController provides standard PiP/AirPlay UI when app, device, media, and route support are configured.",
+      "max_score": 20
+    },
+    {
+      "name": "No unsupported requirement",
+      "description": "Does not invent a PiP entitlement or claim silent failure as the diagnostic model.",
+      "max_score": 10
+    }
+  ]
+}

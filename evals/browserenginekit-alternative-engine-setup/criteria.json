@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether BrowserEngineKit setup guidance covers entitlement, build, eligibility, and process-bootstrap requirements for an alternative browser engine.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Host entitlements",
+      "description": "Names both the default-browser entitlement and com.apple.developer.web-browser-engine.host for the browser app.",
+      "max_score": 15
+    },
+    {
+      "name": "Extension entitlements",
+      "description": "Names the webcontent, networking, and rendering entitlements and assigns each to its matching extension target.",
+      "max_score": 20
+    },
+    {
+      "name": "Required device capability",
+      "description": "Adds web-browser-engine to UIRequiredDeviceCapabilities and does not rely only on runtime checks.",
+      "max_score": 15
+    },
+    {
+      "name": "arm64e distribution",
+      "description": "Explains that iOS device distribution needs arm64e support while Simulator builds should not force arm64e.",
+      "max_score": 15
+    },
+    {
+      "name": "Eligibility API",
+      "description": "Uses BEAvailability instead of hard-coded region checks for runtime alternative-engine eligibility.",
+      "max_score": 15
+    },
+    {
+      "name": "Bootstrap sequence",
+      "description": "Explains that the host launches processes, obtains networking/rendering anonymous XPC endpoints, and sends them to web content before page work begins.",
+      "max_score": 15
+    },
+    {
+      "name": "Boundary",
+      "description": "Does not recommend WKWebView or SwiftUI WebKit as a replacement for an approved alternative browser engine implementation.",
+      "max_score": 5
+    }
+  ]
+}

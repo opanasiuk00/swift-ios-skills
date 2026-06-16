@@ -1,0 +1,31 @@
+{
+  "context": "Tests whether Focus Engine guidance corrects SwiftUI form focus state, ambiguous bindings, default focus, and scene command value patterns without drifting into accessibility focus.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Single optional enum focus state",
+      "description": "Recommends one optional Hashable enum @FocusState for multiple focus targets rather than separate competing Bool focus states.",
+      "max_score": 20
+    },
+    {
+      "name": "Ambiguous binding correction",
+      "description": "Explains that reusing the same focus enum value across multiple fields is ambiguous and should be avoided.",
+      "max_score": 20
+    },
+    {
+      "name": "Default focus discipline",
+      "description": "Recommends one clear default focus target or scoped default focus rather than several competing defaultFocus modifiers.",
+      "max_score": 20
+    },
+    {
+      "name": "Focused scene values",
+      "description": "Uses focusedSceneValue or focused values for scene, menu, or toolbar actions that depend on the currently focused content.",
+      "max_score": 25
+    },
+    {
+      "name": "Accessibility boundary",
+      "description": "Keeps VoiceOver, Switch Control, and accessibility-specific focus out of scope except as a handoff to an accessibility skill.",
+      "max_score": 15
+    }
+  ]
+}

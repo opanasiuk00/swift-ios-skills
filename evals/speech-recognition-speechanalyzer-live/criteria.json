@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent uses current iOS 26 SpeechAnalyzer and SpeechTranscriber guidance for live transcription without stale or unsupported API claims.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Documented transcriber preset",
+      "description": "Uses SpeechAnalyzer with SpeechTranscriber and a documented preset such as .timeIndexedProgressiveTranscription, not .offlineTranscription.",
+      "max_score": 20
+    },
+    {
+      "name": "Support checks",
+      "description": "Checks SpeechTranscriber.isAvailable and supportedLocale(equivalentTo:) or equivalent supported locale state before starting transcription.",
+      "max_score": 15
+    },
+    {
+      "name": "Asset installation",
+      "description": "Installs or verifies model assets with AssetInventory.assetInstallationRequest(supporting:) before analysis.",
+      "max_score": 15
+    },
+    {
+      "name": "Compatible audio format",
+      "description": "Converts AVAudioEngine microphone buffers to SpeechAnalyzer.bestAvailableAudioFormat(compatibleWith:) before yielding AnalyzerInput.",
+      "max_score": 20
+    },
+    {
+      "name": "Volatile and final results",
+      "description": "Handles volatile results separately from finalized results so live transcript text is replaced rather than duplicated.",
+      "max_score": 15
+    },
+    {
+      "name": "Session finalization",
+      "description": "Explicitly finalizes or cancels the analyzer session after input ends instead of assuming the input stream finish is enough.",
+      "max_score": 15
+    }
+  ]
+}
