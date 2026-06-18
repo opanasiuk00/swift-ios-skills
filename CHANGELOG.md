@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Add the `swiftui-design` skill for SwiftUI visual direction, design tokens, typography, color, layout composition, brand polish, anti-generic UI guidance, and design review.
+- Update the public skill catalog, SwiftUI bundle listing, and install count for 87 skills.
+
 ## Initial release
 
 - Publish the Swift iOS Skills collection.
