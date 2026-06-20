@@ -48,7 +48,7 @@ Install everything for any coding agent:
 npx skills add opanasiuk00/swift-ios-skills --all
 ```
 
-Use `--all` when you want the full set of 87 skills installed automatically for any coding agent.
+Use `--all` when you want the full set of 88 skills installed automatically for any coding agent.
 
 Install specific skills directly:
 
@@ -206,9 +206,9 @@ For Claude Code plugin bundles, reinstall the bundle you use:
 
 | Plugin | Skills included |
 |--------|----------------|
-| **all-ios-skills** | All 87 skills |
+| **all-ios-skills** | All 88 skills |
 | **apple-kit-skills** | 39 skills spanning Apple Kit frameworks plus CarPlay |
-| **swiftui-skills** | focus-engine, swiftui-animation, swiftui-design, swiftui-gestures, swiftui-layout-components, swiftui-liquid-glass, swiftui-navigation, swiftui-patterns, swiftui-performance, swiftui-uikit-interop, swiftui-webkit |
+| **swiftui-skills** | figma-to-swiftui, focus-engine, swiftui-animation, swiftui-design, swiftui-gestures, swiftui-layout-components, swiftui-liquid-glass, swiftui-navigation, swiftui-patterns, swiftui-performance, swiftui-uikit-interop, swiftui-webkit |
 | **swift-core-skills** | core-data, swift-api-design-guidelines, ios-architecture, swift-codable, swift-charts, swift-concurrency, swift-formatstyle, swift-language, swift-testing, swiftdata |
 | **ios-app-framework-skills** | activitykit, adattributionkit, alarmkit, app-clips, app-intents, avkit, carplay, mapkit, paperkit, pdfkit, photokit, push-notifications, storekit, tipkit, widgetkit |
 | **ios-data-framework-skills** | cloudkit, contacts-framework, eventkit, financekit, healthkit, musickit, passkit, weatherkit |
@@ -224,6 +224,7 @@ For Claude Code plugin bundles, reinstall the bundle you use:
 
 | Skill | What it covers |
 |-------|---------------|
+| [figma-to-swiftui](skills/figma-to-swiftui/) | Figma MCP handoff to production SwiftUI, design context, screenshots, tokens, assets, variants, adaptation audits, Code Connect |
 | [focus-engine](skills/focus-engine/) | @FocusState, defaultFocus, focusSection, focused scene values, focus restoration, UIFocusGuide |
 | [swiftui-animation](skills/swiftui-animation/) | Spring animations, PhaseAnimator, KeyframeAnimator, matchedGeometryEffect, SF Symbols |
 | [swiftui-design](skills/swiftui-design/) | SwiftUI visual direction, design tokens, typography, color, spacing, brand polish, anti-generic UI review |
