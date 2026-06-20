@@ -19,6 +19,8 @@ Process Figma assets for Xcode without substituting or approximating designer-au
 
 Every visible Figma-owned icon, logo, illustration, photo, and decorative graphic must be represented by a real Figma-rendered PNG export unless the user explicitly approves a substitution.
 
+Reuse existing project assets first. Search the target asset catalogs and generated asset helpers before downloading. If the same graphic, logo, icon, or shipped image already exists, use the existing asset and access pattern instead of adding a duplicate export.
+
 Banned substitutions:
 - `Image(systemName:)` for a Figma-designed icon
 - `Text("G")`, `Text("f")`, or similar fake logo text
@@ -149,6 +151,8 @@ Deduplication:
 - Search `Assets.xcassets` before adding a new asset
 - Reuse the same Catalog image for the same source node or identical brand asset
 - One asset can be displayed at multiple SwiftUI frame sizes
+- If the project uses generated asset access (SwiftGen, R.swift, custom `Asset` enums), use that generated API after adding or reusing the asset
+- Do not add a second image with a Figma layer name when an existing semantic asset already represents the same visual
 
 ## 5. Add PNG Images to Asset Catalog
 
@@ -278,8 +282,9 @@ For every hit:
 
 1. Figma assets first; SF Symbols only by exception
 2. Build a visual inventory before SwiftUI implementation
-3. Download icons, logos, illustrations, and static image fills from Figma
-4. Code only structural UI geometry, gradients, materials, and simple backgrounds
-5. Use remote loading only for data-driven content images
-6. Validate file formats before adding assets to Xcode
-7. Match scale variants, rendering mode, and project naming conventions
+3. Search existing project assets before downloading from Figma
+4. Download icons, logos, illustrations, and static image fills from Figma only when missing
+5. Code only structural UI geometry, gradients, materials, and simple backgrounds
+6. Use remote loading only for data-driven content images
+7. Validate file formats before adding assets to Xcode
+8. Match scale variants, rendering mode, and project naming conventions

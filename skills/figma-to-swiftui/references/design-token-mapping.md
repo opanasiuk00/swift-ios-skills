@@ -17,12 +17,16 @@ How to translate Figma variables (from get_variable_defs) into a SwiftUI design 
 
 Figma color variables map to SwiftUI Color extensions or Asset Catalog named colors.
 
+Before creating or editing any token, run the project reuse pass in `project-reuse.md`. A Figma variable is not automatically a new app token.
+
 ### Strategy
 
 1. Check if project already has a color system (Color+Extensions.swift, Theme.swift, or Asset Catalog named colors)
 2. If yes: map Figma variable names to existing project colors by matching values
 3. If no: create Color extensions or Asset Catalog entries from Figma variables
 4. Prefer semantic colors and named assets already used by adjacent screens before introducing a new token
+5. If an exact color value already exists, use the existing project token/name even when Figma uses a different variable name
+6. If a new token is needed, add it to the same asset catalog, extension, enum, or design-system package that owns comparable tokens
 
 ### Mapping Rules
 
@@ -207,3 +211,5 @@ Radial gradient -> `RadialGradient`. Angular/conic gradient -> `AngularGradient`
 4. Do not duplicate: one source of truth for each token
 5. Prefer existing shared modules and helpers, theme wrappers, and Asset Catalog colors when they already express the same intent
 6. Group tokens logically (Color, Spacing, Typography, Radius, Shadow)
+7. Never add a parallel Figma-only token namespace when the project already has a design-system namespace
+8. After mapping tokens, review layout and composition with `swiftui-layout-components` and `swiftui-patterns` when implementing SwiftUI

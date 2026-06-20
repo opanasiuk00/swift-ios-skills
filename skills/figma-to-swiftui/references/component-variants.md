@@ -23,6 +23,8 @@ Figma components use variant properties to define visual permutations. When `get
 
 Fetch all variants of a component set, not just the default. Use `get_metadata` to find sibling variant nodes, then `get_design_context` on each to understand the full range of visual states.
 
+Before creating a new SwiftUI component or enum, run the project reuse pass in `project-reuse.md`. Check Code Connect mappings and existing `View`, `ButtonStyle`, `ToggleStyle`, `ViewModifier`, and design-system components. If the same component already exists, use or extend it instead of generating a Figma-specific duplicate.
+
 ## State Variants
 
 Map Figma state variants to the closest native SwiftUI mechanism. Only create custom state enums for states that have no system equivalent.
@@ -153,6 +155,8 @@ struct TextLinkButtonStyle: ButtonStyle { /* underlined text, no background */ }
 ```
 
 Rule: prefer one style with an enum parameter when the only differences are colors, borders, or font weights. Use separate styles when layout, structure, or content arrangement differs.
+
+If the project already has a style enum, use its naming and cases where they fit. Add a new case only when the Figma variant belongs to that existing component family.
 
 ## Content Toggles
 
